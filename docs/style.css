@@ -365,6 +365,10 @@ button {
   color: #E4DED8;
 }
 
+#makeyourowngames {
+  font-size: 80%;
+}
+
 h1 {
   font-size: 1.5em;
   font-weight: normal;
@@ -540,6 +544,16 @@ body.nightmode {
 
 body.nightmode a {
   color: lightgoldenrodyellow;
+}
+
+body.nightmode .spacedLink {
+  background-color: whitesmoke;
+  color: #222222;
+  border-color: #222222;
+}
+
+body.nightmode .choice label {
+  border-color: rgba(255, 255, 255, 0.9);
 }
 
 body.nightmode .next {
