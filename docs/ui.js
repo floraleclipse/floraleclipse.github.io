@@ -380,12 +380,12 @@ function textOptionsMenu(categories) {
 }
 
 function getZoomFactor() {
-  if (document.documentElement.style.fontSize === undefined) {
+  if (document.body.style.zoom === undefined) {
     return window.zoomFactor || 1;
   } else {
-    var fontSize = parseFloat(document.documentElement.style.fontSize);
-    if (isNaN(fontSize)) fontSize = 100;
-    return fontSize / 100;
+    var zoomFactor = parseFloat(document.body.style.zoom);
+    if (isNaN(zoomFactor)) zoomFactor = 1;
+    return zoomFactor;
   }
 }
 
