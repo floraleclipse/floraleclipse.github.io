@@ -605,6 +605,8 @@ function clearScreen(code) {
         extraScroll = 1; // try to hide url bar
       }
       pageYOffset -= extraScroll;
+      var zoomFactor = window.zoomFactor || document.body.style.zoom;
+      if (zoomFactor) pageYOffset /= parseFloat(zoomFactor);
       container1.style.transform = "translateY(-"+pageYOffset+ "px)";
       container1.style.webkitTransform = "translateY(-"+pageYOffset+ "px)";
       window.scrollTo(0,extraScroll);
