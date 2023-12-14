@@ -390,8 +390,17 @@ function getZoomFactor() {
 }
 
 function setZoomFactor(zoomFactor) {
-  document.documentElement.style.fontSize = Math.round(100*zoomFactor) + "%";
-  window.zoomFactor = zoomFactor;
+  if (document.body.style.zoom === undefined) {
+    var initialMaxWidth = 700;
+    document.body.style.maxWidth = (initialMaxWidth / zoomFactor) + "px";
+    document.body.style.transformOrigin = "center top";
+    document.body.style.transform = "scale("+zoomFactor+")";
+    document.body.style.webkitTransformOrigin = "center top";
+    document.body.style.webkitTransform = "scale("+zoomFactor+")";
+    window.zoomFactor = zoomFactor;
+  } else {
+    document.body.style.zoom = zoomFactor;
+  }
   if (initStore()) store.set("preferredZoom", String(zoomFactor));
 }
 
@@ -3199,13 +3208,6 @@ function changeTitle(title) {
     titleTag.innerHTML = "";
     titleTag.appendChild(document.createTextNode(title));
   }
-  var text = document.getElementById('text');
-  if (text) {
-    var textTitleTag = document.createElement('h1');
-    textTitleTag.classList.add('gameTitle');
-    textTitleTag.appendChild(document.createTextNode(title));
-    text.appendChild(textTitleTag);
-  }
 }
 
 function changeAuthor(author) {
@@ -3213,13 +3215,6 @@ function changeAuthor(author) {
   if (authorTag) {
     authorTag.innerHTML = "";
     authorTag.appendChild(document.createTextNode("by " + author));
-  }
-  var text = document.getElementById('text');
-  if (text) {
-    var textAuthorTag = document.createElement('h2');
-    textAuthorTag.classList.add('gameTitle');
-    textAuthorTag.appendChild(document.createTextNode("by " + author));
-    text.appendChild(textAuthorTag);
   }
 }
 
@@ -3748,8 +3743,6 @@ if (window.isWeb) {
   
 } else if (window.isIosApp) {
   document.getElementById("dynamic").innerHTML =
-  "#text .gameTitle { display: block; }"+
-  ""+
   "#header { display: none; }"+
   ""+
   "body { transition-duration: 0; }"+
@@ -3781,8 +3774,6 @@ if (window.isWeb) {
   })();
 } else if (window.isAndroidApp) {
   document.getElementById("dynamic").innerHTML =
-  "#text .gameTitle { display: block; }" +
-  "" +
   "#header { display: none; }"+
   ""+
   "#emailUs { display: none; }"+
@@ -3791,8 +3782,6 @@ if (window.isWeb) {
 } else if (window.isMacApp || window.isWinOldApp || window.isCef || window.isNode || window.isSteamApp) {
   document.getElementById("dynamic").innerHTML =
     "#header .gameTitle { display: none; }" +
-    "" +
-    "#text .gameTitle { display: block; }" +
     "" +
     "#headerLinks { display: none; }"+
     ""+
