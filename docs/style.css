@@ -259,7 +259,7 @@ table {
 
 .selected {
   color: rgba(255, 255, 255, 0.85);
-  background-color: #007AFF;
+  background-color: #a03c3c;
 }
 
 .choice .firstChild {
@@ -286,7 +286,7 @@ table {
 .choice>div.selectedKeyboard:hover,
 .next.selectedKeyboard {
   color: rgba(255, 255, 255, 0.85);
-  background-color: #007AFF;
+  background-color: #a03c3c;
   transition-property: background-color, color;
   transition-duration: 0.5s;
   transition-timing-function: linear;
