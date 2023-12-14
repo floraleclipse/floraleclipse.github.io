@@ -15,7 +15,7 @@ body {
   /* we'll override the font, but keep the size from iOS dynamic text sizing */
   font-family: Georgia, "Times New Roman", serif;
   background-color: #F7F4F1;
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(0, 0, 0, 0.9);
   margin: 8px auto;
   padding: 0;
   -webkit-user-select: text;
@@ -28,7 +28,7 @@ body {
 
 a {
   /* colored underlined links for XULRunner support */
-  color: blue;
+  color: crimson;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -535,17 +535,17 @@ p#buttons {
 
 body.nightmode {
   background-color: #242424;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 body.nightmode a {
-  color: #7bc8fa;
+  color: lightgoldenrodyellow;
 }
 
 body.nightmode .next {
   color: #242424;
   /* Match background color */
-  background-color: #D9D9D9;
+  background-color: #FFFFFF;
 }
 
 body.nightmode .shuttle {
