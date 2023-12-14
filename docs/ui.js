@@ -837,7 +837,7 @@ function printFooter() {
     if (window.stats && stats.scene && stats.scene.secondaryMode == "stats") {
       statsButton.innerHTML = "Return to the Game";
     } else {
-      statsButton.innerHTML = "Show Stats";
+      statsButton.innerHTML = "Stats";
       if (window.isAndroidApp && window.statsMode.get()) {
         showStats();
       }
@@ -3362,7 +3362,7 @@ function loadPreferences() {
       window.slidingEnabled = preferredSliding !== false && preferredSliding !== "false";
     });
   } else {
-    window.animateEnabled = true;
+    window.animateEnabled = false;
   }
   if (typeof document.body.style.animationName === "undefined") {
     if (typeof document.body.style.webkitAnimationName === "undefined") {
