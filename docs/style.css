@@ -1,17 +1,19 @@
-body {
-  position: relative;
-  max-width: 700px;
-  min-height: 100vh;
-  /* keep iOS address bar from popping in and out */
-  /*_width:expression(this.scrollWidth > 680 ? "680px" : "auto");*/
-  font-size: 100%;
-  /* reset for CWS */
+html {
   font: -apple-system-body;
   /* we'll override the font, but keep the size from iOS dynamic text sizing */
-  font-family: Georgia, "Times New Roman", serif;
+}
+
+body {
+  position: relative;
+  max-width: 80ch;
+  min-height: 100vh;
+  /* keep iOS address bar from popping in and out */
+  font-size: 100%;
+  /* reset for CWS */
+  font-family: Palatino, Georgia, "Times New Roman", serif;
   background-color: #F7F4F1;
   color: rgba(0, 0, 0, 0.85);
-  margin: 8px auto;
+  margin: 1ch auto;
   padding: 0;
   -webkit-user-select: text;
   /* selectable text for Chrome app support */
@@ -37,7 +39,7 @@ a {
   /* so containers can overlap */
   left: 0;
   right: 0;
-  margin: 0 8px;
+  margin: 0 1ch;
   animation-duration: 0.5s;
   -webkit-animation-duration: 0.5s;
   transition-property: opacity;
@@ -94,10 +96,10 @@ a {
 
 .statBar {
   background-color: #949291;
-  height: 2em;
-  line-height: 2em;
-  margin: 4px 0;
-  width: 300px;
+  height: 2rem;
+  line-height: 2rem;
+  margin: 0.5ch 0;
+  width: 20rem;
   max-width: 100%;
   color: #f7f4f1;
   position: relative;
@@ -138,23 +140,29 @@ table {
 }
 
 .choice {
-  margin: 1.2rem 0 1rem 0;
+  margin: 1rem 0;
+}
+
+.choice>div {
+  position: relative;
+  /* so the .shuttle can be positioned absolutely within it */
+  min-height: 1.25cm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-color: #a9acaf;
+  border-style: solid;
+  border-width: 1px 1px 0px 1px;
 }
 
 .choice label {
-  position: relative;
-  /* so the .shuttle can be positioned absolutely within it */
   transition-property: background-color, color;
   transition-duration: 0.1s;
   -webkit-transition-property: background-color, color;
   -webkit-transition-duration: 0.1s;
   -webkit-tap-highlight-color: transparent;
-  padding: 11px 8px 12px;
+  padding: 0.5em 1ch;
   display: block;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px 0px 0px 0px;
-  cursor: pointer;
 }
 
 .shuttle {
@@ -195,13 +203,13 @@ table {
 @keyframes shuttlefadeout {
   from {
     opacity: 0.25;
-    transform: translateX(-403%);
+    transform: translateX(-401%);
   }
 
   /* borders, maybe? */
   to {
     opacity: 0;
-    transform: translateX(-403%);
+    transform: translateX(-401%);
   }
 }
 
@@ -213,7 +221,7 @@ table {
 
   to {
     opacity: 0.25;
-    transform: translateX(-403%);
+    transform: translateX(-401%);
   }
 }
 
@@ -230,13 +238,13 @@ table {
 @-webkit-keyframes shuttlefadeout {
   from {
     opacity: 0.25;
-    -webkit-transform: translateX(-403%);
+    -webkit-transform: translateX(-401%);
   }
 
   /* borders, maybe? */
   to {
     opacity: 0;
-    -webkit-transform: translateX(-403%);
+    -webkit-transform: translateX(-401%);
   }
 }
 
@@ -248,7 +256,7 @@ table {
 
   to {
     opacity: 0.25;
-    -webkit-transform: translateX(-403%);
+    -webkit-transform: translateX(-401%);
   }
 }
 
@@ -257,20 +265,34 @@ table {
   background-color: #007AFF;
 }
 
-.choice .firstChild {
-  border-top-width: 5px;
+.selectedKeyboard,
+.choice>div.selectedKeyboard:hover,
+.next.selectedKeyboard {
+  color: rgba(255, 255, 255, 0.85);
+  background-color: #007AFF;
+  transition-property: background-color, color;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+  -webkit-transition-property: background-color, color;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-timing-function: linear;
+}
+
+.choice>div:first-child {
+  border-top-width: 1px;
+  -webkit-border-top-right-radius: 1ch;
+  -webkit-border-top-left-radius: 1ch;
+  border-top-right-radius: 1ch;
+  border-top-left-radius: 1ch;
 }
 
 /* IE doesn't support label:last-child */
-.choice .lastChild {
-  border-bottom-width: 5px;
-}
-
-.choice .onlyChild {
-  border-width: 1px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+.choice>div:last-child {
+  border-bottom-width: 1px;
+  -webkit-border-bottom-right-radius: 1ch;
+  -webkit-border-bottom-left-radius: 1ch;
+  border-bottom-right-radius: 1ch;
+  border-bottom-left-radius: 1ch;
 }
 
 .choice .noBorder {
@@ -279,15 +301,7 @@ table {
 
 input[type="radio"],
 input[type="checkbox"] {
-  margin-right: 8px;
-  cursor: pointer;
-  height: 14px;
-  width: 14px;
-}
-
-input[type="radio"]:checked,
-input[type="checkbox"]:checked {
-  accent-color: black
+  margin-right: 1ch;
 }
 
 .saveGame>label {
@@ -309,6 +323,10 @@ input[type=password] {
   margin: 2px 0;
 }
 
+button {
+  font-size: 100%;
+}
+
 .next {
   clear: both;
   display: block;
@@ -323,15 +341,12 @@ input[type=password] {
   /* Safari, don't override my CSS styles */
   color: #f7f4f1;
   /* Match background color */
-  background-color: #222222;
-  border-color: black;
-  border-width: 4px;
-  border-style: double;
+  background-color: #626160;
+  border: none;
   -webkit-border-radius: 0.5em;
   -moz-border-radius: 0.5em;
   border-radius: 0.5em;
-  padding: 4px 4px 0px 4px;
-  cursor: pointer;
+  padding: 6px;
 }
 
 .linkButton {
@@ -348,41 +363,13 @@ h1 {
   font-weight: normal;
 }
 
-h1.gameTitle {
-  margin-top: 0.2em;
-  margin-bottom: 0.4em;
-  font-family: 'Papyrus', fantasy;
-}
-
 h2 {
   font-size: 1.125em;
   font-weight: normal;
 }
 
-h2#author {
-  margin-bottom: 0em;
-  font-size: 0.8em;
-  float: right;
-  margin-top: -2.4em;
-  font-family: 'Papyrus', fantasy;
-}
-
-p {
-  margin-block-start: 0.9em;
-  margin-block-end: 0.9em;
-}
-
-p#headerLinks {
-  display: none;
-}
-
-p#buttons {
-  margin-top: 0.5em;
-}
-
 #identity {
   float: right;
-  display: none;
 }
 
 #identity>a {
@@ -404,30 +391,10 @@ p#buttons {
 
 .spacedLink {
   margin-right: 0.5em;
-  background-color: #222222;
-  color: floralwhite;
-  border-color: floralwhite;
-  border-style: double;
-  border-width: 2px;
-  border-radius: 5px;
-  padding: 4px 8px;
-  cursor: pointer;
 }
 
 .spacedLink:last-child {
   margin-right: 0;
-}
-
-#quickSaveMenu {
-  margin-right: 0.7em;
-  margin-left: 0.2em;
-  width: 150px;
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  border-radius: 5px;
-  padding: 4px 0px 4px 2px;
-  cursor: pointer;
 }
 
 #sharelist {
@@ -561,18 +528,68 @@ body.whitemode .next:hover {
   color: #ddd;
 }
 
-@media only screen and (max-width: 480px) {
+/* hide <dialog> on old browsers */
+dialog:not([open]) {
+  display: none;
+}
+
+#keyboardShortcuts {
+  font-family: system-ui;
+}
+
+#keyboardShortcuts::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+#keyboardShortcuts header {
+  display: flex;
+  justify-content: space-between;
+}
+
+#keyboardShortcuts header span {
+  font-weight: bold;
+}
+
+#keyboardShortcuts .table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#keyboardShortcuts .table div {
+  padding: 0.5em;
+}
+
+#keyboardShortcuts .key {
+  background-color: ghostwhite;
+  border: thin solid lightgrey;
+  border-radius: 5px;
+  padding: 0.3em;
+  font-family: monospace;
+}
+
+#text .gameTitle {
+  display: none;
+}
+
+@media (max-width: 480px) or (max-height: 640px) {
   .definition {
     display: none;
   }
 
   #headerLinks {
-    line-height: 2;
-    /* For tapability */
+    display: none;
   }
 
-  .gameTitle {
+  #title {
+    font-size: 1.125em;
+  }
+
+  #author {
     display: none;
+  }
+
+  #text .gameTitle {
+    display: block;
   }
 
   #advertisement {
@@ -593,213 +610,13 @@ body.whitemode .next:hover {
     max-width: 45%;
   }
 
-}
-
-.alertify-show,
-.alertify-log {
-  -webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1);
-  /* older webkit */
-  -webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
-  -moz-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
-  -ms-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
-  -o-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
-  transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
-  /* easeOutBack */
-}
-
-.alertify-hide {
-  -webkit-transition: all 250ms cubic-bezier(0.600, 0, 0.735, 0.045);
-  /* older webkit */
-  -webkit-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
-  -moz-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
-  -ms-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
-  -o-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
-  transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
-  /* easeInBack */
-}
-
-.alertify-cover {
-  position: fixed;
-  z-index: 99999;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.alertify {
-  position: fixed;
-  z-index: 99999;
-  top: 50px;
-  left: 50%;
-  width: 550px;
-  margin-left: -275px;
-}
-
-.alertify-hidden {
-  top: -50px;
-  visibility: hidden;
-}
-
-.alertify-logs {
-  position: fixed;
-  z-index: 5000;
-  bottom: 10px;
-  right: 10px;
-  width: 300px;
-}
-
-.alertify-log {
-  display: block;
-  margin-top: 10px;
-  position: relative;
-  right: -300px;
-}
-
-.alertify-log-show {
-  right: 0;
-}
-
-.alertify-dialog {
-  padding: 25px;
-}
-
-.alertify-resetFocus {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-.alertify-inner {
-  text-align: center;
-}
-
-.alertify-text {
-  margin-bottom: 15px;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  font-size: 100%;
-}
-
-.alertify-buttons {}
-
-.alertify-button {
-  /* line-height and font-size for input button */
-  line-height: 1.5;
-  font-size: 100%;
-  display: inline-block;
-  cursor: pointer;
-  margin-left: 5px;
-}
-
-@media only screen and (max-width: 680px) {
-
-  .alertify,
-  .alertify-logs {
-    width: 90%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-
-  .alertify {
-    left: 5%;
-    margin: 0;
+  #identity {
+    display: none;
   }
 }
 
-/**
- * Default Look and Feel
- */
-.alertify,
-.alertify-log {
-  font-family: sans-serif;
-}
-
-.alertify {
-  background: #FFF;
-  border: 10px solid #333;
-  /* browsers that don't support rgba */
-  border: 10px solid rgba(0, 0, 0, .7);
-  border-radius: 8px;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, .3);
-  -webkit-background-clip: padding;
-  /* Safari 4? Chrome 6? */
-  -moz-background-clip: padding;
-  /* Firefox 3.6 */
-  background-clip: padding-box;
-  /* Firefox 4, Safari 5, Opera 10, IE 9 */
-}
-
-.alertify-text {
-  border: 1px solid #CCC;
-  padding: 10px;
-  border-radius: 4px;
-}
-
-.alertify-button {
-  border-radius: 4px;
-  color: #FFF;
-  font-weight: bold;
-  padding: 6px 15px;
-  text-decoration: none;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, .5);
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, .5);
-  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .3), rgba(255, 255, 255, 0));
-  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, .3), rgba(255, 255, 255, 0));
-  background-image: -ms-linear-gradient(top, rgba(255, 255, 255, .3), rgba(255, 255, 255, 0));
-  background-image: -o-linear-gradient(top, rgba(255, 255, 255, .3), rgba(255, 255, 255, 0));
-  background-image: linear-gradient(top, rgba(255, 255, 255, .3), rgba(255, 255, 255, 0));
-}
-
-.alertify-button:hover,
-.alertify-button:focus {
-  outline: none;
-  box-shadow: 0 0 15px #2B72D5;
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-  background-image: linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-}
-
-.alertify-button:active {
-  position: relative;
-  top: 1px;
-}
-
-.alertify-button-cancel {
-  background-color: #FE1A00;
-  border: 1px solid #D83526;
-}
-
-.alertify-button-ok {
-  background-color: #5CB811;
-  border: 1px solid #3B7808;
-}
-
-.alertify-log {
-  background: #1F1F1F;
-  background: rgba(0, 0, 0, .9);
-  padding: 15px;
-  border-radius: 4px;
-  color: #FFF;
-  text-shadow: -1px -1px 0 rgba(0, 0, 0, .5);
-}
-
-.alertify-log-error {
-  background: #FE1A00;
-  background: rgba(254, 26, 0, .9);
-}
-
-.alertify-log-success {
-  background: #5CB811;
-  background: rgba(92, 184, 17, .9);
+@media (max-width: 375px) {
+  #achievementsButton {
+    display: none;
+  }
 }
