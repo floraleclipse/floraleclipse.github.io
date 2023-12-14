@@ -1,8 +1,303 @@
-This is a stats screen!
+*label statsPage
 
+[b]Name:[/b] ${name}
+
+[b]Age:[/b] ${age}
+
+*if (basicTraitsCustomized = false)
+    You are the crown heir of Shasetir.
+*elseif (age > 6)
+    You are a young ${child} of minor Kopirtansh nobility living in the imperial palaces as a student to prepare for a career in court. You have ${eyeColor} eyes and 
+    *if (hairTypeSet)
+        @{hairType straight | wavy | curly | coiled} 
+    ${hairColor} hair against a @{skinColorNum deep black | dark brown | light brown | dark beige | light beige | pale} complexion.
+*else
+    You are the Crown $!{heir} of Shasetir, with ${eyeColor} eyes and ${hairColor} hair against a @{skinColorNum deep black | dark brown | light brown | dark beige | light beige | pale} complexion.
+
+[b]SKILLS[/b]
 *stat_chart
-  percent Leadership
-  opposed_pair Strength
-    Weakness
-  text Leadership
-  text Strength
+    percent insightStat Insight
+    percent deceitStat Deceit
+    percent composureStat Composure
+    percent resolveStat Resolve
+
+*comment ☼ ☾ ༄ ᨒ
+
+[b]EDUCATION[/b]
+*stat_chart
+    percent scienceStat Scientific
+    percent artStat Artistic
+    percent martialStat Martial
+
+*if (showReputation)
+    [b]REPUTATION[/b]
+    *stat_chart
+        percent austerityStat Austerity
+        percent humilityStat Humility
+        percent audacityStat Audacity
+        percent altruismStat Altruism
+        percent honestyStat Honesty
+
+*if (showRelationships)
+    [b]RELATIONSHIPS[/b]
+    *if (showYirkarzad)
+        *stat_chart
+            percent yilkarzadStat Yilkarzad
+    *if (showKhavrmetak)
+        *stat_chart
+            percent khavrmetakStat Khavrmetak
+    *if (showVristismanya)
+        *stat_chart
+            percent vristismanyaStat Vristismanya
+    *if (showAityusen)
+        *stat_chart
+            percent aityusenStat Aityusen
+
+[b]Copper Coins:[/b] ${copper}
+
+[b]Silver Strips:[/b] ${silver}
+
+*choice
+    #[ Return to the [b]Game[/b] ]
+        *finish
+    *if (characters_unlocked)
+        #[b]Characters[/b]
+            *goto charactersPage
+    *if (inventory_unlocked)
+        #[b]Inventory[/b]
+            *goto inventoryPage
+    *if (locations_unlocked)
+        #[b]Locations[/b]
+            *goto locationsPage
+    *if (showStatChanges)
+        #[ [b]Hide[/b] in-game notifications about stat changes after a choice ]
+            *set showStatChanges false
+            *goto statsPage
+    *else
+        #[ [b]Notify[/b] me in-game about stat changes after a choice ]
+            *set showStatChanges true
+            *goto statsPage
+
+*label locationsPage
+
+[b]【 ⊹ ࣪ ˖ LOCATIONS ࣪ ˖ ⊹ 】[/b]
+
+Whether built by nature's patience, human labor, or the combined wisdom of both, there will always be new wonders in this realm unfamiliar to you. Perhaps it is enough to remember those you have already explored.
+
+*temp locations_visited_string_length 0
+*set locations_visited_string_length length(locations_visited_string)
+*temp oasis_station_visited false
+*if (locations_visited_string_length >= 1)
+    *gosub_scene cslib_string substring locations_visited_string 1 1
+    *if (cslib_ret = "1")
+        *set oasis_station_visited true
+*temp imperial_palaces_visited false
+*if (locations_visited_string_length >= 2)
+    *gosub_scene cslib_string substring locations_visited_string 2 2
+    *if (cslib_ret = "1")
+        *set imperial_palaces_visited true
+*temp lecture_halls_visited false
+*if (locations_visited_string_length >= 3)
+    *gosub_scene cslib_string substring locations_visited_string 3 3
+    *if (cslib_ret = "1")
+        *set lecture_halls_visited true
+*temp courier_stations_visited false
+*if (locations_visited_string_length >= 4)
+    *gosub_scene cslib_string substring locations_visited_string 4 4
+    *if (cslib_ret = "1")
+        *set courier_stations_visited true
+*temp palace_armories_visited false
+*if (locations_visited_string_length >= 5)
+    *gosub_scene cslib_string substring locations_visited_string 5 5
+    *if (cslib_ret = "1")
+        *set palace_armories_visited true
+*temp court_service_halls_visited false
+*if (locations_visited_string_length >= 6)
+    *gosub_scene cslib_string substring locations_visited_string 6 6
+    *if (cslib_ret = "1")
+        *set court_service_halls_visited true
+*temp imperial_gardens_visited false
+*if (locations_visited_string_length >= 7)
+    *gosub_scene cslib_string substring locations_visited_string 7 7
+    *if (cslib_ret = "1")
+        *set imperial_gardens_visited true
+*temp training_grounds_visited false
+*if (locations_visited_string_length >= 8)
+    *gosub_scene cslib_string substring locations_visited_string 8 8
+    *if (cslib_ret = "1")
+        *set training_grounds_visited true
+*temp academy_research_halls_visited false
+*if (locations_visited_string_length >= 9)
+    *gosub_scene cslib_string substring locations_visited_string 9 9
+    *if (cslib_ret = "1")
+        *set academy_research_halls_visited true
+*temp towers_of_crossing_winds_visited false
+*if (locations_visited_string_length >= 10)
+    *gosub_scene cslib_string substring locations_visited_string 10 10
+    *if (cslib_ret = "1")
+        *set towers_of_crossing_winds_visited true
+
+*choice
+    #[ Return to [b]Main Stats[/b] ]
+        *goto statsPage
+    #[ Return to the [b]Game[/b] ]
+        *finish
+    *if (oasis_station_visited)
+        #[b]Abandoned Oasis Village[/b]
+            *gosub_scene locations_page oasisStationLabel
+            *goto locationsLabelChoices
+    *if (imperial_palaces_visited)
+        #[b]Imperial Palaces[/b]
+            *gosub_scene locations_page imperialPalacesLabel
+            *goto locationsLabelChoices
+    *if (lecture_halls_visited)
+        #[b]Lecture Halls[/b]
+            *gosub_scene locations_page lectureHallsLabel
+            *goto locationsLabelChoices
+    *if (courier_stations_visited)
+        #[b]Courier Stations[/b]
+            *gosub_scene locations_page courierStationsLabel
+            *goto locationsLabelChoices
+    *if (palace_armories_visited)
+        #[b]Palace Armories[/b]
+            *gosub_scene locations_page palaceArmoriesLabel
+            *goto locationsLabelChoices
+    *if (court_service_halls_visited)
+        #[b]Court Service Halls[/b]
+            *gosub_scene locations_page courtServiceHallsLabel
+            *goto locationsLabelChoices
+    *if (imperial_gardens_visited)
+        #[b]Imperial Gardens[/b]
+            *gosub_scene locations_page imperialGardensLabel
+            *goto locationsLabelChoices
+    *if (training_grounds_visited)
+        #[b]Training Grounds[/b]
+            *gosub_scene locations_page trainingGroundsLabel
+            *goto locationsLabelChoices
+    *if (academy_research_halls_visited)
+        #[b]Academy Research Halls[/b]
+            *gosub_scene locations_page academyResearchHallsLabel
+            *goto locationsLabelChoices
+    *if (towers_of_crossing_winds_visited)
+        #[b]Towers of Crossing Winds[/b]
+            *gosub_scene locations_page towersOfCrossingWindsLabel
+            *goto locationsLabelChoices
+
+*label locationsLabelChoices
+*choice
+    #[ Return to the [b]Game[/b] ]
+        *finish
+    #[ Return to [b]Locations[/b] ]
+        *goto locationsPage
+    #[ Return to [b]Main Stats[/b] ]
+        *goto statsPage
+
+*label inventoryPage
+
+[b]【 ⊹ ࣪ ˖ INVENTORY ࣪ ˖ ⊹ 】[/b]
+
+From the simplest trinkets to the rarest curios, every item earns their place here through the special value it holds for you.
+
+*temp inventory_owned_string_length 0
+*set inventory_owned_string_length length(inventory_owned_string)
+*temp sachet_owned false
+*if (inventory_owned_string_length >= 1)
+    *gosub_scene cslib_string substring inventory_owned_string 1 1
+    *if (cslib_ret = "1")
+        *set sachet_owned true
+
+*if (sachet_owned)
+    *gosub_scene inventory_page sachetLabel
+
+*choice
+    #[ Return to the [b]Game[/b] ]
+        *finish
+    #[ Return to [b]Main Stats[/b] ]
+        *goto statsPage
+
+*label charactersPage
+
+[b]【 ⊹ ࣪ ˖ CHARACTERS ࣪ ˖ ⊹ 】[/b]
+
+You will meet many people in this life, but only a few might sear an impression on you that will last a lifetime…
+
+*temp characters_met_string_length 0
+*set characters_met_string_length length(characters_met_string)
+*temp empress_met false
+*if (characters_met_string_length >= 1)
+    *gosub_scene cslib_string substring characters_met_string 1 1
+    *if (cslib_ret = "1")
+        *set empress_met true
+*temp instructor_met false
+*if (characters_met_string_length >= 2)
+    *gosub_scene cslib_string substring characters_met_string 2 2
+    *if (cslib_ret = "1")
+        *set instructor_met true
+*temp instructor_brother_met false
+*if (characters_met_string_length >= 3)
+    *gosub_scene cslib_string substring characters_met_string 3 3
+    *if (cslib_ret = "1")
+        *set instructor_brother_met true
+*temp secretary_met false
+*if (characters_met_string_length >= 4)
+    *gosub_scene cslib_string substring characters_met_string 4 4
+    *if (cslib_ret = "1")
+        *set secretary_met true
+*temp yilkarzad_met false
+*if (characters_met_string_length >= 5)
+    *gosub_scene cslib_string substring characters_met_string 5 5
+    *if (cslib_ret = "1")
+        *set yilkarzad_met true
+*temp dahnom_met false
+*if (characters_met_string_length >= 6)
+    *gosub_scene cslib_string substring characters_met_string 6 6
+    *if (cslib_ret = "1")
+        *set dahnom_met true
+*temp hadya_met false
+*if (characters_met_string_length >= 7)
+    *gosub_scene cslib_string substring characters_met_string 7 7
+    *if (cslib_ret = "1")
+        *set hadya_met true
+
+*choice
+    #[ Return to [b]Main Stats[/b] ]
+        *goto statsPage
+    #[ Return to the [b]Game[/b] ]
+        *finish
+    *if (empress_met)
+        #[b]The Empress of Summoned Harmony[/b]
+            *gosub_scene characters_page empressLabel
+            *goto characterLabelChoices
+    *if (yilkarzad_met)
+        #[b]Yilkarzad[/b]
+            *gosub_scene characters_page empressLabel
+            *goto characterLabelChoices
+    *if (instructor_met)
+        #[b]{instructor}[/b]
+            *gosub_scene characters_page empressLabel
+            *goto characterLabelChoices
+    *if (instructor_brother_met)
+        #[b]{instructor brother}[/b]
+            *gosub_scene characters_page empressLabel
+            *goto characterLabelChoices
+    *if (secretary_met)
+        #[b]{secretary}[/b]
+            *gosub_scene characters_page empressLabel
+            *goto characterLabelChoices
+    *if (dahnom_met)
+        #[b]Dahnom[/b]
+            *gosub_scene characters_page empressLabel
+            *goto characterLabelChoices
+    *if (hadya_met)
+        #[b]Hadya[/b]
+            *gosub_scene characters_page empressLabel
+            *goto characterLabelChoices
+
+*label characterLabelChoices
+*choice
+    #[ Return to the [b]Game[/b] ]
+        *finish
+    #[ Return to [b]Characters[/b] ]
+        *goto charactersPage
+    #[ Return to [b]Main Stats[/b] ]
+        *goto statsPage

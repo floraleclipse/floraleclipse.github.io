@@ -1,0 +1,1876 @@
+*set age 12
+
+*comment Chapter 1 control stats
+*temp arrivalMethod 3
+*temp apologyReaction false
+*temp duelResult 1
+*temp promotionReaction 1
+*temp yilkarzadConversation 1
+
+*temp questionTwinsNum 0
+*temp disciplineIntuitionChoice 1
+
+[b]Chapter 1: Gold, Pearls, and Diamonds[/b]
+
+*page_break
+
+There is no time for breakfast.
+
+Throwing on the layers of wrapped shirts, sashed trousers, and loose robes that make up the easy-fitting attire expected of imperial students, you splash a bowl of water on your face and rinse your mouth before shoving the homework scrolls you didn't have time to finish into your linen satchel. Leather boots pulled on and the door to your room locked, you descend the stairs of your residential building with rapid heartbeats keeping awake a dizzy head.
+
+Morning sunlight follows your sprinting form across the palace grounds.
+
+Servants scrub stone flooring with soaped washcloths and carry buckets of dirty fabrics to the laundry. Messengers push past you to deliver formal mandates to courtiers engaged in loud disputes. Guards steady their hands on sword and spear as they escort visiting officials from the provinces. Foreign diplomats, noticeable from their lack of a crisp-white scarf fastened around the collar, banter with high-ranking Kiruqtaniran ministers, their accented phrases of excitement floating into your ear as you rush past.
+
+Pillared halls encircled by billowing sheets of translucent curtains and tiered towers walled by intricately latticed windows blur together into a rich palette of heavy mahogany, deep jade, shimmering amber, marbled ivory, and inked ebony.
+
+Your eyes flicker across the tiled roofs, geometric domes, lofty spires, and open terraces of the palace skyline ahead.
+
+You are outrageously late.
+
+*fake_choice
+    #Hide into the back of a passing horse-driven cart heading the same way
+        *set arrivalMethod 1
+        *set deceitStat +medStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Deceit"
+        
+        *gosub imperialPalaceLocationUnlocked
+        
+        Just as you begin to run out of breath, sharp senses catch notice of a horse-driven cart about to round a corner, headed the same way as you at full speed. A fast reflex allows you to silently dive into the back as it passes you, without alerting the driver. The cart carries hay and lumber. Comfortable enough companions.
+        
+        This should save you some time.
+    #Take a hidden shortcut I discovered a few months back
+        *set arrivalMethod 2
+        *set insightStat +medStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Insight"
+        
+        *gosub imperialPalaceLocationUnlocked
+        
+        Just as you begin to run out of breath, keen wits offer a reminder of previously discovered hidden secrets in this area of the palace. A recollection of an unmapped shortcut through an unused step-well lights up. An acute memory helps you to quickly locate the entrance, obscured by tall hedges in a small garden off the main pathways.
+        
+        This should save you some time.
+    #Push forward running towards my destination
+        *set resolveStat +medStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Resolve"
+        
+        *gosub imperialPalaceLocationUnlocked
+        
+        Even as you begin to run out of breath, steadfast grit pushes you forward. Where the certainty of a failed punctuality would have leeched the spirit of others through unnecessary agitation, you are instead inspired by a habit of principled honor to show the respect you owe to your instructor by making the effort to minimize the damage.
+    #Why the rush? I'm already late
+        *set composureStat +medStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Composure"
+        
+        *gosub imperialPalaceLocationUnlocked
+        
+        You still your breathing. Careful judgment helps you page through the consequences of the options available. An attitude of controlled patience dissipates any distress that would have plagued others, rejecting the futile hindrance to your peace of mind.
+        
+        Cool wind rolls over you as you walk a gentle pace, your robes flowing in elegant arcs.
+        
+        Indeed, why waste energy if the outcome is determined to be constant?
+
+*if (arrivalMethod = 2)
+    This step-well has two openings connected by an underground passage beneath an impassable block of gated buildings, so you come up the other side having saved an incense stick's worth of time.
+
+You emerge from the cool shade of canopied corridors into the stifling silence of narrow alleyways, then from the clean fragrance of delicately curated gardens into the efficient structure of expansive courtyards designed with adherence to philosophies you've yet to understand.
+
+*if (arrivalMethod = 1)
+    Your transportation takes a turn while still several blocks from your journey's end, so you jump out before the oblivious driver continues on his way with a happily whistled tune.
+
+The sun casts short shadows across the earth when you finally reach your destination, then dims behind a soft puff of cloud.
+
+*goto arriveAtLectureHalls
+
+*label imperialPalaceLocationUnlocked
+*set locations_visited_string &"1"
+*gosub_scene startup location_unlocked_notif "The Imperial Palaces"
+*return
+
+*label arriveAtLectureHalls
+*page_break The lecture halls
+
+Lectures for imperial students are held in the western district of the palace complex, more than a good meal's distance from your residential rooms in the northeast.
+
+Sixty-four open-air halls stand imposingly in a painstakingly planned arrangement of three concentric octagons — four on each edge in the outermost one, three for the middle, and one for the innermost. Flat sandstone roofs lined with carvings of fractal patterns sit three stories high, supported by fluted columns above smooth granite flooring tinted with dignified colors. Pale rose, sapphire blue, midnight sky. The hall that hosts your current class, situated in the inner ring, is cushioned with a particularly soothing shade of light emerald.
+
+You hear the echoing disarray of taunting laughter and frustrated grunts before you hear the hollow clashes of wooden staffs against each other.
+
+With a deep breath, you ascend the few steps leading up to the lecture hall for the last class of your week — martial combat.
+
+*page_break
+
+*set locations_visited_string &"1"
+*gosub_scene startup location_unlocked_notif "Imperial Lecture Halls"
+
+The first thing you see is the swirling shower of silk-lined robes tethered to the spins and strikes of wooden weaponry. Soft layers printed with fine-threaded embroidery flow in constant motion to paint a disorienting tapestry with dancing blocks of expensive colors.
+
+The second thing you see is the warmth in the eyes of the man at the opposite end of the hall.
+
+You hesitate in a moment of caution — you hadn't meant to meet his eyes. 
+
+A man of graying hair, he sits with a cheek resting against a thin wrist, side leaned against a table. Dark skin of warm undertones is contrasted by high-collared robes dyed a pale shade. Crossed legs and a relaxed posture make it difficult to assess whether he is elegant or simply tired.
+
+Across a storm of rich fabrics, he sends you a small nod.
+
+Unsure of his identity, you return with a bow held low out of respect to an elder.
+
+*fake_choice
+    #One can never be too careful in the palaces.
+        *set deceitStat +smallStatChange
+        *set resolveStat +smallStatChange
+        *if (showStatChanges)
+            *gosub_scene startup twoStatChangeNotif "Deceit" "Resolve"
+    #Such a unique presence must not be taken lightly.
+        *set insightStat +smallStatChange
+        *set composureStat +smallStatChange
+        *if (showStatChanges)
+            *gosub_scene startup twoStatChangeNotif "Insight" "Composure"
+
+You feel the stares of the other students as they begin to take notice of your entrance.
+
+The flurry of motion and sound faints to a palpable idleness, until the hall becomes so hushed that you hear the coldness in the lone voice that speaks out with a shock of ringing clarity.
+
+"I assure everyone that this is not the first day in which a student fails to respect their schedule."
+
+*page_break You impulsively straighten your posture
+
+*gosub_scene startup character_met_routine
+*gosub_scene startup character_unlocked_notif "{instructor}"
+
+The crowd parts to make way for the young woman who walks towards you in quick but relaxed strides, shoulders still and hands clasped behind her back.
+
+With dark brown hair tied in a single braid and an admirably straitlaced posture that you've personally never been able to imitate and hold for a full lecture, Instructor {placeholder} is only seven years your senior but already carries the distinction of a seventh-rank courtier as an imperial tutor in the Ministry of Education.
+
+Despite this, you've never seen her without a constant shadow of strained affliction across her face that makes her appear to be in a state of perpetual unhappiness.
+
+She stands before you now, her warm beige complexion and amber eyes weighed down with the deep creases of furrowed brows.
+
+"Do you wish to say anything in response to such an apparent interest in your arrival?"
+
+*fake_choice
+    #Apologize graciously.
+        "Instructor {placeholder}." Following palace traditions, you bow confidently with hands behind your waist before nodding with eyes politely cast downwards. "I'm sorry for being late. I understand how disruptive it is," you say. "I can tidy the hall after the lecture to compensate for this." You know when you are in the wrong, and it is important to you that you make amends.
+        
+        *set softStat +smallStatChange
+        *set warmStat +smallStatChange
+        *set apologyReaction true
+    #Apologize coldly.
+        "Instructor {placeholder}." Following palace traditions, you bow gracefully with hands behind your waist before raising your head with a cool stare. "I apologize for the interruption," you say. "Allow me to tidy the hall after the lecture." You know when you are in the wrong, and there is strength in admission.
+        
+        *set softStat +smallStatChange
+        *set coldStat +smallStatChange
+        *set apologyReaction true
+    #Ask what you missed with an airy wit.
+        "Instructor {placeholder}." Following palace traditions, you bow confidently with hands behind your waist before raising your head with a polite smile. "I'll start today's practice immediately… if I may be granted the privilege of a brief pointer to the material covered before I interrupted." Having already disturbed the class, you do not wish to waste more of everyone's time.
+        
+        *set sharpStat +smallStatChange
+        *set coolStat +smallStatChange
+    #Bluntly ask what you missed.
+        "Instructor {placeholder}." Following palace traditions, you bow gracefully with hands behind your waist before looking your teacher in the eyes. "If I could be briefed on the material covered today, I will begin today's practice immediately." Having already disturbed the class, you find it pointless to waste any more time.
+        
+        *set sharpStat +smallStatChange
+        *set brightStat +smallStatChange
+
+*if (apologyReaction)
+    {placeholder} adjusts the white scarf around her collar. "There is no need to apologize. You did not ask anyone to pause themselves," she glances behind her at your silent classmates, "when you arrived. There is also no punishment for being late to a lecture, so I would ask you to not waste your time on a task that you are not meant to perform."
+*else
+    {placeholder} adjusts the white scarf around her collar. "The next two maneuvers in your readings following the chapter covered by this month's exam." She pauses for a moment before nodding at you. "The responsibility of retracing lost progress lies with yourself, which I know you understand."
+
+And with that, the young teacher turns to face your classmates. "I do not believe there remains any cause for this extended passivity. Is there?"
+
+"I was just worried, instructor. I hope our classmate is not feeling unwell."
+
+You narrow your eyes at the impatient voice laced with a thin sheet of concerned sympathy that fails to soften the acidic sharpness of someone who definitely does not care if you are feeling unwell. It now directs itself towards you. "It's good to see you — are you quite well? You missed our Algebra lecture this morning, and I'm worried because you've been arriving late to all of our early morning classes for the past week."
+
+*page_break A shadow flickers across your face
+
+*gosub_scene startup character_met_routine
+*gosub_scene startup character_unlocked_notif "{instructor brother}"
+
+Of course {placeholder} would take any chance to spill ink on your image.
+
+He holds the hollow wooden staff in his hands with visible tension throughout his body. Back straight and gaze held level, he carries a faultless stance of trained integrity. Wavy locks of dark brown hair frame a cold beige complexion and amber eyes that would have been bright if it were not for the apparently familial trait of pained irritation permanently settled on his features.
+
+Indeed, it had not been too surprising to learn of {placeholder} and {placeholder} being cousins from the same clan — Measured Season. Highly favored by four generations of crowns including the current empress, the younger members are never far from eyes and ears waiting for a fumbling mistake.
+
+{placeholder}'s words succeed in annoying you, as always.
+
+*fake_choice
+    #I simply declare that I slept in with dismissive confidence.
+        *set coldStat +smallStatChange
+        
+        You settle your gaze on {placeholder} with a candid air of uninterested confidence.
+        
+        "No, I'm fine. I just felt like sleeping in this week."
+        
+        The silence that follows is flat, a neutral silence at the unreserved bluntness of your words. Perhaps your classmates expected you to give a better excuse, anything other than "I was simply too lazy, actually". But why not? The imperial academy does not waste punishment on late arrivals or skipped lectures — the missed content itself is supposedly enough repercussion for the student.
+        
+        {placeholder} looks slightly offended that you dismissed him so easily.
+        
+        {placeholder_instructor} raises an eyebrow, and you suddenly hope that she does not see this as a public dismissal of the importance of her class. But she makes no comment as she glides back towards the front of the hall. "Back to practice, everyone."
+    #I deflect the taunt with casual amusement.
+        *set coolStat +smallStatChange
+        
+        You do not miss a single beat, making a dramatic show of feigned gratitude.
+        
+        "I truly cannot appreciate your concern over my well-being enough, {placeholder}. Thanks to your empathy, I'm feeling much better today. But of course, I would never dream of surpassing you in health. May {placeholder} of Measured Season live through one hundred years of youth!"
+        
+        {placeholder}'s face heats up at the quiet chorus of sudden but suppressed sounds of amusement that follows, though he tries to cover the moment with a cough.
+        
+        There was really no strategy to his taunt. What was even the goal of pointing out your flawed schedule-following this week? The imperial academy does not waste punishment on late arrivals or skipped lectures — the missed content itself is supposedly enough repercussion for the student.
+        
+        "Alright, that's enough," {placeholder_instructor} says in a bored voice as she glides back towards the front of the hall. "Back to practice, everyone."
+    #I respond to the taunt with serious sincerity.
+        *set brightStat +smallStatChange
+        
+        You address {placeholder} with a polite nod.
+        
+        "It is nothing significant, just restless nights with troubling dreams. A seasonal matter for me. I am feeling much better today, and will do my best to ensure I do not interrupt our lessons in the future."
+        
+        Certainly the truth, just not in full…
+        
+        {placeholder} blinks, looking a bit disgruntled at how seriously you took his words, as the other students start returning to their sparring.
+        
+        There was really no strategy to his taunt. What was even the goal of pointing out your flawed schedule-following this week? The imperial academy does not waste punishment on late arrivals or skipped lectures — the missed content itself is supposedly enough repercussion for the student.
+        
+        "Take rest when you can," {placeholder_instructor} tells you in a bored voice as she glides back towards the front of the hall. "Back to practice, everyone."
+
+Soon, the hollow dissonance of clashing wooden weaponry again fills the hall.
+
+But as you get in position across a classmate to spar, blunt staff in your hands, you are still able to hear {placeholder_instructor} drop a remark as she drifts past her cousin. "Even if ${he} skips [i]half[/i] of ${his} lectures, ${he} would still sit higher than you in the monthly rankings."
+
+*set scienceStat +10
+*set artStat +10
+*set martialStat +10
+*if (showStatChanges)
+    *gosub_scene startup oneStatChangeNotif "Sciences, Arts, Martials"
+
+*fake_choice
+    #You do not hide the slight quirk of your mouth.
+        *set coolStat +smallStatChange
+    #An imperceptible raise of the chin and a firm gaze are your only response.
+        *set brightStat +smallStatChange
+
+As a child of Kiruqtaniran nobility, you have been studying at the imperial palaces since the age of nine.
+
+For eight out of ten days a week, three out of three weeks a month, ten out of twelve months a year, you attend three lectures that combine to occupy a quarter of your day. Classes range from the basic training of arithmetic, calligraphy, physical form, and etiquette in earlier years to the more advanced fields of algebra, geometry, herbalism, agriculture, prose, poetry, music, visual composition, horse-riding, stealth, combat, and court systems required this year.
+
+Amongst the one hundred and eighty-three students in your year, you have consistently placed in the top five of the overall evaluations each month — which is why you know {placeholder} cannot object to {placeholder_instructor}'s comment, however miffed he might be.
+
+In particular, you have a profound intuition for…
+
+*fake_choice
+    #The [b]scientific[/b] disciplines
+        *set scienceStat +30
+        *set disciplineIntuitionChoice 1
+        
+        You have long since learned to submit with a devout reverence to the logical beauty of mathematics, the patient mystery of medical treatment, and the ambitious kindness of the natural world.
+        
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Scientific education"
+    #The [b]artistic[/b] disciplines
+        *set artStat +30
+        *set disciplineIntuitionChoice 1
+        
+        You have long since learned to submit with a devout reverence to the inspiring creativity of visual crafts, the clever philosophy of literary studies, and the modest sincerity of musical theory.
+        
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Artistic education"
+    #The [b]martial[/b] disciplines
+        *set martialStat +30
+        *set disciplineIntuitionChoice 2
+        
+        You have long since learned to submit with a devout reverence to the resilient self-improvement of martial combat, the exact precision of trained stealth, and the liberating thrill of the hunt.
+        
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Martial education"
+
+The class carries on with sparring matches and form training for what feels like almost a full minor hour.
+
+{placeholder} walks amongst the students to provide pointers, her expression intent and her gaze cold, but her voice never impatient. You had missed the beginning of the lecture, when she would normally teach and demonstrate the maneuvers and strategies to be learned this week.
+
+Fortunately, you had studied not only today's material, but also everything covered in the following two weeks, well in advance. Six rotations of sparring practice have occurred since you joined, all of which you have emerged victorious from, @{disciplineIntuitionChoice even as your current strength lies in another discipline| the effort almost absurdly simple for you}.
+
+*fake_choice
+    #It is advantageous to prepare ahead — I know what my peers do not.
+        *set insightStat +smallStatChange
+        *set deceitStat +smallStatChange
+        *if (showStatChanges)
+            *gosub_scene startup twoStatChangeNotif "Insight" "Deceit"
+    #It feels reassuring to be prepared ahead — I can improve faster.
+        *set composureStat +smallStatChange
+        *set resolveStat +smallStatChange
+        *if (showStatChanges)
+            *gosub_scene startup twoStatChangeNotif "Composure" "Resolve"
+
+Although the benefits are clear to you, preparing ahead for your lessons is a habit really only born from the slightly more extensive spare time you enjoy compared to your peers as someone from a minor, peripheral clan based far from any of the empire's major cities.
+
+No relatives in the capital means no obligations or invitations to any recreational events hosted in the city.
+
+You are not that upset by this, you tell yourself.
+
+You reel in the force of your strike as your weapon lightly taps your current training partner on the arm. She is one of the more familiar classmates to you — {placeholder_girl}, a girl with warm brown skin, a head of thick, wavy black hair, and sleeves permanently rolled-up above her elbows. She tells you this is the only comfortable way.
+
+"Yeah, obviously you win again," she says with a slight grumble. "Though I'd much rather train with you every lecture here than having to deal with {placeholder} one more time."
+
+{placeholder_girl} nods towards the center of the hall, where {placeholder} and another boy are sparring.
+
+*page_break
+
+You glance briefly in their direction before agreeing with a shrug. "Yeah, he's not my favorite person either."
+
+"But he's being more irritating than usual today," {placeholder_girl} says, pausing to catch a few breaths. "I was sparring with him a few rotations before, and I get the feeling he's not using the maneuvers we're supposed to practice today."
+
+As you take a longer look, you begin to realize what she means. {placeholder}'s moves are quick, precise, but most of all, urgent. There is a heated intensity to his actions that does not belong to a simple practice session.
+
+
+
+
+
+
+
+
+
+*page_break A voice from the opposite end of the hall
+
+You had almost forgotten about him.
+
+Now standing up, layered robes hang loosely in a waterfall of light, washed-out colors around the man's thin frame. He adjusts the high collar around his neck, hands slightly fumbling.
+
+Only now do you notice the silver pendant he wears over the standard white scarf required of all imperial courtiers, catching beams of sunlight between columns as he walks towards the middle of the hall.
+
+Your mind blanks for the span of a breath before you remember what this detail implies just as {placeholder_teacher} replies with a stiff bow to mask the confusion coloring her countenance.
+
+"I — Of course, Secretary {placeholder}."
+
+*page_break The Imperial Secretary of Kopirtanri
+
+*gosub_scene startup character_met_routine
+*gosub_scene startup character_unlocked_notif "{secretary}"
+
+You instinctively rush forward and make two swift motions to dust off both sleeves of your robe before placing one knee and one fist to the ground with elegant conviction.
+
+"Safety and peace, Secretary {placeholder}."
+
+As the highest authority in the Ministry of Records, the Imperial Secretary is a first-rank position at the Kopirtansh court. You guess that his presence is granted for an informal evaluation of instructor {placeholder}, though you wonder why it is not someone from the Ministry of Education.
+
+{placeholder} hurries to gently wave you back up, bending his own waist slightly. "To you as well, young student."
+
+Up close, you now hear the coldness in the secretary's voice. Cold, in the way that a cup of melting ice in the harshest day of summer is cold.
+
+"May I ask for the name you use?"
+
+The phrasing of the question causes every aspect of your being to still for a heartbeat.
+
+*page_break The name you use...
+
+No, you reassure yourself. There is no chance that he knows.
+
+No one knows.
+
+She granted you a promise.
+
+So you raise your head, calm intensity behind your own steady gaze meeting the curious warmth of the secretary's, and say the name you chose for yourself.
+
+*label chooseName
+*fake_choice
+    #Aizat [central asian/turkic]
+        *set name "afsfd"
+    #Heshen [north asian tungusic]
+        *set name "afsfd"
+    #Enkhbayar
+        *set name "Enkhbayar"
+    #Yonghe
+        *set name "Yonghe"
+    #[tibetan]
+        *set name "afsfd"
+    #[north indian]
+        *set name "afsfd"
+    #[south indian dravidian]
+        *set name "afsfd"
+    #[iranian]
+        *set name "afsfd"
+    #[arabic]
+        *set name "afsfd"
+    #Choose traditionally masculine names
+        *goto chooseMasculineNames
+    #Choose traditionally feminine names
+        *goto chooseFeminineNames
+    #Input your own name
+        *goto chooseYourOwnName
+*goto nameChosen
+
+*label chooseMasculineNames
+*fake_choice
+    #[central asian/turkic]
+        *set name "afsfd"
+    #Heshen
+        *set name "Heshen"
+    #Enkhbaatar
+        *set name "Enkhbaatar"
+    #Zhenhe
+        *set name "Zhenhe"
+    #[tibetan]
+        *set name "afsfd"
+    #[north indian]
+        *set name "afsfd"
+    #[south indian dravidian]
+        *set name "afsfd"
+    #[iranian]
+        *set name "afsfd"
+    #[arabic]
+        *set name "afsfd"
+    #Choose traditionally feminine names
+        *goto chooseFeminineNames
+    #Choose gender neutral names
+        *goto chooseName
+    #Input your own name
+        *goto chooseYourOwnName
+*goto nameChosen
+
+*label chooseFeminineNames
+*fake_choice
+    #[central asian/turkic]
+        *set name "afsfd"
+    #[north asian tungusic]
+        *set name "afsfd"
+    #Enkhzol
+        *set name "Enkhzol"
+    #Yanhe
+        *set name "Yanhe"
+    #[tibetan]
+        *set name "afsfd"
+    #[north indian]
+        *set name "afsfd"
+    #[south indian dravidian]
+        *set name "afsfd"
+    #[iranian]
+        *set name "afsfd"
+    #[arabic]
+        *set name "afsfd"
+    #Choose traditionally masculine names
+        *goto chooseMasculineNames
+    #Choose gender neutral names
+        *goto chooseName
+    #Input your own name
+        *goto chooseYourOwnName
+*goto nameChosen
+
+*label chooseYourOwnName
+You go by the name of…
+
+*input_text name
+*goto nameChosen
+
+*label nameChosen
+
+"${name} is my name."
+
+The hall waits with held breaths, lowered eyes, and open ears.
+
+"${name}," {placeholder} nods lightly, then turns to scan the rest of the class with an evaluating gaze. "As students under the guidance of instructor [placeholder], I trust both ${name} and [placeholder] to understand the stall in this lecture to be the result of a joint responsibility."
+
+You furrow your brows at this, though you know that the offense taken by {placeholder} must be even greater.
+
+"So, Instructor {placeholder}. In this situation, how should our lecture proceed?"
+
+There is a brief but unbearably loud pause before your teacher dusts both sleeves with practiced force and lowers one knee to the floor.
+
+"I have not forgotten that I was once your student, Lord Secretary. Forgive the ignorant haste I betrayed in favor of my own impatience."
+
+She rises just as quickly as she had descended, addressing her students. "I invite you all to lay down your thoughts on the disturbances of {placeholder} and ${name}."
+
+*page_break A chaotic mess of mumbled discussion breaks out
+
+Relief softens the tension in your body. You spare a glance towards {placeholder}, finding him in a similar state of relaxed gratitude. He startles slightly as he meets your eyes, then makes an irritated face before turning away.
+
+As unimpressed as you've been with his behavior throughout the entirety of your mutual acquaintanceship, you can still trust that he shares your understanding of how this will play out.
+
+It is not unusual for misbehaving students to be requested to perform the lecture's material for critique. An opportunity, really, since one can either shine with perfect form or fade through disastrous incompetence. But no one will suggest such a thing at this moment, because it is mutually beneficial to every party in the hall to [i]not[/i] waste any more time.
+
+You watch your classmates send uncertain stares and disinterested shrugs at each other. It will not take long for them to agree with {placeholder_instructor} in simply resuming practice.
+
+The clean voice that cuts through the muffled clutter of hesitation is calm, with easy politeness as its only emotion.
+
+"Might a practical duel be an appropriate resolution?"
+
+*page_break ...What?
+
+A hint of a smile finally graces the secretary's features.
+
+"Your highness," {placeholder} nods.
+
+A soft flutter of cool air alerts you to the sudden presence of a silent figure. You lower your gaze slightly to the side without moving your head. Long hair tied back to spill over smooth robes in the common style shared by imperial students, there is a sharp aura of austerity to the patient motions of standard etiquette being performed.
+
+You know many who use the labels of gracious, respectful, stoic, or frigid to describe this particular classmate of yours, depending on their level of approval. But there has only ever been one word that surfaces in your mind for Yilkarzad — clean.
+
+Clean clothes, clean eyes, clean movements, clean disposition.
+
+You've wondered, once, if it comes with the responsibility as a…
+
+*fake_choice
+    #[b]Prince[/b] of Kopirtanri, a nephew of the current empress
+        *set y_gender 1
+        *set y_he "he"
+        *set y_him "him"
+        *set y_his "his"
+        *set y_hiss "his"
+        *set y_he_is "he's"
+        *set y_he_has "he's"
+        *set y_child "boy"
+        *set y_sibling "brother"
+        *set y_nephew "nephew"
+        *set y_heir "prince"
+    #[b]Princess[/b] of Kopirtanri, a niece of the current empress
+        *set y_gender 2
+        *set y_he "she"
+        *set y_him "her"
+        *set y_his "her"
+        *set y_hiss "hers"
+        *set y_he_is "she's"
+        *set y_he_has "she's"
+        *set y_child "girl"
+        *set y_sibling "sister"
+        *set y_nephew "niece"
+        *set y_heir "princess"
+
+You've wondered, once, if this particular quality of cleanness comes with ${y_his} responsibility as a ${y_heir} of Kopirtanri, a ${y_nephew} of the current empress.
+
+It is a thought you've long since dismissed. Being of the same age, you've shared lectures with Yilkarzad ever since your first study year, and ${y_he} is the only member of the imperial family with whom you've had extended contact. However, living in the imperial palace complex provides more than enough chances to obtain a cursory judgment of others in the younger generation of princes and princesses.
+
+*page_break
+
+*gosub_scene startup character_met_routine
+*gosub_scene startup character_unlocked_notif "$!{y_heir} Yilkarzad"
+
+Yilkarzad now stands next to you with hands held behind ${y_his} back in a modest stance of respect towards both the imperial secretary and the rigid figure of your teacher.
+
+"Safety and peace, Secretary {placeholder}, Instructor {placeholder}. Forgive me if my words are too bold, but many of us do not mind the slight stall in the lecture today. However, since the class is already paused, a demonstrative competition applying the material we've been studying this week would not only ease tensions, but also help clarify any points of struggle in our learning in a more… interesting way."
+
+[i]Interesting[/i], ${y_he} says.
+
+You see {placeholder_instructor} clench her fists behind her back, a rare shadow of alarm crossing her features. {placeholder} is staring at the staff gripped tightly in his hands.
+
+Then, you catch {placeholder}'s eyes. He sends you a barely perceptible nod before he returns his focus on Yilkarzad.
+
+The secretary smiles gently. "A logical suggestion."
+
+*page_break ...
+
+You are still processing the implications of {placeholder}'s support for Yilkarzad's words on your already bad day, when the ${y_heir} somehow makes the situation even worse for you.
+
+With one sudden, fluid motion, Yilkarzad kneels down and lays ${y_his} wooden staff on the emerald-laced granite flooring with a force you know is stronger than necessary.
+
+"I volunteer to participate in the contest."
+
+"No!" {placeholder_instructor}'s response is nearly instantaneous. Seemingly realizing the harshness in her tone, she coughs lightly before continuing with her usual cold impartiality. "That will not be necessary, $!{y_heir} Yilkarzad. This should only concern the students involved in the root of the conflict today. Besides, we only have time for one duel."
+
+You grit your teeth, taking a deep breath. Whatever minuscule chance you or {placeholder} had to decline the impending fight is nothing but dissipated smoke now. Your teacher would never have allowed Yilkarzad to participate — if word got out that she forced an imperial ${y_heir} into a practical duel to spare her own younger cousin, she may as well disavow herself from the Measured Season clan.
+
+You can either stay quiet and wait for {placeholder_instructor} or {placeholder} to call on you, or take the initiative yourself.
+
+The choice is almost too easy.
+
+*fake_choice
+    #Retrieve the staff that Yilkarzad had laid down without asking. "I accept this challenge."
+        *set sharpStat +smallStatChange
+        Before anyone can react further, you kneel down next to Yilkarzad and retrieve the staff in front of the ${y_heir} with swift decisiveness. As you spin the weapon in your hands, you level with Yilkarzad's gaze. You see faint surprise through the cold patience in ${y_his} dark brown eyes.
+        
+        "I accept this challenge," you say each word with focused clarity.
+        
+        Yilkarzad rises from ${y_his} kneeling position with an easy grace.
+        
+        In a quiet voice only you can hear, the ${y_heir} gives you ${y_his} blessing.
+        
+        "You'll do well."
+    #Turn towards Yilkarzad with a courteous expression. "Your staff... Since your highness is not participating, may I?"
+        *set softStat +smallStatChange
+        Before anyone can react further, you acknowledge both {placeholder} and {placeholder} with polite form before turning towards Yilkarzad with a courteous expression.
+        
+        "Your staff… Since your highness is not participating, may I?" you say each word with controlled clarity.
+        
+        The ${y_heir} rises from ${y_his} kneeling position with an easy grace. As Yilkarzad spins the weapon in ${y_his} hands, ${y_he} levels with your gaze. You see faint curiosity through the cold patience in ${y_his} dark brown eyes. Then, it disappears as ${y_he} looks down to press the wooden staff into the palm of your hand.
+        
+        In a quiet voice only you can hear, Yilkarzad gives you ${y_his} blessing.
+        
+        "You'll do well."
+
+*page_break
+
+Light leather boots carry you across the sea of emerald-green stone flooring, shimmering in the morning sunlight.
+
+You are adjusting the sash around your robes when {placeholder_instructor} falls into step next to you almost awkwardly, a heavy desperation clouding her expression.
+
+You lower your eyes. It is not hard to see what troubles her.
+
+"$!{name}…" she starts, and you suddenly feel a cold hand on your shoulder.
+
+You stop walking and jolt slightly out of surprise more than anything, but this makes {placeholder} pull away immediately.
+
+"I apologize," she says. Your instructor faces you, then takes a breath as if to say something, but no words form.
+
+A few other students are now watching you two. Her dark amber eyes are alight with even more stress than usual. She stares at you, then at {placeholder}, then back at you, this time with the despair in her gaze dulled by acceptance.
+
+"Best of fortunes, $!{name}."
+
+*page_break
+
+Your classmates spread themselves along the edges of the hall, leaning against the fluted pillars or sitting on the sun-warmed granite floor. {placeholder} is back in his seat at the front of the hall, casually partaking in what looks to be a very one-sided conversation with {placeholder}, who stands next to him with detached resignation.
+
+And in the center, you and {placeholder} ready yourselves, tensely waiting.
+
+You try your best to recall the notes and corrections from this week's martial classes. Simply disarming an opponent or knocking the other off their feet is not the true goal — an honorable victory in a demonstrative duel results from the incorporation of the newest maneuvers and tactics you've been learning.
+
+You meet placeholder's eyes as you take your starting stances.
+
+He is nervous, and you make a mental note of your observation.
+
+*fake_choice
+    #"Good luck, placeholder."
+        *set warmStat +smallStatChange
+        *set softStat +smallStatChange
+        Safe to say, you are more than a little annoyed at placeholder's long-suffering insistence on starting trouble. However, you still try to maintain a decent amount of courtesy.
+        
+        "Good luck, placeholder."
+        
+        You almost regret it when he has the audacity to grimace at your words. But then, he returns your acknowledgment.
+        
+        "…Good luck."
+    #"Give everything you've got, placeholder. Don't make it [i]too[/i] easy for me, yeah?"
+        *set coolStat +smallStatChange
+        *set sharpStat +smallStatChange
+        Safe to say, you are more than a little annoyed at placeholder's long-suffering insistence on starting trouble. You see no reason to hold back a verbal jab of your own after everything he'd said today.
+        
+        "Give everything you've got, {placeholder}. Don't make it [i]too[/i] easy for me, yeah?"
+        
+        As expected, the light smirk you send his way is met with a grimace that weighs down his already exasperated features.
+    #"Let us both fight well."
+        *set brightStat +smallStatChange
+        *set softStat +smallStatChange
+        Safe to say, you are more than a little annoyed at placeholder's long-suffering insistence on starting trouble. However, you still try to maintain a decent amount of courtesy.
+        
+        "Let us both fight well."
+        
+        You almost regret it when he has the audacity to grimace at your words, but then, he returns your acknowledgment.
+        
+        "…I will."
+    #Say nothing, but hold his gaze with cold intensity.
+        *set coldStat +smallStatChange
+        *set sharpStat +smallStatChange
+        Safe to say, you are more than a little annoyed at placeholder's long-suffering insistence on starting trouble. You see no reason to acknowledge him with any words after everything he'd said today.
+        
+        The cold intensity of your steady gaze is met with the slightly faltering in the that in your opponent's amber eyes that dulls the sharpness of the grimace weighing down his already exasperated features.
+
+"Begin," the quiet voice of your instructor announces.
+
+*page_break The duel begins
+
+You do not fear making the first offense. Both hands positioned at half-staff, you quickly start with a close-range strike targeting the waist.
+
+Perfect form. Unfortunately, {placeholder} blocks you easily before moving his grip to the end of his staff for a wide sweep to force you back.
+
+Then follows a rapid succession of hollow wooden clashes, both of you resorting to your most familiar maneuvers to claim a temporary upper hand before soon losing it to the other.
+
+You can tell {placeholder} has been keeping his distance thus far, opting for the leverage and range of an end-staff grip over the control and flexibility of a half-staff one. But you keep deflecting his large arching strikes with smooth simplicity — this is not working for him.
+
+He will eventually change tactics. Or, you can change first.
+
+*fake_choice
+    #Watch and wait carefully for the moment he switches his grip to fight in closer range, then quickly change my own grip for an unexpected long-range thrust when he moves closer
+        *set duelResult 1
+        *set insightStat +medStatChange
+        *set resolveStat +medStatChange
+        *if (showStatChanges)
+            *gosub_scene startup twoStatChangeNotif "Insight" "Resolve"
+        
+        You train your eyes on {placeholder}'s hands, all while spinning your staff against his clearing sweeps and delivering forceful two-handed strikes of your own to threaten disarming him —
+        
+        Now. He's changing grip now, and moving closer.
+        
+        You breath in.
+        
+        One hand loosens around your staff, the other moves back to angle it right at his chest, and then you thrust with both the power and range granted by this maneuver.
+        
+        You breath out.
+        
+        {placeholder} stumbles back in shock, and you don't stop pushing forwards. It is but a few seconds before he falls to yield against the painful pressure.
+    #Suddenly move my own hands to one end of my staff, equalizing our range, then bait him into a binding thrust when he switches to disarming attacks
+        *set duelResult 2
+        *set deceitStat +medStatChange
+        *set composureStat +medStatChange
+        *if (showStatChanges)
+            *gosub_scene startup twoStatChangeNotif "Deceit" "Composure"
+        
+        With one spin on your knee after a clean slide to dodge a clearing strike, you shift your hands to the end of your staff. {placeholder} wastes no time in changing strategy to quick, disarming blows.
+        
+        You indulge him with one, two, three half-hearted parries lacking just enough finesse —
+        
+        Now. An unstable diagonal strike.
+        
+        Raising both hands to point your staff downwards, you lean back to block the strike, then push upwards, hands moving over and around your head. {placeholder} is still pressing sideways when you suddenly bind down with a reverse grip — your staff is now on top, and pointed directly towards him with no barrier.
+        
+        You thrust and continue binding his staff, weakening his grip through pressure forced on his wrists.
+        
+        {placeholder} drops his staff just as yours makes contact with his chest.
+
+*page_break A perfect victory
+
+There is a short moment of silence, when {placeholder} @{duelResult braces himself with his back against the floor, looking up at you with a defeated glare. | stands before you with an expression of dazed shock, staring down at the weapon forced away from him.}
+
+"Excellent use of the @{duelResult surprise ranged strike | binding thrust}," [placeholder_instructor] says in a steady voice, neatly tidying her sleeves as she walks down towards you. "Thank you, $!{name}. A good example to study from, for the class —"
+
+She nearly trips down the low platform raised at the front of the hall, catching herself just in time.
+
+"Take caution of these, Instructor. Steps are still steps even if they're low." Secretary {placeholder} smiles lightly, then nods at you and {placeholder}. "A very good demonstration for the class. Thank you both."
+
+Discreet glances are passed amongst your classmates. You lower your eyes, not needing to see the flustered look on her face to know the distress that consumes her. A terrible day to receive the honor of an evaluation directly granted by the Imperial Secretary.
+
+*fake_choice
+    #Instructor {placeholder} does not deserve to be brought down by the actions of her younger cousin.
+        Two sets of eyes flicker across your consciousness — twins in shape and color, both chilled by the weak glimmer of unwavering pride.
+        
+        You cannot remember the number of times you've wondered how two faces so similar can carve out such strikingly different images in your mind. As much as some try to ignore it, the impact of {placeholder} and {placeholder}'s actions on the reputation of each other and the entire Measured Season clan is a link that will remain unsolvable in this world.
+    #It is either {placeholder}'s destined fortune or {placeholder}'s fated curse that they are bound by clan piety.
+        Two sets of eyes flicker across your consciousness — twins in shape and color, both chilled by the weak glimmer of unwavering pride.
+        
+        You cannot remember the number of times you've wondered how two faces so similar can carve out such strikingly different images in your mind. The question of whether it is {placeholder}'s destined fortune or {placeholder}'s fated curse that they find themselves bound by clan piety in this life is one that will remain without an answer.
+
+Disheveled and a bit sweaty, you tidy your robes with a deep breath before turning towards {placeholder} and {placeholder} with renewed assurance behind your posture.
+
+"I thank Secretary {placeholder} and Instructor {placeholder} for this opportunity to remedy the unhappiness I brought today," you say with a light bend of your waist.
+
+*page_break
+
+Recovering his senses, {placeholder}'s expression returns to the usual painful irritation found on his face as he @{duelResult scrambles to pick himself up from the floor | quickly leans down to retrieve his staff from the floor}.
+
+He does not meet the eyes of your teacher or the secretary when he mumbles his own gratitude.
+
+Retreating into the sidelines, several of your classmates send you supportive grins or quiet congratulations. Hard to say, though, which ones are happy for you and which ones are happy to see the Measured Season clan take a hit. A small hit, but then again, you are all still young.
+
+*fake_choice
+    #Give quick nods in return
+        *set sharpStat +smallStatChange
+        
+        You return with a few quick nods before settling in place.
+    #Smile politely
+        *set softStat +smallStatChange
+        
+        You return your classmates' support with a smile and polite thanks before settling in place.
+
+In the crowd on the opposite side of the hall, Yilkarzad shows no emotion on ${y_his} face other than impartial civility, turned towards the front at {placeholder} and {placeholder} with an intent look in ${y_his} eyes.
+
+The imperial secretary stands up.
+
+"Before this lecture ends in…" {placeholder} glances outside with a slight squint. "…in a very short time, I do have an announcement." From the pockets of his pale robe, he takes out and unfurls a scroll. Even from your distant position, you take only one glance to know the type. Finely-textured paper bordered with silver-inked patterns, anchored by two thin bars of bronze-lined redwood. You've seen them used often for official court mandates.
+
+And then you feel everyone around you take a sharp breath following the secretary's next words.
+
+"Instructor {placeholder}, I'm happy to inform you of your promotion in status to Sixth Rank Minor."
+
+*page_break
+
+[i]Ah.[/i] So this is why someone from the Ministry of Records instead of Education is here today. This is not a performance evaluation — this is a promotion of court personnel.
+
+Perhaps stunned, {placeholder} takes a few seconds before dusting her sleeves and dropping one knee to the floor to accept the mandate from {placeholder}.
+
+"{placeholder} of Measured Season receives this mandate with honor, in thanks of the imperial blessing offered," she says, all traces of insecurity and discomfort gone.
+
+You look down to suppress an idle smile that you do not fully know the cause of. So, your martials instructor is quick to recover to her usual composure. At least when granted a benefit to her clan.
+
+Secretary {placeholder} gently places the scroll in the hands of {placeholder}. "Well-deserved, the empress and I both agreed."
+
+…The empress herself?
+
+*fake_choice
+    #Does the Measured Season clan not care how others perceive them? But perhaps this is precisely the image they must impress upon the court.
+        *set promotionReaction 1
+    #The simple reality of the Measured Season clan's continued favor by four generations of crowns is a testament to the family's competency.
+        *set promotionReaction 2
+
+Your gaze scans over to the rigid figure of {placeholder}, face lowered and gripping the ends of his sleeves tightly. Some students with less care for strategic prudence are already rolling their eyes at each other. As if the empress has the time to personally favor the promotion of a seventh rank courtier unless someone from the Measured Season clan had directly brought the matter up to her.
+
+*if (promotionReaction = 1)
+    This is far from the first time you have witnessed derisive scorn in response to the extent of the Measured Season clan's influence and ambition. Do they not care how others perceive them? But perhaps this is precisely the image the family must impress upon the court. After all, continued favor from four generations of crowns is a heavy gift with a curse suppressed only through endless diligence.
+*else
+    For the countless time since entering the palace, you cannot help but respect that the Measured Season clan is truly impressive in their influence and ambition. No matter how others at court may perceive them, the simple reality of their continued favor by four generations of crowns is more than enough of a testament to the family's competency.
+
+When your bottom line is already higher than the upper limit of most others, many things can be forgiven.
+
+In the mix of surprise, contempt, and the uncaring anxiousness for lunchtime, one classmate's reaction catches your eye.
+
+*page_break Yilkarzad
+
+$!{y_he} stands near the edge of the crowd of students, away from the center of attention around {placeholder} and {placeholder}. Yet, ${y_his} dark eyes cast an unbroken, candidly inquisitive stare towards the Imperial Secretary, confirming the ${y_heir}'s interest in the current affair regardless of whether ${y_he} wants it to be known or not.
+
+Yilkarzad's usually unreadable countenance is now colored with the softest shades of surprise and disappointed confusion. You find that it does not suit ${y_him}.
+
+You look away, closing your eyes for a moment to clear your thoughts.
+
+Treat it as entertainment, you think to yourself. As if any of the friction that exists among the imperial court requires your attention in any manner.
+
+None of the love, hatred, passion, revenge, benevolence, cruelty, life, and death in this beautiful city of Tenzadjiln has ever, and will ever, be part of your story.
+
+*page_break
+
+When the class ends, there is a flurry of robes as hundreds of students hurry across sunlit stone pathways or dash through shaded corridors connecting different building compounds, all heading northeast to the dining halls for lunch. You, however, run southwards.
+
+Though, when you run, there is a distinct lack of the pleasant ring of silver strips or copper coins in your linen satchel.
+
+You have a somewhat unhappy disadvantage. Of course, none of your peers have stashes of money with them in the palace either. But what they do have are established connections within the city thanks to the powerful and rich clans that children who are able to enter the imperial academy usually belong to. Personal wealth is rather unnecessary if you have benefactors in service to your parents who will take care of your spending needs.
+
+Such luxuries are not an option for you, which is why you find yourself in front of…
+
+*fake_choice
+    #A palace armory
+        There are over a dozen armories spread out across the imperial complex, each hosting a vast array of bladed, ranged, thrown, and polearm weapons, in addition to a wide multitude of shields and armor sets, all neatly organized and stored on polished wooden weapon stands.
+        
+        You cross an enclosed courtyard to reach the main building, a tidy room of maps, schedules, and diagrams, but the armory itself is partially underground. As you descend the stairs, the cool temperature is a welcome change from the hot noontime weather outside. The space is dimly lit through narrow windows near the roof, and quiet with only the golden glint of steel blades and iron frames as your companion.
+        
+        Most armories belong to either the Ministry of Defense or the Pioneer Guards, but this armory is a responsibility of the Palace Weaponry Order, a small unit under the Ministry of Industry. The ground floor is the main workspace, but not a soul is found here today, when most courtiers in the palace are attending their monthly ministry-wide meeting.
+        
+        Which leaves you a lonesome time of helping the young courtiers of Palace Weaponry clean up any unsettled tasks.
+        
+        *page_break
+        
+        *gosub freshOutOfEducation
+        
+        Paperwork to record the lending and returning of weapons throughout the palace, inspection for damage or disrepair, organization of inventory, and even the polishing and cleaning of used weaponry — they let you do it all.
+        
+        *gosub veryBusyMC
+        
+        *page_break
+        
+        *set locations_visited_string &"010"
+        *gosub_scene startup location_unlocked_notif "Palace Armories"
+        
+        You spend at least three hours in the armory, cloth in hand. You remove rust and scratches on swords and daggers with a whetstone, cleanse the grease and stains from light bronze armor with flour, and polish scabbards of leather and shields of poplar and spruce with orange oil.
+        
+        Exposure to weapons your instructors would never let you touch grants you much experience with the martial discipline.
+        
+        *set martialStat +10
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Martial knowledge"
+        
+        Just as you finish inspecting the last quiver of arrows for bent feathers, loud voices float from above. Time to collect their end of the deal.
+        
+        *page_break
+        
+        *gosub gettingSomeMoney
+        
+        *page_break
+        
+        *goto afterWork
+    #A courier station
+        Over fifty courier stations cover the vast spread of the imperial complex for convenient communication between any two residents. One need only drop a message or package with the desired palace address at the nearest station. They are easily spotted by the tall spires extending from their roofs, pearls of guidance in a labyrinth. Delivery outside the walls, however, must go through the central Courier Arena near the southern gates.
+        
+        The messy room is a bit stuffy but well-lit through large, open windows. Paper of all manners — envelopes, scrolls, loose leafs, books, paintings, calligraphy sheets — are scattered across tables and stools. You nearly knock over a bottle of ink trying to find a seat.
+        
+        This station, like all others, is run by a small unit under the Imperial Courier Program, though not a soul is seen here at the moment. Today, most courtiers in the palace are attending their monthly ministry-wide meeting.
+        
+        Which leaves you a lonesome time of helping the young courtiers of this particular station clean up any unsettled tasks.
+        
+        *page_break
+        
+        *gosub freshOutOfEducation
+        
+        Inspection of letters and packages for any illicit communication, paperwork to record the day's drop-offs and deliveries, organization of inventory, and of course, the tedious replication of court documents — the process is rather familiar now.
+        
+        *gosub veryBusyMC
+        
+        *page_break
+        
+        *set locations_visited_string &"100"
+        *gosub_scene startup location_unlocked_notif "Courier Stations"
+        
+        You spend at least three hours in the station, writing reed in hand. Today's early afternoon is quite idle. Only a few letters arrive in the mail drop, but you never agreed to run the dispatch errands anyways. You pass most of the time carefully duplicating dozens of sheets of a few court announcements to be delivered across the palace tonight.
+        
+        Exposure to the writings of courtiers, students, and servants with vastly different intentions and styles grants you much experience with the artistic discipline.
+        
+        *set artStat +10
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Artistic knowledge"
+        
+        Just as you finish the twenty-third copy of the final document, loud voices float inside through the windows. Time to collect their end of the deal.
+        
+        *page_break
+        
+        *gosub gettingSomeMoney
+        
+        *page_break
+        
+        *goto afterWork
+    #An imperial finance hall
+        The southeast sector of the palace complex is home to an expansive grid of pillared halls, interlocking with each other to form neat, open courtyards where sunlight rains down on sparkling water fountains and vibrant garden scenery.
+        
+        The hall you now stand beneath is rather insignificant, located in a peripheral area visited only by those who work here. Latticed screens between the pillars diffuse the natural light into shimmering diamonds across the scattered sheets and bound books covering the rows of long tables. A cozy space, bright and breezy yet privately concealed at the same time.
+        
+        This is the workplace of a small bookkeeping unit under the Ministry of Revenue, though not a soul is seen here at the moment. Today, most courtiers in the palace are attending their monthly ministry-wide meeting.
+        
+        Which leaves you a lonesome time of helping the young courtiers of this bookkeeping unit clean up any unsettled tasks.
+        
+        *page_break
+        
+        *gosub freshOutOfEducation
+        
+        Paperwork to record paid-off debts and interest on outstanding dues, inspection for discrepancies between different sources, filing and organization of reports, and of course, the calculation of total revenue from each account book — all delegated to you.
+        
+        *gosub veryBusyMC
+        
+        *page_break
+        
+        *set locations_visited_string &"001"
+        *gosub_scene startup location_unlocked_notif "Court Service Halls"
+        
+        You spend at least three hours in the hall, head bent over dense lines of numbers. The constant clicks of your abacus are the only sounds you hear as you scrutinize pages of revenue records and tax details, filling up dozens of report sheets with double-checked calculations.
+        
+        Exposure to the financial accounting processes of the imperial court grants you much experience with the scientific discipline.
+        
+        *set scienceStat +10
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Scientific knowledge"
+        
+        Just as you finish binding the day's work into a book, loud voices float inside through the screens. Time to collect their end of the deal.
+        
+        *page_break
+        
+        *gosub gettingSomeMoney
+        
+        *page_break
+        
+        *goto afterWork
+
+*label freshOutOfEducation
+Fresh out of education and born into accomplished families, wealth and a shabby job in the capital seem to be the only things they've inherited. Over the past month, you've come here every day after classes to do the simple but tedious work no one wants in exchange for the shine of silver and copper.
+*return
+
+*label veryBusyMC
+On top of other odd errands throughout the palace for pay, homework for all your classes, and studying for the summer exams late into the night, you're not surprised that you've started oversleeping in the mornings this past week.
+*return
+
+*label gettingSomeMoney
+A young man who can't be over twenty, the first to notice you, throws you a few ropes of copper coins. "We appreciate the help, ${name}," he says slowly, eyes narrowed in an unspoken question.
+
+You stare back with an equal gaze. "No one came by, and no one saw me." 
+
+Appeased, he breezes past to drop onto a cushioned alcove seat with a deep sigh.
+
+The other young courtiers follow inside with sounds of laughter and argument, waving around skewers of assorted sweets that make your stomach send an unpleasant reminder that you haven't eaten since a rushed breakfast this morning. They look tired, but you would gladly trade the cramps in your hands for simple exhaustion.
+
+Nonetheless, you soon find your bag much heavier than before.
+
+*set copper +137
+*set silver +3
+[b][ +137 copper ][/b]
+
+[b][ +3 silver ][/b]
+*return
+
+*label afterWork
+
+A few of your temporary benefactors, as it were, are often a bit too curious. Such as now.
+
+"Why does ${he} need to earn extra coin in the palace?"
+
+"…Not every family bathes under a waterfall of money like yours. $!{his} clan is either too new or too old — I've never heard of their name before, is all I'm saying."
+
+"So… how are they, you know, paying for education in the imperial palace?"
+
+"You two want to talk any louder? I'm pretty sure ${he} can hear you. Just ask ${him}, I bet that's why ${he_is} working here. To pay for the imperial tuition. Right, ${name}?"
+
+*fake_choice
+    #"It's no concern of yours, but yes, I'm happy there are jobs in the palace where half the work can be done by a twelve year old."
+        *set sharpStat +smallStatChange
+        
+        You bite your cheek to keep down a snicker, and try to arrange your face into a somber expression until the last of your dues are safely jingling in your bag.
+        
+        "It's no concern of yours, thought I'm happy there are jobs in the palace where half the work can be done by a twelve year old."
+        
+        Then you sprint.
+        
+        You probably won't be coming back here any time soon, you think.
+    #"Yes, the income helps. It's my fortune to find people who require assistance in the imperial court."
+        *set softStat +smallStatChange
+        
+        You turn your head to hide a small smile, and walk with what you hope is a pleasant expression until the last of your dues are safely jingling in your bag.
+        
+        "Yes, the income here certainly helps. It's my fortune to find people who require assistance in the imperial court."
+        
+        Then you are off with an airy spring in your step, but not before taking in the suspicious gazes of the courtiers as they think over your words.
+
+*page_break
+
+Courtiers, students, and attendants alike throw you subtle glances through furrowed brows as you hurry past, irritated that you do not fit in with the silent stillness of mid-afternoon.
+
+You dash across the pale limestone bricks of wide boulevards carefully lined with paneled screens depicting art and poetry from all corners of the empire. Over arched bridges with railings of bronze and guarded by sandstone statues of gentle elephants and graceful tigers. Through narrow alleys bound on both sides by high walls painted deep scarlet, dusty yellow, or muted jade.
+
+Finally, you stop before a decorative archway between low partitions of stone latticework that seem to stretch on forever. Trimmed hedges of dense foliage and the cool shade of tall trees hide the enclosure from the rest of the palace.
+
+You enter the imperial garden to meet the reason behind a month of tiresome work.
+
+*page_break
+
+You can't help but take a deep breath. The fragrances are pleasant but very light, only just enough to lead one forward in search for more.
+
+Throughout the years, you have never lost appreciation for the sight of both pastel and rich colors coexisting as an elegant palette of floral beauty.
+
+With neatly tiled pathways to guide you, the sprawling garden is enclosed as a rectangle with a stepped layout. Water, diverted from the large river west of the palace complex, flows along a central line to fill eighteen layers of terraced pools.
+
+You ascend broad stairs to reach the third highest layer, where you find two children, a boy and a girl, sitting on stone stools around a table next to a flowering shrub under the shade of a pistachio tree. They look a couple years younger than you. The boy has slightly lighter skin than yours while the girl's is a shade darker. All three of you share the same shade of ${haircolor} hair and ${eyeColor} eyes.
+
+Both children even have…
+
+*fake_choice
+    #Straight hair, like you.
+        *set hairType 1
+    #Wavy hair, like you.
+        *set hairType 2
+    #Curly hair, like you.
+        *set hairType 3
+    #Coiled hair, like you.
+        *set hairType 4
+
+*set hairTypeSet true
+
+Dressed in the plain attire of palace servants, the decorative fabrics in their hair and braces around their wrists are dyed in bright colors that suit their youth. Although busy finishing what looks to be a late lunch of steamed buns and breads, the pair still manage to notice your arrival before you can call out to them.
+
+"${name}! I brought you something new from the kitchens today!" The young boy hops down from his seating immediately, waving at you excitedly and pointing to a redwood food container on the table.
+
+You smile cautiously with a tilt of your head. "Is 'brought' finally the correct word this time, Dahnom?"
+
+Dahnom brings a hand up to scratch his cheek, trying to cover an impulsive grin. "I [i]took[/i] something new from the kitchens today, then."
+
+*fake_choice
+    #Shake my head in jest, grinning along with him.
+        *set coolStat +smallStatChange
+        
+        You shake your head in jest, keeping your own smile to match the boy's grin. Dahnom seems quite pleased with his skill at never getting caught with theft from the imperial kitchens, and you feel it unnecessary to break his spirits with harsher words. Besides, you can't say you haven't benefited from his escapades…
+        
+        "Well, I can't stop you in any case. Thanks, Dahnom." 
+    #There is an immediate worry in your mind. What if he gets in trouble?
+        *set brightStat +smallStatChange
+        
+        You cannot help the light crease of your brows as you listen to the boy's words. Dahnom seems quite pleased with his skill at never getting caught with theft from the imperial kitchens, and you worry that he is getting too casual with his actions. The punishment for theft in the palaces is not modest, to say the least.
+        
+        "Based on past experience, I know I can't stop you, but please be careful, Dahnom."
+
+Shifting towards the girl, you change to a softer voice. "Did you get to sleep better last night, Hadya?"
+
+Hadya is still a bit shy around you. She lowers her head, her round eyes staring at the ground, but there is a happy smile that brightens her face. "I did! Thank you for the medicine, ${name}. I…"
+
+She breaks off, turning and making a vague gesture towards the table, where a woven basket covered with a sheet of oiled paper rests. "I made some small refreshments for you. They're just very simple treats!" She says hastily. "And not very good… but I thought that you might like them."
+
+*fake_choice
+    #Gently touch her shoulders with a kind smile.
+        *set warmStat +smallStatChange
+        
+        Following her words, you move closer and gently touch her shoulders as a sign of reassurance, bending down slightly with a kind smile. Two years younger than you, there has always been an air of vulnerability around Hadya, a quality that stings your heart every time you see her carry large bundles of clothing, including yours, off for washing, or run into her when she cleans the imperial student residencies.
+    #Nod, eyes soft with an emotion you cannot name.
+        *set coldStat +smallStatChange
+        
+        Seeing the mild shake of her hands as they tug on linen sleeves, your eyes soften with an emotion you are not sure you can name, choosing to respond with a simple nod when you find yourself at a loss of words. Two years younger than you, there has always been an air of vulnerability around Hadya, a quality that stings your heart every time you see her carry large bundles of clothing, including yours, off for washing, or run into her when she cleans the imperial student residencies.
+
+"Thank you, Hadya, for taking the time to do this for me. I can smell the fragrance already."
+
+*page_break
+
+*gosub_scene startup character_met_routine
+*gosub_scene startup character_unlocked_notif "Dahnominidi"
+
+*gosub_scene startup character_met_routine
+*gosub_scene startup character_unlocked_notif "Hadyanumsin"
+
+Dahnominidi and Hadyanumsin are twins who you have made acquaintance of since nearly the exact day they entered the imperial palaces as servants under the kitchen and cleaning staff respectively, about a year ago.
+
+The elder brother's open, relaxed, and [i]expansively[/i] communicative disposition pairs with his sister's reserved, gentle, and [i]much[/i] quieter demeanor in a comfortable balance that you find makes them very easy to be around. Gradually, over the past year, you have become friends so close that the twins seem to truly no longer feel unease at the difference in status between you and them — just as you have been insisting from the very beginning.
+
+You also think that your unremarkable background may have made you easier for them to accept.
+
+Nonetheless, when you are with Dahnom and Hadya, you welcome the absence of masked competition that remains eternal amongst your own peers.
+
+*page_break
+
+Dahnom rolls his eyes before pulling you over to the seating area. "She spent some [i]time[/i], I risked my [i]safety[/i]. Come on, let's sit."
+
+Hadya frowns at her brother with what could be called a glare if her features were even slightly sharper, before turning to you with worry. "${name}, if you skipped lunch again, you should eat something now."
+
+The three of you hop onto the soothing coolness of the stone stools, shaded from the afternoon sun by the wide leaves of the pistachio tree above.
+
+And, heavens, with both a skipped breakfast and lunch, you are definitely hungry.
+
+*fake_choice
+    #Open Dahnom's container first.
+        *set dahnomStat +smallStatChange
+        
+        Dahnom shrugs animatedly with a smile, happily humming some sort of tune as he @{hairType runs a hand through his hair | runs a hand through his hair | pushes a few locks of his hair away from his eyes | smooths back the edges of his hair}.
+        
+        You open the lid to find an array of exotic fruits presented in neatly-cut pieces laid out in elegant formation on a thin sheet of oiled parchment paper lining the interior of the redwood container. The box is actually double-layered, and removing the top layer of fruits reveals several rolls of rice-batter pancakes accompanied by small dishes of various spices and flavored sauces.
+    #Open Hadya's basket first.
+        *set hadyaStat +smallStatChange
+        
+        Hadya fidgets with the @{hairType strands | strands | curls | coils} of her hair while pretending to look at the stream of running water down the center of the garden, a happy smile on her face.
+        
+        You remove the covering sheet, breathing in the fragrant aroma from the assortment of steamed, baked, and fried flour-based delicacies presented in the form of cookies, cakes, and rolls, spread out evenly on a thin sheet of oiled parchment paper lining the interior of the woven basket.
+
+You spend a short but blissful period of time enjoying the food.
+
+*page_break
+
+After subduing your hunger, you reach over for your satchel. You set all the wealth you've earned today out on the table, first taking out the silver strips and then retrieving the ropes of copper coins stringed together through the square hole in their centers.
+
+*set copper -137
+*set silver -3
+[b][ -137 copper ][/b]
+
+[b][ -3 silver ][/b]
+
+"There is still a week before the nearest payback term ends?" you ask.
+
+"Yes, a week," Dahnom says. "Then the gambling house starts another term with an even higher interest rate." He sighs and props up his chin, elbows against the table. "I don't understand what mother and father find so entertaining about those… games. You don't even [i]do[/i] much, all you really do is praying you get fortune's blessing this time."
+
+You look down briefly, silent as Dahnom and Hadya each take out a sizable rope of copper coins from their pouches as well, adding their own earnings from yesterday to the pile.
+
+*fake_choice
+    #Numbing the mind with thoughtless tasks is one of the best ways to forget one's own failings.
+        As Dahnom counts the coins aloud with his head bent over the table while Hadya covertly shifts them to her side to count again, clearly not having much trust in her brother, a quiet bubble of ill temper rises up in you.
+        
+        Numbing the mind with thoughtless tasks is one of the best ways to forget one's own failings. But once someone arrives at this point, you are not sure if they can really call themselves fit to be parents.
+    #The more misfortune that befalls a person, the closer they believe they must be to luck.
+        As Dahnom counts the coins aloud with his head bent over the table while Hadya covertly shifts them to her side to count again, clearly not having much trust in her brother, a quiet bubble of ill temper rises up in you.
+        
+        The more misfortune that befalls a person, the closer they believe they must be to luck. But once someone resorts to relying on fortune's blessing for everything, you are not sure if they can really call themselves fit to be parents.
+
+The three of you arrive at a grand total of one hundred and eighty-one copper coins and three silver strips.
+
+You nod with approval. "We've got a good amount today. How much do we have left to cover?"
+
+Dahnom and Hadya exchange a look.
+
+"Well… actually…" Dahnom begins slowly, before suddenly pushing the entire pile of money towards you.
+
+*page_break
+
+You blink, an unspoken question in your eyes as you look at the twins. "Uh… what's this?"
+
+It is rare to see Dahnom and Hadya sharing the exact same expression, but you now witness such an occasion, as both twins beam with excitement shining through their ${eyeColor} eyes, attempting and failing to restrain a wide smile.
+
+"So… we forgot to tell you something yesterday. We actually already have enough to cover all our parents' debts after yesterday's earnings. So that means we can start paying you back now," Dahnom says.
+
+*label questionTwins
+
+*if (questionTwinsNum = 0)
+    [i]Several[/i] questions float around in your head at this.
+*elseif (questionTwinsNum = 1)
+    You still have a few unanswered concerns.
+*else
+    There is a final inquiry you wish to raise.
+
+*fake_choice
+    *disable_reuse #How are they certain the debts can be covered?
+        *if (questionTwinsNum = 0)
+            This comes as a bit of a surprise. It is good news for certain, but you respond to the twins' strangely eager optimism with a cautious stare of inquisition.
+        *else
+            There is still the question of how the twins are certain the debts can be covered without further issues.
+        
+        *set questionTwinsNum +1
+        
+        "Would either of you explain to me how you have determined that the entirety of your parents' [i]many[/i] debt records across [i]several[/i] different betting houses can be accounted for? As in, all of it? And how do you know your parents won't just use the money you give them to continue gambling?"
+        
+        From previous conversations, you know that ever since the twins had started helping their family with paying back gambling dues, there have been multiple occasions where their hard-earned money had successfully tempted their parents into incurring even more debt.
+        
+        *page_break
+        
+        Dahnom takes out a scroll from his satchel, untying it and unrolling the contents out on the table. "Father wouldn't tell me where he and mother keeps all the debt slips when we visited this week, but that doesn't mean I couldn't find them."
+        
+        You see rows upon rows of compact script etched carefully in ink. The slight unsteadiness of the handwriting is not noticeable enough to distract from the clearly defined numbers, calculations, dates, and street addresses that combine to give a coherent overview of total interest-accounted debt, as well as how much and where to pay each individual record.
+        
+        "I wrote it up, but Dahnom and I did the calculations together," Hadya speaks up. "As for making sure the money is really used to repay the debts and not spent on more gambling, this time we plan on bringing the money to the collectors ourselves."
+        
+        Looking over the scroll, you admit that the twins seem to have everything taken care of.
+        
+        *page_break
+        
+        *goto questionTwins
+    *disable_reuse #Why did they hide this from me until today?
+        *if (questionTwinsNum = 0)
+            This comes as a bit of a surprise. It is good news for certain, but you respond to the twins' strangely eager optimism with a cautious stare of suspicion.
+        *else
+            There is still the question of why the twins had decided to hide this information from you until today.
+        
+        *set questionTwinsNum +1
+        
+        You cross your arms, more out of tired confusion than actual exasperation, meeting Dahnom and Hadya's content expressions with a light tilt of your head. "So, why exactly have I been kept unaware of this obviously favorable news until now?"
+        
+        Dahnom stares at you with a deadpan look, as if saying you should clearly know the answer already. Hadya ends up answering.
+        
+        "I guess we wanted to surprise you with some good news from us, after all the effort you've put in over the past month, for us. But also, of course we weren't going to tell you any earlier that we would soon have enough money to start paying you back. I mean, based on what we know about you, ${name}, Dahnom and I both concluded that you probably wouldn't even agree to [i]meet[/i] us if you knew we wanted to repay you."
+        
+        *page_break
+        
+        It is your turn to roll your eyes now, though you understand what the twins mean. Hadya may be exaggerating, but it is true that you had made it clear many times for them to treat your financial assistances as gifts of friendship rather than as loans.
+        
+        Despite this, you know you are not wholly virtuous in your intentions. You certainly have your own reasons for taking care of the two siblings — selfish, cowardly reasons.
+        
+        They look so much like [i]${him}[/i].
+        
+        *page_break
+        
+        *goto questionTwins
+    *disable_reuse *selectable_if (questionTwinsNum > 1) #...Paying me back?
+        *set questionTwinsNum +1
+        
+        After your initial surprise, you focus on the last part of what Dahnom had said.
+        
+        A slight frown sets upon your features, subtly expressing your disapproval and denial.
+        
+        *fake_choice
+            #Respond with a distant coldness. "There is a misunderstanding between us. These were never meant to be [i]loans[/i]."
+                *set coldStat +smallStatChange
+                You raise your eyes with a look that is perhaps colder than you truly intend. "There is a misunderstanding between us. I recall having mentioned many times the nature of my aid. I do not wish for financial matters to affect my relationship with the two of you. These were never meant to be [i]loans[/i]."
+                
+                Dahnom crosses his arms and returns your gaze, relaxed and untroubled at your stiff response.   
+            #Respond with a gentle decline. "Perhaps I have been unclear in my communication. The courtesy is appreciated, but I truly have no need for the money."
+                *set warmStat +smallStatChange
+                You shake your head with an almost tired sigh and decline the twins' offer as gently as you can manage. "Perhaps I have been unclear in my communication. I understand that you have the heart to repay me, and the courtesy is appreciated, but I truly have no need for the money. Besides, I hope that we do not let financial matters affect our friendship."
+                
+                Dahnom crosses his arms and returns your gaze, attentively listening to your warm response. 
+            #Respond with a casual dismissal. "Stop being so serious. I [i]want[/i] to help. Besides, do you truly think I have need of the money?"
+                *set coolStat +smallStatChange
+                You clear the faint hints of displeasure from your expression with a casual smile and a relaxed gaze, leaning back in your seat. "Stop being so serious. Let us prevent matters of financial concern from wasting any more of our time. I [i]want[/i] to help. Besides, do you truly think I have need of the money? You know I've got massive coffers of silver waiting for me back home."
+                
+                Dahnom crosses his arms and returns your gaze, lightly smiling at your carefree response.
+        
+        *if (questionTwinsNum > 2)
+            *goto finishQuestioning
+        *else
+            *page_break
+            [b]Bug:[/b] This should not be possible
+            *finish
+
+*label finishQuestioning
+
+"Do you know, ${name}? Hadya and I made a promise on the day we met you. We promised to never let each other forget that meeting someone like you is not a gift earned through our own virtues and labor. It is a blessing granted by fate."
+
+Hadya leans forward softly, continuing her brother's words. "But how could we ever receive anything from fate without spending our fortune? We don't want to take from fate without giving back. And you're the closest thing to an embodiment of fate that we know of, ${name}."
+
+Your heart tightens with a familiar pain, all emotions hidden safely behind the peace in your eyes.
+
+*page_break
+
+Hadya reaches for her bag and takes out a small, thin, leather-bound book. She nudges her brother, handing it to him. It is when Dahnom holds the book forward with both hands that you realize they mean for you to receive it.
+
+"What is this?" you ask, flipping through the pages. There are neither words nor art on the dull brown cover and the paper is rougher than what you are used to. Messy ink scratches of numbers and dates blur into a hazy confusion until you slow down and piece together their essence just as Dahnom speaks.
+
+"This is a list of every loan we've received from you. And we want you to keep it, ${name}, to hold us accountable."
+
+*if (hairType = 1)
+    Hadya nervously tucks her hair back, straight strands flowing silently as a waterfall of ${hairColor} ink. 
+*elseif (hairType = 2)
+    Hadya nervously tucks her hair back, wavy strands blown astray as ribbons of ${hairColor} ink. 
+*elseif (hairType = 3)
+    Hadya nervously pulls on her hair, curled ${hairColor} locks bouncing across her shoulder. 
+*else
+    Hadya nervously touches her hair, tight curls swaying gently upwards as a soft cloud of ${hairColor} ink. 
+
+A sudden sorrow arises in you. To have all of one's fortunes be in another's debt — it is a powerful distress that you are too familiar with.
+
+You take the book.
+
+*fake_choice
+    #"Well then, I'll be waiting for my money," I ease the mood with a wink.
+        *set coolStat +smallStatChange
+        "Well then, I'll be waiting for my money," you ease the mood with a wink, calm amusement shining through your cool gaze. "And you know, I would charge interest, but unlike your parents' debt collectors, I think I'd rather save the time and effort of hunting you down."
+    #"I understand now. The misjudgment is mine for not considering your viewpoint," I offer a sincere smile.
+        *set warmStat +smallStatChange
+        "I understand now. The misjudgment is mine for not considering your viewpoint," you offer a sincere smile, gentle warmth apparent in your eyes. "Unlike your parents' debt collectors, though, I don't care much for interest charges. You can pay me back whenever and however often you wish."
+    #"Let us all continue to hold each other accountable going forward, then," I nod with earnest conviction.
+        *set brightStat +smallStatChange
+        "Let us all continue to hold each other accountable going forward, then," you nod with earnest conviction, smiling intensity behind your bright gaze. "Unlike your parents' debt collectors, I do not intend to rely on interest charges for my income. Pay me back on your own terms."
+
+*set copper +181
+*set silver +3
+[b][ +182 copper ][/b]
+
+[b][ +3 silver ][/b]
+
+Seeing Dahnom and Hadya's faces light up, eyes brilliant with the unsoiled innocence of youth, you know that this is the happiest you've felt in a very long time.
+
+*page_break
+
+The three of you spend the remainder of early afternoon in casual banter, enjoying the visual, aromatic, and acoustic splendor of the imperial garden.
+
+From your vantage point on the third-highest tier of the landscape, you can see the central waterfall flowing all the way down over descending steps of white marble, through layers upon layers of Kepritaniri flora sketched on soil and painted by the colors of the seasons. Decorating the garden grounds are a comfortable arrangement of shaded pavilions, roofed walkways, stone fountains, wooden swing-sets, sculptures of mythical beasts, and cultivated sceneries of miniature mountains and valleys.
+
+*page_break
+
+*set locations_visited_string &"1"
+*gosub_scene startup location_unlocked_notif "The Imperial Gardens"
+
+It is after a lazy bout of easy silence that Dahnom, curious and genuine in tone, asks you, "${name}, why do you always look after us?"
+
+Hearing the question, Hadya turns towards you as well.
+
+Outside of recent monetary assistance to relieve their parents' troubles, you know that the twins are also recalling the innumerable occasions where you had helped both Dahnom and Hadya with difficulties, obstacles, and fears they had encountered in the palaces.
+
+You especially remember the times you had…
+
+*fake_choice
+    #Covered for Dahnom by providing false alibis to the imperial kitchen staff during the instances he'd caused trouble or made mistakes
+        *set dahnomStat +smallStatChange
+        *set deceitStat +smallStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Deceit"
+        
+        You especially remember the times you had covered for Dahnom by providing false alibis to the imperial kitchen staff during the instances he'd caused trouble or made mistakes.
+        
+        Of course, every time this happens, he tells you once again that this is the last time, he promises…
+    #Prevented Hadya from being unfairly treated due to her timid nature by personally persuading the heads of the imperial cleaning staff to take extra care of her and punish the bullies
+        *set hadyaStat +smallStatChange
+        *set composureStat +smallStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Composure"
+        
+        You especially remember the times you had prevented Hadya from being unfairly treated due to her timid nature by personally persuading the heads of the imperial cleaning staff to take extra care of her and punish the bullies.
+        
+        There is a certain unhappiness you find at the number of times this has happened to her.
+    #Aided Dahnom in performing the often monotonous labor assigned as punishment for the troubles and mistakes traced back to him
+        *set dahnomStat +smallStatChange
+        *set resolveStat +smallStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Resolve"
+        
+        You especially remember the times you had aided Dahnom in performing the often monotonous labor assigned as punishment for the troubles and mistakes traced back to him.
+        
+        Of course, every time this happens, he tells you once again that this is the last time, he promises…
+    #Proved Hadya's innocence when she had been wrongfully blamed of theft, broken decorations, or damaged furniture by sorting out the true culprits through inquiry and analysis
+        *set hadyaStat +smallStatChange
+        *set insightStat +smallStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Insight"
+        
+        You especially remember the times you had proved Hadya's innocence when she had been wrongfully blamed of theft, broken decorations, or damaged furniture by sorting out the true culprits through inquiry and analysis.
+        
+        There is a certain unhappiness you find at the number of times this has happened to her.
+
+Processing the question, your breath catches, and the beauty of the garden provides an excuse to avoid meeting the gaze of either sibling.
+
+The sun is cool but the air is stifling. Pristine water flows silently on their downward path, moving away from you.
+
+*fake_choice
+    #"There are... certain times when people don't need a reason to help others."
+        "There are… certain times when people don't need a reason to help others." A truth, but not your truth.
+    #"Most of the time, people help others so that others will help them one day."
+        "Most of the time, people help others so that others will help them one day." The truth, but not the full truth.
+
+You do not know what the twins make of your vague answer, but both Dahnom and Hadya nod without much hesitation. Perhaps they are content, or perhaps they will save your words to mull over sometime in the future.
+
+Dahnom smiles at you almost shyly, touching the back of his neck. "Sometimes it feels like you're an older ${sibling} to us."
+
+Hadya turns to you. "Hopefully you don't mind us saying this, ${name}. We've always wanted an older sibling like you."
+
+"I mean, we [i]used[/i] to have another older ${sibling}. Neyahisan," Dahnom says. "That was ${his} name."
+
+"$!{he} also worked in the palaces. But they told us ${he} became very sick. $!{he}…passed away six years ago," Hadya tells you, then shakes her head after a slight pause. "Sorry for bringing this up. Don't worry, ${name}. I guess it is a sad affair for our family, but…"
+
+"As bad as it sounds, we don't remember much of ${him}," Dahnom continues when his sister trails off. Hadya nods, her sheepish expression showing her agreement.
+
+"I'm very sorry."
+
+You do not tell them that you know tomorrow is Neyahisan's birthday.
+
+*page_break
+
+You leave the gardens after bidding the twins farewell for the day and reminding them to keep a close eye on their assets.
+
+The sun drifts lazily in the west as the blue celestial canvas welcomes the first shades of warm yellow. It is near the end of the afternoon and you have some free time before dinner.
+
+Where do you wish to spend your time?
+
+*fake_choice
+    #Visit the palace training grounds to refine martial skills
+        Outside the gardens, the training grounds is the only place in the palace complex with vast areas of uncovered natural soil. The necessity of a stronger control over balance and reflexes to maintain one's form on an open, uneven terrain provides tiring but effective sparring sessions for those wishing to improve their martial competence.
+        
+        The sharp clashes of fine steel blades are the most vivid sounds you hear as you practice strategies of attack and tactics of defense with like-minded students your age. Out here, you wield swords glinting with the weight of sharp metal and maneuver spears heavy with the threat of sudden power.
+        
+        *set locations_visited_string &"100"
+        *gosub_scene startup location_unlocked_notif "Training Grounds"
+        
+        You feel more in tune with the martial discipline.
+        
+        *set martialStat +20
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Martial knowledge"
+    #Visit one of the academy's research halls to study the sciences
+        Located in the quiet northern sector of the palace complex, the imperial library is a building of colorful archways and domed roofs. Stairs lead up to three floors of interior balconies high above the low tables of sandalwood spread across the vast central area on the main floor. Students and courtiers alike sit or kneel on woven rugs either in work or study.
+        
+        The warm glow of afternoon sunlight, softened through bronze latticed windows, provides a cozy ambience as you flip the delicate pages of logical proofs and experimental theories. In the serenity of the library, your remain focused on texts detailing the applications of science for the stars, the land, and society.
+        
+        *set locations_visited_string &"010"
+        *gosub_scene startup location_unlocked_notif "Academy Research Halls"
+        
+        You feel more in tune with the scientific discipline.
+        
+        *set scienceStat +20
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Scientific knowledge"
+    #Visit one of the Towers of Crossing Winds to practice the arts
+        With eighteen floors, the Towers of Crossing Winds are the tallest buildings in the palace complex. Great columns of marble swirling with inky black and cotton white, carved with reliefs of the patron animals of the twelve months, support each floor above as you climb the spiraling stairway to the top. Holding on to the banisters between the columns, you can see the entirety of the southwest sector of the imperial grounds.
+        
+        Bottles of paints, dyes, and ink of artists and writers are strewn across tables along with reeds, brushes, and paper. You ignore the mutters of the overly meticulous as they scratch out lines of beautiful calligraphy while you refine techniques of composition and theories of color.
+        
+        *set locations_visited_string &"001"
+        *gosub_scene startup location_unlocked_notif "Towers of Crossing Winds"
+        
+        You feel more in tune with the artistic discipline.
+        
+        *set artStat +20
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Artistic knowledge"
+
+*page_break
+
+You peer towards the cooling sky. Looking forward to the last meal of the day, you walk amongst the other residents of the palaces along the open pathways of the imperial complex showered in the drowsy glow of late afternoon sunlight.
+
+Dinner is always a lively time within the palace walls. Starving after a long, tiresome day with your only sustenance being the two small dishes of food offered by Dahnom and Hadya, you pay little attention to the many other students around as you push past each other to reach the residence dining halls. Perhaps this is why the steady voice that calls out your name strikes you with mild surprise.
+
+"${name} —"
+
+You pause your footsteps before turning around with a light bow of courtesy before meeting an intense gaze from patient eyes.
+
+"Safety and peace, your highness."
+
+*page_break
+
+Under the reddened glow cast by the last rays of the day's sunlight, the cool undertones of Yilkarzad's dark beige skin are painted with a warmer filter, softening ${y_his} usual aura of cold civility.
+
+"I've been meaning to find you." From an inner pocket of ${y_his} overrobe, Yilkarzad takes out a small drawstring pouch. Silver embroidery glints against the clean black of its silk-threaded fabric as Yilkarzad hangs the pocket up by its thin, braided cotton sash. $!{y_his} eyes watch yours for a moment before the ${y_heir} neatly wraps up the strings and then holds the delicate item out for you.
+
+"This was on the steps leading down from the lecture hall. When I found it, you had already left."
+
+You stare at the intricate design of the pouch, hands instinctively reaching to the side of your waist.
+
+"This is… mine." A gift for your sixth birthday — a sachet. A small pocket-sized bag sewn and embroidered by both your father and mother as per tradition, it is meant to be filled with herbs, dried flowers, and other fragrant ingredients. You always keep it carried on the cloth belt under your outer robes, but the strings must have loosened during the… cursed match in your martial combat class this morning.
+
+At this thought, you take your belonging back from Yilkarzad's hand with slight irritation.
+
+*fake_choice
+    #"...Thank you," I manage to offer stiffly, forced politeness apparent in my tone.
+        *set coldStat +smallStatChange
+        *set warmStat +smallStatChange
+        
+        "...Thank you," you manage to offer stiffly after a stretch of silence long enough to be noticeable, forced politeness apparent in your tone.
+        
+        Yilkarzad, perhaps noticing the icy distance in your formal attitude, appears a bit surprised, tilting ${y_his} head slightly and glancing down briefly before moving back a step as you carefully fasten the sachet strings around your belt.
+    #"Thank you. I suppose I had been too tired after the events of the lecture," I reply, a hint of accusation in my words behind a calm and impassive voice.
+        *set brightStat +smallStatchange
+        *set coldStat +smallStatChange
+        
+        "Thank you. I suppose I had been too tired after the events of the lecture," you reply gracefully without any hesitation, a hint of accusation in your words behind a calm and impassive voice.
+        
+        Yilkarzad, perhaps noticing the quiet reproach in your chilly attitude, narrows ${y_his} eyes almost imperceptibly, though ${y_his} gaze feels more curious than affronted. $!{y_he} moves back a step as you carefully fasten the sachet strings around your belt.
+    #I sigh, focusing on the current matter instead of dwelling on the knot in my mind. "This is very kind, your highness. I'm grateful for your concern."
+        *set warmStat +smallStatChange
+        *set brightStat +smallStatChange
+        
+        You sigh with the weariness of being forced to quickly balance your emotions, deciding to focus on the current matter instead of dwelling on the knot in your mind. "This is very kind, your highness. I'm grateful for your concern."
+        
+        Yilkarzad, perhaps noticing the gentle sensitivity in your forthright attitude, softens ${y_his} gaze slightly with a nod, moving back a step as you carefully fasten the sachet strings around your belt.
+
+*set inventory_unlocked true
+[b]【 ⊹ ࣪ ˖ INVENTORY TAB UNLOCKED ࣪ ˖ ⊹ 】[/b]
+
+*set inventory_owned_string &"1"
+*gosub_scene startup inventory_unlocked_notif "A small sachet"
+
+*page_break
+
+"No trouble. I considered sending it to your residence through the palace couriers, but figured that it might not be the best choice if the item is of special importance. I assumed you might pass by this area on the way to the academic residences for dinner," the ${y_heir} says. "So I took a chance."
+
+"I appreciate the consideration," you respond with a slight incline of your head. But then your brows knit together as an inquiry arises in your mind.
+
+"May I ask how your highness determined me as the owner?"
+
+Yilkarzad smiles lightly, with a rare openness that reaches ${y_his} brown eyes.
+
+"The embroidery on your sachet — it is very beautiful. Especially the work put into the…"
+
+*fake_choice
+    #[b]Falcon[/b] — [ Set birthday in the [b]first[/b] month of the Kopirtanrian year ]
+        *set birthMonth 1
+        *set birthMonthName "light"
+        *set birthMonthAnimal "falcon"
+    #[b]Horse[/b] — [ Set birthday in the [b]second[/b] month of the Kopirtanrian year ]
+        *set birthMonth 2
+        *set birthMonthName "ice"
+        *set birthMonthAnimal "horse"
+    #[b]Crane[/b] — [ Set birthday in the [b]third[/b] month of the Kopirtanrian year ]
+        *set birthMonth 3
+        *set birthMonthName "soil"
+        *set birthMonthAnimal "crane"
+    #[b]Elephant[/b] — [ Set birthday in the [b]fourth[/b] month of the Kopirtanrian year ]
+        *set birthMonth 4
+        *set birthMonthName "seed"
+        *set birthMonthAnimal "elephant"
+    #[b]Tiger[/b] — [ Set birthday in the [b]fifth[/b] month of the Kopirtanrian year ]
+        *set birthMonth 5
+        *set birthMonthName "thunder"
+        *set birthMonthAnimal "tiger"
+    #[b]Camel[/b] — [ Set birthday in the [b]sixth[/b] month of the Kopirtanrian year ]
+        *set birthMonth 6
+        *set birthMonthName ""
+        *set birthMonthAnimal "camel"
+    #[b]Turtle[/b] — [ Set birthday in the [b]seventh[/b] month of the Kopirtanrian year ]
+        *set birthMonth 7
+        *set birthMonthName "rain"
+        *set birthMonthAnimal "turtle"
+    #[b]Fox[/b] — [ Set birthday in the [b]eighth[/b] month of the Kopirtanrian year ]
+        *set birthMonth 8
+        *set birthMonthName "rain"
+        *set birthMonthAnimal "fox"
+    #[b]Snake[/b] — [ Set birthday in the [b]ninth[/b] month of the Kopirtanrian year ]
+        *set birthMonth 9
+        *set birthMonthName "crop"
+        *set birthMonthAnimal "snake"
+    #[b]Deer[/b] — [ Set birthday in the [b]tenth[/b] month of the Kopirtanrian year ]
+        *set birthMonth 10
+        *set birthMonthName "rain"
+        *set birthMonthAnimal "deer"
+    #[b]Owl[/b] — [ Set birthday in the [b]eleventh[/b] month of the Kopirtanrian year ]
+        *set birthMonth 11
+        *set birthMonthName "snow"
+        *set birthMonthAnimal "owl"
+    #[b]Wolf[/b] — [ Set birthday in the [b]twelfth[/b] month of the Kopirtanrian year ]
+        *set birthMonth 12
+        *set birthMonthName "dark"
+        *set birthMonthAnimal "wolf"
+
+*set birthMonthSet true
+
+"The embroidery on your sachet — it is very beautiful. Especially the work put into the ${birthMonthAnimal}."
+
+You recognize the meaning behind Yilkarzad's words at once, reminding yourself that the Kopirtanrian calendar shares the same monthly zodiac as the one you had been born under. The @{birthMonth first | second | third | fourth | fifth | sixth | seventh | eighth | ninth | tenth | eleventh | twelfth} month of the year, watched over by the $!{birthMonthAnimal} in the mortal realm, is the month during which you offer gratitude for your birth.
+
+"But how does your highness know of…?"
+
+"I sent an application to the Board of Student Records requesting a list of birth months for everyone in our martial combat class," Yilkarzad answers your implied question with a level cadence, adjusting the folded cuffs of ${y_his} robe. "I was able to speak to the others listed under the month of the $!{birthMonthAnimal}. You were the only person I had yet to ask."
+
+You nod with a light bend of your waist, slightly surprised. A request made by an imperial heir would be taken as utmost priority by even first-rank ministers, not to mention a mere third-rank board responsible for palace student personnel under the Ministry of Education.
+
+In fact, Yilkarzad could probably break into the High Minister of Education's office and demand the info ${y_he} needs without receiving any consequences, if ${y_he} wanted to.
+
+*page_break A short pause
+
+What follows is a short period of silence, only growing in awkwardness as the traffic of people around you thin down, soon leaving only the two of you standing in a quiet alleyway on a floor of sand-colored stone, high walls on both sides painted saffron red and carved with tea green linings.
+
+Yilkarzad straightens ${y_his} posture with a light cough behind a closed fist, breaking the pause with a nod, polite and sharp. "Let us meet again in class next week, ${name}."
+
+$!{y_he} turns to leave, and you stare after the hems of Yilkarzad's dark crimson overrobe, flowing just above the black leather of ${y_his} boots.
+
+There has been a knot in your heart ever since the lecture this morning, looped and tied with increasing intricacies throughout the day, and under the weakening rays of the setting sun, you suddenly feel that this might be your last chance at resolving it.
+
+*fake_choice
+    #Confront the issue directly with an accusatory tone. “Your highness guaranteed that I had no choice but to accept."
+        *set sharpStat +smallStatChange
+        *set yilkarzadConversation 1
+        
+        "Your highness guaranteed that I had no choice but to accept."
+        
+        Yilkarzad pauses ${y_his} steps. The discourtesy in your words is not lost on either of you — if you had no choice, then are you not accusing the ${y_heir} of forcing your actions?
+        
+        But after a stretch of tense silence, ${y_he} raises a hand to signify for you to continue, ${y_his} back still turned against you.
+        
+        You speak quickly, heart speeding up as you realize your increasing impiety. "I guess I do seem like a good choice to manipulate into targeting younger members of worrisome court factions for the imperial family. Low background, no clan factions, but with somewhat passable competence determined through only academic records. A terribly unlucky combination, is it not?"
+        
+        The ${y_heir} turns around, and this time, not even the soft rays of late afternoon sunlight against the warm colors of your surrounding alleyway can brighten the harsh chill of ${y_his} presence.
+        
+        "You raise yourself too high. Every decision I make is influenced only by my own considerations. No one else in the imperial family had anything to do with the events of today, I'm sorry to disappoint."
+        
+        *page_break You almost find Yilkarzad's response amusing
+    #Breach the subject delicately with a cautious tone. "I appreciate the opportunity given to me by your highness this morning."
+        *set softStat +smallStatChange
+        *set yilkarzadConversation 2
+        
+        "I appreciate the opportunity given to me by your highness this morning."
+        
+        Yilkarzad pauses ${y_his} steps and turns around. $!{y_he} looks at you with searching eyes before shaking ${y_his} head lightly. "You know it was not truly a benefit for you, ${name}. Do not pretend to thank me."
+        
+        You receive Yilkarzad's words with a light bend of your waist in courtesy. "No matter the intention, I can still recognize the increase to my own reputation gained from the match. The imperial family obtains a small dent in the ambition of a worrisome court faction, while I collect a feat of merit to my name. A win for all of us, is it not?"
+        
+        The ${y_heir} focuses ${y_his} attention on you sharply, and this time, not even the soft rays of late afternoon sunlight against the warm colors of your surrounding alleyway can brighten the harsh chill of ${y_his} presence.
+        
+        "I'm afraid you've thought too much of this. Every decision I make is influenced only by my own considerations. No one else in the imperial family had anything to do with the events of today, I'm sorry to disappoint."
+        
+        *page_break You almost find Yilkarzad's response amusing
+
+You almost find Yilkarzad's response amusing. Of course ${y_he} still thinks that you take the good graces of the imperial family as the highest blessing you can receive as a student in the palaces aiming for a future as a courtier, just like any of your other classmates.
+
+But you will never be a Kepritaniri courtier, and you certainly do not value the acquaintance of anyone less than the Empress of Summoned Harmony herself.
+
+A small smile of resignation appears on your countenance.
+
+*fake_choice
+    #"No. It is your highness who is the most disappointed person today."
+        *set sharpStat +smallStatChange
+        
+        "No. It is your highness who is the most disappointed person today. Unless your highness wants to tell me I have overestimated the shock of our instructor's promotion?"
+    #"I'm not quite sure that the most disappointed person today is myself."
+        *set softStat +smallStatChange
+        
+        "I'm not quite sure that the most disappointed person today is myself. But perhaps I am overestimating the shock of our instructor's promotion."
+
+Yilkarzad does not falter at your clearly directed words, instead walking slowly towards you with lightly narrowed eyes.
+
+"I know what you want from this conversation, ${name}. I saw an opportunity to advance my own intentions, and I took it. I apologize for using you in the process, but I will also tell you that this will happen again. If not you, then someone else."
+
+The ${y_heir} pauses, holding your gaze. "I do not think of myself as a good person, ${name}."
+
+*page_break
+
+With this thought, you arrive at a round pavilion, bright with the glow from long, hanging lanterns but too loud with the sounds of students trying to talk over each other while stuffing their mouths.
+
+You give a few waves to familiar faces before hurrying to your usual seat.
+
+*page_break A pleasant dinner
+
+// scene of dinner
+
+// CHOICE: how do you feel about communal dinnertime, when bantering conversation is expected and common?
+// i enjoy being aware of how everyone else is doing but prefer to listen instead of speaking myself
+// i enjoy the relaxation of casual conversation after a long day
+// !!!! save variable here in startup
+
+// show fellow students in your residential quarters congratulating you on coming out on top yet again in the monthly evaluations of various classes.
+
+// CHOICE:
+// Say thanks and encourage everyone to surpass you next time
+// Say thanks and remind everyone that you've all helped each other with homework
+
+*page_break
+
+You look up to see an ocean of fire. It is the evening now, just after a dinner of steamed rice, baked flatbread, and spiced spreads of various vegetables and minced meats. You splay your body in a boneless position across soft satin cushions in an open courtyard that serves as a leisure and social gathering site for students in your year.
+
+The west side is bounded by a simple white wall with an open circular entrance, while the other three sides enclose the comfortably large area with pillared halls, walled only on the outer perimeter. Some of your classmates are kicking around a leather ball, careful to stay away from the decorative greenery. Others sit on soft satin cushions under the roofs of the halls, playing various board games at the low wooden tables.
+
+*fake_choice
+    #Join the game in the courtyard
+        The other students nod as you near. "We're trying to keep it in the air for as long as possible without using our hands," a girl informs you. The ball flies your way, and you pass it cleanly across the circle with the inside of your foot after a stabilizing bounce off your knee.
+        
+        Despite the simplicity of the rules, the game is engaging and requires keen reactiveness, keeping you attentive.
+        
+        *set composureStat +smallStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Composure"
+        
+        *page_break
+        
+        The boy to your left is quite talkative, but you try to filter out most of his comments in favor of keeping your focus on the game.
+        
+        "…And honestly, another thing is that I wish they would put a heavier weight on archery and horseback riding in our current martial classes. I know we can [i]finally[/i] specialize in a few years but I do not exactly [i]love[/i] the curricular bias for close range fighting," he grumbles as he kicks the ball.
+        
+        Puzzled, you turn to ask him — just as the ball comes back to you, bouncing happily off your head. "Specia — agh!"
+        
+        You put both hands on your head and there are a few lighthearted giggles around the group. "Apologies! Are you okay?" the boy who passed it to you calls out.
+        
+        *goto smolBonk
+    #Go to the board games
+        You walk to a table where two students sit, intent on the game between them. Joining the spectators, you see lines forming grids on the board and circular stones of black or white placed on the intersections. Soon, the boy on your left sighs in frustration.
+        
+        "I lost!" he says and pushes himself up. Noticing you, he gestures to the cushion. "Here, you have a go at it."
+        
+        The game is not unfamiliar to you, with the goal of surrounding as many stones from the other side with your own. Despite the simplicity of the rules, the game is engaging and requires patient strategy, keeping you attentive.
+        
+        *set resolveStat +smallStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Resolve"
+        
+        *page_break
+        
+        Your opponent is quite talkative, but you try to filter out most of her comments to focus on the game.
+        
+        "…And listen, of course I appreciate the beauty of poetry and algebra, but we get to a point where I have to say, [i]what is going on here?[/i] I know we can specialize in a few years, but the palace complex of one of the richest capitals on the continent and they cannot spare [i]resources[/i] to teach music and higher mathematics to people in our year?" she says as she places a white stone, enclosing a group of your black pieces.
+        
+        Puzzled, you raise your head just as someone on the side points out that you've lost the match.
+        
+        Looking at the board again, you realize that it is indeed a victory for her.
+        
+        *goto anHonorableMatch
+
+*label smolBonk
+*fake_choice
+    #I give a simple nod and throw the ball back.
+        *set coldStat +smallStatChange
+        You step out of the game for a short break, nodding to the others.
+    #I laugh as well. "I'm fine. Here," you throw the ball back.
+        *set warmStat +smallStatChange
+        You step out of the game for a short break, smiling to the others.
+    #With a grin, I throw the ball upwards, and hit it back with my head.
+        *set brightStat +smallStatChange
+        You step out of the game for now, as the others begin playing a new version of the game using their heads.
+
+The boy you were trying to talk to earlier joins you with a sheepish smile. "Sorry, I think you were distracted by something I said?"
+
+"Right. What was that you said about specializing?"
+
+"Yes, the more advanced and particularized fields within the three disciplines. Do you not know? In a few years, we will choose our own schedule of classes that focus on more specialized knowledge that interest us!"
+
+*page_break Interesting...
+
+He ponders for a moment. "So for example, the martial discipline branches into areas like combat, stealth, and hunting. I was saying that I'd definitely take hunting, since it covers archery and horseback riding! Stealth also seems fun, I'm thinking it'll have a lot to do with ending a fight quickly and quietly — whoa," he appears shocked by his own words. "Um. Thinking about it, it seems kind of dark…"
+
+Shaking his head, he continues. "And combat is pretty straightforward. It'll definitely be more intense than the martial training practice in our current classes."
+
+*label askDifferentDisciplines1
+*fake_choice
+    *disable_reuse #Ask about the scientific discipline branches.
+        *goto askScientificDiscipline1
+    *disable_reuse #Ask about the artistic discipline branches.
+        *goto askArtisticDiscipline1
+    #Thank him for the information.
+        *goto finishSpecializationInfo1
+
+*label askScientificDiscipline1
+"What about the scientific discipline?" you ask him.
+
+"I heard you can focus on things like mathematics, medicine, and natural sciences, though to be honest, I'm not entirely certain what that last one covers," he says, trailing off in confusion.
+
+You contemplate this quietly. Since it's about the natural world, it will likely be around topics like agriculture, astronomy, and alchemy.
+*goto askDifferentDisciplines1
+
+*label askArtisticDiscipline1
+"And do you have any info on the artistic discipline?" you question.
+
+He looks up and hums in thought. "Well, there's music, visual arts, and literature. The visual discipline probably includes different types of art. By the way, I heard learning different languages falls under literature," he tells you.
+*goto askDifferentDisciplines1
+
+*label finishSpecializationInfo1
+You nod a few times after taking in all the information. "This is new knowledge for me. I appreciate it."
+
+The boy nods back solemnly, and breaks out into a friendly smile. "You are ${name}, right? We have classes for the sciences together on the fifth and ninth days of the week. Everyone knows your name is always near the top of our year in the listings! With your grades, your first position in the court will already rank quite high, at least a seven or six!"
+
+You sense his genuine and earnest tone, but a familiar aversion still washes over you. Serving the Kopirtansh court has never been your destiny nor goal.
+
+"That is very kind of you to say," you try to give a small smile. There is a brief pause as you struggle to find a way to stay honest with an honest person. "But I do not belong in this — in our imperial court."
+
+This is not your home.
+
+*page_break
+
+The boy, perhaps having noticed the dim in your eyes, looks away and fiddles with his hair, straight black and left untied.
+
+Then he turns back to you with determined eyes. "I understand your concern, ${name}. A lot of people are envious of you, and it is hard without a powerful family behind you — oh!" his eyes widen in shock once again. "I did not mean any disrespect! But I am saying, why should that impact your own ambition? I am certain you will make many allies," he smiles. "Including me. So, my name is {friend name}. I hope you are open to make a new friend?"
+
+You blink. This is not a response you had expected. It is oddly moving to hear encouragement like this, even if he has completely missed the mark on your source of melancholy.
+
+"{friend name}," you say, inclining your head.
+
+*fake_choice
+    #"I am happy to gain your friendship."
+        *set warmStat +smallStatChange
+        *set brightStat +smallStatChange
+        
+        "I am happy to gain your friendship," you say, and you are honest.
+    #"Honored to make your acquaintance."
+        *set coolStat +smallStatChange
+        *set coldStat +smallStatChange
+        
+        "Honored to make your acquaintance," you say, and you are honest.
+
+*goto madeFriend
+
+
+*label anHonorableMatch
+*fake_choice
+    #I nod in courtesy. "I enjoyed our match."
+        *set coldStat +smallStatChange
+        "I enjoyed our match," you say and incline your head in courtesy.
+    #I smile and nod graciously. "Thank you for the excellent match."
+        *set warmStat +smallStatChange
+        "Thank you for the excellent match," you incline your head graciously with a smile.
+    #I feel lucky to have met a good opponent, "You are really good at this. Fully defeated, yours truly!"
+        *set brightStat +smallStatChange
+        "You are really good at this. Fully defeated, yours truly!" you say, grateful to have met a good opponent.
+
+You rise from the comfort of your cushion and leave the place open for another waiting to play.
+
+The girl also leaves the table and joins you on the side with a polite bow. "I believe my talk was distracting for you during the game. You were meaning to ask me something?"
+
+"Right. What was that you said about specializing?"
+
+"There are more advanced fields that the three disciplines branch out into. You do not know? It's quite exciting. We can finally choose our own schedule of classes in a few years."
+
+*page_break Interesting...
+
+She contemplates for a moment. "To give an example, the artistic discipline splits into the fields of music, visual arts, and literature. As I was saying, music? Definitely my area of choice in the arts. The visual arts? Well, certainly interesting. Painting, sculpting, textiles, ceramics. All fine domains, fine domains most certainly," she says with a nod more to herself than to you.
+
+Not missing a beat, she continues. "And literature? Not much to say that anyone would not know. Although the material will be more intense than what we learn in our lectures currently — oh, it also covers languages."
+
+*label askDifferentDisciplines2
+*fake_choice
+    *disable_reuse #Ask about the scientific discipline branches.
+        *goto askScientificDiscipline2
+    *disable_reuse #Ask about the martial discipline branches.
+        *goto askArtisticDiscipline2
+    #Thank her for the information.
+        *goto finishSpecializationInfo2
+
+*label askScientificDiscipline2
+"What about the scientific discipline?" you ask her.
+
+"Mathematics, medicine, and natural sciences. The maths will cover far more than what we learn now. Theories of geometry, statistics, logic. Medicine? Straightforward. The natural sciences? Astronomy, agriculture, alchemy. Fine subjects, fine subjects worthy of respect."
+*goto askDifferentDisciplines2
+
+*label askArtisticDiscipline2
+"And the martial discipline?" you question.
+
+The girl puts a hand on her chin. "The fields we can study are stealth, combat, and hunting. I would think that combat should be much more intense than what we do now. Hunting, my guess is that focus will be on archery and riding. I will be sincere, stealth? I cannot say I know much about it," she tells you, shaking her head.
+
+You contemplate this quietly. Stealth likely implies the practice of agile, silent, and quick fighting.
+*goto askDifferentDisciplines2
+
+*label finishSpecializationInfo2
+You nod a few times after taking in all the information. "This is new knowledge for me. I appreciate it."
+
+"It is no trouble at all to help a fellow classmate," the girl declares solemnly.
+
+She then nods at you with a smile. "${name} is your name, right? We are in the same arts class on the fourth and eighth day of the week. Everyone knows you are always one of the highest ranked names of our year in the academic listings. With your grades, it is absolutely impossible that you will sit below a rank six for your first position in the court!"
+
+You sense her honesty and sincerity, but a familiar aversion still washes over you. Serving the Kopirtansh court has never been your destiny nor goal.
+
+"That is very kind of you to say," you try to give a small smile. There is a brief pause as you struggle to find a way to stay genuine with a genuine person. "But I do not belong in this — in our imperial court."
+
+This is not your home.
+
+*page_break
+
+The girl, perhaps having noticed the dim in your eyes, looks away and fiddles with the colorful ribbons decorating her wavy black hair.
+
+Then she turns back to you and speaks with a determined voice. "You are right, ${name}. There are many of those who are envious of you. And I," she pauses over her words for the first time since you've met. "I mean no disrespect by this, but it will be difficult without the support of a powerful family. But why should that impact your own ambition? I guarantee you, you will make many allies," she smiles. "including myself. My name is {friend 2 name}. May I ask for an extension of amity?"
+
+You blink. This is not a response you had expected. It is oddly moving to hear encouragement like this, even if she has completely missed the mark on your source of melancholy.
+
+"{friend 2 name}," you say, inclining your head.
+
+*fake_choice
+    #"I am happy to gain your friendship."
+        *set warmStat +smallStatChange
+        *set brightStat +smallStatChange
+        
+        "I am happy to gain your friendship," you say, and you are honest.
+    #"Honored to make your acquaintance."
+        *set coolStat +smallStatChange
+        *set coldStat +smallStatChange
+        
+        "Honored to make your acquaintance," you say, and you are honest.
+
+*goto madeFriend
+
+*label madeFriend
+The rest of the evening passes quickly. You make idle conversation with others, enjoying refreshments of fresh grapes and sweetened tea brought from the kitchens. The most interesting event of note occurs when someone kicks the leather ball with a bit too much force, which sends it crashing into the halls right onto a table hosting a board game, to the sound of angry curses from those watching the match as small round pieces of black and white scatter the floor.
+
+The moon is bright when you return to your room.
+
+*page_break 
+
+*ending

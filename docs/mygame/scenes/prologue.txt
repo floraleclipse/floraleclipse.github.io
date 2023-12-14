@@ -1,0 +1,589 @@
+Gentle winds soothe the heat of high noon sunlight, glaring down upon a desert that meets the horizon on all sides, an endless field of blinding gold.
+
+Holding on to the reins, you motion to the attendant leading your camel for some water. With an unfocused mind, you watch the other pack animals of the caravan trudge through the sand, tuning out the quiet conversations of the surrounding merchants and diplomats. Fate has blessed this expedition well. Behind you follow dozens of camels laden with delicate ceramics, heavy rolls of patterned fabrics, jewelry set with precious stones, sealed jars of fragrant spices, books written in scripts from all corners of the realm, and chests of carefully minted coins.
+
+Coins from your homeland.
+
+But this caravan belongs to a foreign empire, you remember. The attendant returns with a bowl of water, and you stumble over your thanks in an unfamiliar language.
+
+*page_break
+
+As the only child born to the king and queen of Shasetir, you know what is expected of you even at this young age of six.
+
+Having long been aware of the ancient tradition to send royal children to foreign states for a diverse education in the scientific, artistic, and martial disciplines, this journey had not come as a surprise.
+
+Controlling the crossroads of the busiest trade routes on the continent, with mythical lands and fabled riches to host an almost dubiously wealthy exchange of knowledge and ideas, the empire of Kiruqtanir is your southern neighbor.
+
+Given this choice, consideration of other options had been unnecessary.
+
+Even the extravagant gifts sent along with you are a necessary signal of goodwill, according to your parents.
+
+Any real objection to being shipped off like this is dulled when you think of your favorite birthday gift, a book from Kiruqtanir with Shasetiri translation. Memories of the time spent reading it still strike a radiant color in your mind that is unlikely to be dimmed in your lifetime…
+
+*fake_choice
+    #A compilation of notes, puzzles, and unanswered questions on mathematical and scientific concepts
+        *set scienceStat +largeStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Scientific knowledge"
+        
+        You recall the simple joy of arriving at the correct answer to a problem without first looking at the answer codex, overshadowing the hazy confusion at the inability to understand many of the more advanced concepts such as algebra or optics.
+    #A collection of poems and songs from around the realm, interspersed with beautiful illustrations
+        *set artStat +largeStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Artistic knowledge"
+        
+        You recall the patient fascination evoked at the beauty of the world as told through the words and colors of people with vastly different philosophies, overshadowing the hazy frustration at your own shallow efforts to mimic the calligraphy and visual style.
+    #A guide to the rudimentary foundations of various schools of martial discipline
+        *set martialStat +largeStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Martial knowledge"
+        
+        You recall the eager curiosity for the next chapter after successfully learning all the core forms and basic moves of the current one, overshadowing the hazy disappointment at not having the chance to train directly under the masters of these disciplines.
+
+It is an emotion not so different from what you feel now as you travel towards the capital city of this foreign land — a strange anticipation that makes continuous attempts to dispel the negative worries in your mind.
+
+*page_break
+
+The caravan has been traveling for nearly a month now, at a steady but easy pace. Having breached the northern border of the empire a few days ago, you now move through the empty deserts that stretch across the northern territories of Kiruqtanir.
+
+You pat the front of your robes for the countless time since leaving, relieved that the interior pocket still protects the sealed envelope your parents entrusted you to present to the empress.
+
+*fake_choice
+    #Open it.
+        *set envelopeOpened true
+        You take the envelope out and break the sealed opening. Unfolding the letter inside reveals dark ink staining finely pressed paper with words written in a foreign script. Kiruqtaniri. With your currently limited understanding of the language, you can only return the paper back to its torn casing. You do, however, notice an uncharacteristic messiness to the message.
+        
+        There is a faint stutter in your heart as you put the broken envelope back inside your inner pocket. It is becoming harder for you to recall the exact words of your mother when she packed your personal satchel and then repacked it two more times, as well as those of your father when he helped you onto the camel carrying your weight in this desert.
+        
+        But you do remember the intent emotion in their voices when they asked you to bring this message to the empress.
+    #No, better not.
+        *set envelopeOpened false
+        Your hands linger over the finely pressed paper, so delicate you think it might break at any time. There is a short stutter in your heart as you feel a light twitch in your eyelid. It is becoming harder for you to recall the exact words of your mother when she packed your personal satchel and then repacked it two more times, as well as those of your father when he helped you onto the camel carrying your weight in this desert.
+        
+        But you do remember the intent emotion in their voices when they asked you to bring this message to the empress.
+        
+        You put the envelope back inside your inner pocket.
+
+*page_break
+
+Your thoughts soon turn to your surroundings.
+
+Interaction with your temporary guardians has been minimal. Your Kiruqtaniri skills are still limited to basic words and common phrases, and no one here has cared to teach you much. There are those in the caravan who speak your native Shasetiri, but besides a few spare glances your direction, and attendants ensuring you receive meals and water, most days on the journey have passed without conversation.
+
+The solitude has allowed you time to consider your expectations regarding life in a foreign land for the foreseeable future.
+
+How do you feel about your situation?
+
+*fake_choice
+    #Excited, looking forward to living in a prosperous, albeit foreign, land
+        *set firstImpression "excited"
+        Although communication with others has been rare along the journey, the incomprehensible chatter amongst the diplomats, guards, and attendants themselves have been lively and intriguing. You are eager at the prospect of immersing yourself in the Kiruqtaniran capital, becoming fluent in the language and studying the many disciplines of science, art, and martial training, so that you may one day join their conversations.
+        
+        You smile to yourself as you reach into your bag for the Kiruqtaniri-Shasetiri dictionary your parents gave you before you left. 
+    #Nervous, a bit apprehensive at the thought of being so far from home
+        *set firstImpression "nervous"
+        The unending foreign conversations around you throughout the journey have been a constant reminder of how far you are from the comfort of familiarity. You cannot help but feel tension at the prospect of arriving at the Kiruqtaniran capital, bowing to the eternal intimidation of unknown rules. At the very least, however, the concrete goal of studying science, art, and martial training provides a certain sense of stability.
+        
+        To distract yourself with other thoughts, you reach into your bag for the Kiruqtaniri-Shasetiri dictionary your parents gave you before you left. 
+    #Displeased, with a faded sense of distrust towards your new home
+        *set firstImpression "displeased"
+        Your travel companions in the caravan have been distant and dispassionate towards you, and you wonder whether this is the same attitude with which your family regards you, considering the decision to send you off to a foreign land all by yourself. The significance of an influential education in the scientific, artistic, and martial disciplines is not lost upon you, but there remains the faint suspicion of new ambitions from an unfamiliar society.
+        
+        Wishing to be better prepared when you arrive at the capital, you reach into your bag for the Kiruqtaniri-Shasetiri dictionary your parents gave you before you left.
+
+Your hands touch the fine, sturdy material of the bag, richly dyed in a vibrant color. Your original sack from Shasetir had worn out a few days ago, so a kind attendant had stitched together a new one for you using fabric from one of her spare outer robes.
+
+*page_break You spend a few hours studying the language...
+
+The winds pick up, billowing out the loose traveling robes of everyone in the party, gracing the desert with flowing sails of washed-out wool and linen.
+
+Court officials inspect the scrolls in their hands, arguing with each other, likely about bureaucratic details. Guards and attendants occasionally make quiet banter amongst themselves. The camels move steadily under the afternoon sun, headed towards the south. Refreshed with water, you feel at ease.
+
+With the peaceful drone of calm chatter around you and a mild breeze against your body, you soon begin to feel drowsy, dozing off.
+
+You wake up to the sound of water.
+
+*page_break
+
+You are still in the desert, but the camels have stopped to rest, either upright or sprawled sideways with their heads on the ground, and servants you have not met are washing clothes in round baskets or tending to cooking fires under thin canopies set up on wooden posts. The caravan has stilled before the entrance to a small village, surrounded by fragments of cracked walls and upturned footpaths, fragile survivors of the elements.
+
+Unclear as to why you have stopped, you hop off your camel, landing on the dense sand, and follow the others inside the settlement.
+
+Despite the current bustle of activity, the place does not look as if it has been regularly lived in for a very long time. Simple buildings of one or two floors with smooth walls of clay and stone scatter the area, tiles missing from their roofs and their doors left open to reveal empty rooms. The few crannies always hidden from the sun still retain faint shades of painted color.
+
+It must have once been a beautiful place.
+
+*page_break
+
+*set locations_unlocked true
+[b]【 ⊹ ࣪ ˖ LOCATIONS TAB UNLOCKED ࣪ ˖ ⊹ 】[/b]
+
+*set locations_visited_string &"1"
+*gosub_scene startup location_unlocked_notif "Abandoned Oasis Village"
+
+Walking through the village, you notice that many other people have already arrived. Men and women wearing finely embellished robes talk in groups of threes and fours in the shades of the abandoned houses, exchanging nods and greetings with the members of your caravan as you walk past them. They wear silken white scarves too bright under the sun, all wrapped in the same asymmetrical style.
+
+Your party gradually nears the center of the settlement, where you see a blue oasis of clear and shining water, large enough to obscure the faces of those on the opposite side. The vibrant green hues of low shrubs and young trees decorate the shores. Around a dozen wooden tables covered in sheets of yellowed papyrus have been set just above the muddy-red banks, each stationed with people writing intently. It is a radiant pillar of life for the surrounding stone and clay.
+
+With some work, the area has the potential to host a scenic and comfortable rest station for travelers in the desert between Shasetir and Kiruqtanir.
+
+But why has your caravan stopped here?
+
+*page_break You look around for someone you can talk to
+
+You try to remember the people who have shown a sufficient grasp of your native language during the travel.
+
+There is a young man in plain-colored robes writing on sheets of paper held in place by an alabaster paperweight at one of the wooden tables along the oasis shore.
+
+In the shade of an extended roof, an elderly woman in elegantly embroidered but simply styled clothing polishes a red-tasseled spear and a curved sword, with a bow and a quiver of arrows slung across her back.
+
+Next to the desert shrubs, you see two musicians in layers of flowing fabric. Having joined the expedition to provide entertainment along the lengthy journey, they are now busily cleaning and tuning their instruments.
+
+Who do you talk to?
+
+*choice
+    #The young scribe
+        *set firstConversation 1
+        *set scienceStat +largeStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Scientific knowledge"
+        
+        The young man, a court scribe sent on the expedition to document the diplomatic exchange between the two states, rises from his seat to greet you as he notices your arrival, carefully laying his writing reed on a piece of cloth to keep the table clean. You smile as you remember how he had shown you how to locate the cardinal directions using both the stars and a compass during the early days of your journey.
+        
+        Happy to hear a language you understand, you ask why the caravan has stopped here.
+        
+        He explains that a messenger had arrived at a speed of first-rank priority from the capital six days ago to inform the expedition to take a detour through this abandoned village, for a reason so unexpected that you ask twice to confirm if you are hearing right. The scribe nods towards the opposite bank of the oasis before repeating again — the empress is here.
+        
+        *gosub gainInfo
+        
+        *if (gainInfo = 1)
+            The scribe looks at you, eyes briefly glinting with an almost imperceptible smile.
+            
+            *goto explainCommon
+        *else
+            The scribe pauses for a brief moment before regarding you with an almost imperceptible smile.
+            
+            *goto explainCommon
+    #The musicians
+        *set firstConversation 2
+        *set artStat +largeStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Artistic knowledge"
+        
+        The musicians, a man and a woman, rise to greet you as they notice your arrival, gently laying down their silver-laced and bronze-lined instruments that glint in the harsh sunlight. The man wears a robe of dull blue with fitted sleeves, and the woman is dressed in numerous layers of flowing earth-colored fabrics cut in a pretty style. You smile as you remember how they had played a substantial repertoire of folk tunes from Shasetir along the journey for you.
+        
+        Happy to hear a language you understand, you ask why the caravan has stopped here.
+        
+        They explain that a messenger had arrived at a speed of first-rank priority from the capital six days ago to inform the expedition to take a detour through this abandoned village, for a reason so unexpected that you ask twice to confirm if you are hearing right. The woman nods towards the opposite bank of the oasis before repeating again — the empress is here.
+        
+        *gosub gainInfo
+        
+        *if (gainInfo = 1)
+            Both musicians look at you, eyes briefly glinting with an almost imperceptible smile.
+            
+            *goto explainCommon
+        *else
+            The musicians pause for a brief moment before regarding you with an almost imperceptible smile.
+            
+            *goto explainCommon
+    #The elderly warrior
+        *set firstConversation 3
+        *set martialStat +largeStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Martial knowledge"
+        
+        The elderly woman, acting as the principal martial officer to guard and oversee the expedition, drops down from her saddle to greet you as she notices your arrival, landing lightly even with the weight of weaponry. You smile as you remember how she had helped you learn how to ride camels without guidance and how to shoot an arrow during the early days of your travel.
+        
+        Happy to hear a language you understand, you ask why the caravan has stopped here.
+        
+        She explains that a messenger had arrived at a speed of first-rank priority from the capital six days ago to inform the expedition to take a detour through this abandoned village, for a reason so unexpected that you ask twice to confirm if you are hearing right. The officer nods towards the opposite bank of the oasis before repeating again — the empress is here.
+        
+        *gosub gainInfo
+        
+        *if (gainInfo = 1)
+            The officer looks at you, eyes briefly glinting with an almost imperceptible smile.
+            
+            *goto explainCommon
+        *else
+            The officer pauses for a brief moment before regarding you with an almost imperceptible smile.
+            
+            *goto explainCommon
+
+*label gainInfo
+You and the rest of the expedition are to pass the last days of your journey in the company of the imperial caravan. The capital is now only ten days away.
+
+Your eyes are quickly drawn towards the other side of the water. You wonder why the empress is out here in an unpopulated outskirt of her domain in person, but more importantly, you realize this means an early meeting with her, and you are not sure if you are ready.
+
+*fake_choice
+    #Call out your thoughts. "An abandoned desert village is important enough for the Empress to visit personally?"
+        *set insightStat +largeStatChange
+        *set resolveStat +largeStatChange
+        *set gainInfo 1
+        *if (showStatChanges)
+            *gosub_scene startup twoStatChangeNotif "Insight" "Resolve"
+    #Speak carefully to test the truth. "Kiruqtanir is fortunate to have such a diligent empress."
+        *set deceitStat +largeStatChange
+        *set composureStat +largeStatChange
+        *set gainInfo 2
+        *if (showStatChanges)
+            *gosub_scene startup twoStatChangeNotif "Deceit" "Composure"
+*return
+
+*label explainCommon
+@{firstConversation He | The man | She} kindly tells you that the empress is here to oversee the scouting of this area, as she often does for new infrastructure or construction projects near the capital. Investing in the transformation of an ancient oasis village into a rest station, for visitors traveling both towards and away from Kiruqtanir, would greatly benefit trade with the empire's northern neighbors — which includes Shasetir, the @{firstConversation scribe | musician | officer} reminds you.
+
+You search through the lively movements of people across the water. Some are busy measuring the shoreline perimeter, building sizes, and settlement area. Others inspect the plant life along the banks, sketching their appearances and recording details deemed important. Around the tables stand groups of people scrutinizing scrolls, likely cluttered with maps and designs.
+
+You wonder if the Empress is amongst those that you observe, but the @{firstConversation young scribe | two musicians | elderly officer} gently @{firstConversation interrupts | interrupt | interrupts} your thoughts.
+
+*page_break
+
+The @{firstConversation young man | woman | aging officer} now asks you to follow as @{firstConversation he escorts | she and her partner escort | she escorts} you to a more comfortable resting place. @{firstConversation Your guide rolls | Both of your guides roll| Your guide rolls} the loosened sleeves of @{firstConversation his | their | her} robes up, sighing up at the afternoon sun. Soon, you arrive at a quieter area near the shoreline, laden with a large woolen rug over the sand and covered overhead by an expansive canopy of fine linen, shading you from the light.
+
+The empress has been informed of your arrival, and your patience is respectfully requested while waiting to meet with her. She will call for you when she is ready, you are told.
+
+The @{firstConversation scribe gives | musicians give | officer gives} a short bow before parting.
+
+*page_break
+
+*label waitingAlone
+You sit comfortably in the shade, tracing the vibrant hues of patterns on the soft rug, an orderly clutter of geometric shapes.
+
+The view is excellent from here. Returning your gaze to the other side of the oasis, you inspect the table that has the largest group of people around it. They wear beautiful robes and tunics in faintly muted colors easy on the eyes, their rich dyes almost blending together into a mild harmony.
+
+It is this expected harmony that makes you look twice at the woman wearing a robe of only black, white, and silver.
+
+She stands under the heat of the sun, her expression unclear as she lowers her head to focus on the mess of loose scrolls and bound books. One hand leans on the table while the other moves across words and numbers, diagrams and sketches, directing the attention of everyone around her as she speaks. She looks up when others voice their thoughts, nodding and writing quick notes on a sheet of paper. You stare at the quiet flickers of gold in her black hair. She must be the empress.
+
+You drone out all distant chatter around you, until the sweet aroma of fresh cooking reaches you.
+
+*page_break Food!
+
+A middle-aged servant kneels to put down several plates of food next to you.
+
+She inclines her head in greeting, then speaks in Shasetiri, surprising you.
+
+You learn that the empress has asked for you to be served with the best dishes the imperial cooking staff can prepare with the available resources. She proceeds to describe each dish briskly before bowing and leaving you alone once again.
+
+You look at the fare laid out before you, delicacies compared to the daily diet of hardened flatbread over the past month. And you are quite hungry.
+
+You take one of the dishes.
+
+*fake_choice
+    #The salty milk tea and the sour dried yogurt, rolled into small round chunks
+        The milky tea is rich and salty in flavor, a strong taste originating from the northern steppes. It pairs well with the intense sourness of the dried yogurt, a surprisingly filling sustenance that you consider useful as a staple for travelers.
+    #The green tea and the scallion pancake made of dough, thinly layered and fried
+        The green tea has a refreshingly bittersweet taste, contrasting nicely with the oily saltiness of the scallion pancake, a staple from the eastern plains. The thin layers of the fried pancake add a chewy texture.
+    #The black tea and the soft pancake made with a batter of lentil and rice, topped with diced carrot and onion
+        The black tea is herbal and malty in both taste and aroma. It enhances the savory and tangy flavor of the lentil-and-rice batter pancake, a staple of the southern plains. The carrot and onion toppings add a chunky texture.
+    #The sweet fruit concentration and the pickled vegetables served alongside a flatbread sprinkled with sesame seeds
+        The pickled vegetables add a crisp texture and an almost salty sourness to the spongy flatbread topped with sweet sesame seeds, a staple originating from lands to the west. The drink has an intense fruitiness and a slight floral tone.
+
+As enticing as the other three plates look, your appetite is now comfortably satisfied. You are content to leave them be, deciding that there will be many more opportunities in the coming years to try different recipes in the empire.
+
+After you finish your meal, the sun descends for another two hours before you are informed to prepare for an audience with the empress.
+
+*page_break
+
+A young attendant kindly brings you a large wooden bowl of hot water, soap, a cotton cloth, and a small hand mirror of polished bronze. You are grateful for the chance to clean your face and hair of weariness and filth before meeting the empress. The understanding is that you are here to improve relations and make a good impression for your family. The first meeting with the empress has a significance that makes you uneasy, 
+*if (firstImpression = "excited")
+    despite your anticipation of living in a new and exciting world.
+*elseif (firstImpression = "nervous")
+    furthered by the tension of navigating a world of unfamiliar rules.
+*else
+    and your distrust for this new world reminds you to be careful in judging her intentions.
+
+Steam rolls off your skin, refreshing your tired mind as you cleanse your face and hair. After drying off with the cloth of soft cotton, you pick up the round hand mirror, heavy and framed with carved patterns, for a final survey of appearance.
+
+Situated near the cultural center of the continent, your homeland has a population bearing a wide range of hair, eye, and skin colors, just like the empire of Kiruqtanir. 
+*if (firstImpression = "excited")
+    It is a happy similarity between the two places that you appreciate.
+*elseif (firstImpression = "nervous")
+    It is a reassuring similarity between the two places that calms you.
+*else
+    It is a surprising similarity between the two places that you admit reluctantly.
+
+Your hair, newly relieved of a miserable accumulation of oil and filth, shines back at you through the mirror in a healthy shade of…
+
+*fake_choice
+    #[b]Black[/b], the color of fresh writing ink
+        *set hairColorNum 1
+        *set hairColor "black"
+    #[b]Brown[/b], the color of coffee blended with milk
+        *set hairColorNum 2
+        *set hairColor "brown"
+    #[b]Blond[/b], the color of mead or champagne
+        *set hairColorNum 3
+        *set hairColor "blond"
+    #[b]Red[/b], the color of wine
+        *set hairColorNum 4
+        *set hairColor "red"
+
+Clean ${hairColor} hair is adjusted briskly to your liking. Tilting your head back, the young brightness of your eyes is unmistakable, an honest glint that reflects a striking hue of…
+
+*fake_choice
+    #[b]Black[/b]
+        *set eyeColorNum 1
+        *set eyeColor "black"
+    #[b]Brown[/b]
+        *set eyeColorNum 2
+        *set eyeColor "brown"
+    #[b]Hazel[/b]
+        *set eyeColorNum 3
+        *set eyeColor "hazel"
+    #[b]Blue[/b]
+        *set eyeColorNum 4
+        *set eyeColor "blue"
+    #[b]Green[/b]
+        *set eyeColorNum 5
+        *set eyeColor "green"
+    #[b]Gray[/b]
+        *set eyeColorNum 6
+        *set eyeColor "gray"
+
+$!{eyeColor} eyes narrow slightly as you bring the mirror closer in to inspect your skin for any residual filth. Your complexion is…
+
+*fake_choice
+    #[b]Black[/b]
+        *set skinColorNum 1
+        *set skinColor "black"
+    #[b]Dark Brown[/b]
+        *set skinColorNum 2
+        *set skinColor "dark brown"
+    #[b]Light Brown[/b]
+        *set skinColorNum 3
+        *set skinColor "light brown"
+    #[b]Dark Beige[/b]
+        *set skinColorNum 4
+        *set skinColor "dark beige"
+    #[b]Light Beige[/b]
+        *set skinColorNum 5
+        *set skinColor "light beige"
+    #[b]Pale[/b]
+        *set skinColorNum 6
+        *set skinColor "pale"
+
+You put down the mirror, content with your cleanliness.
+
+A lightly armored man paces idly outside the shade of your resting area, and gestures for you to follow when you nod your readiness.
+
+He moves swiftly along the edge of the water, towards another canopied area set up on the other side, much larger than the one you were under. Sheets of white satin curtains drape down to surround this makeshift pavilion, hiding the world from the people inside.
+
+You walk past the smoke and sizzling of stoves and open fires, fueled by wood likely brought here from the nearest settlements for the empress' expedition. Groups of people sit near the shoreline eating an early dinner or a late lunch, shooting quick glances at you before whispering to each other, but you near the shadows of your destination before you start to feel uncomfortable.
+
+*page_break 
+
+Your guide, who does not speak your language, motions for you to wait outside.
+
+But you soon focus your attention on the small group of finely dressed people a short walk away at the nearest table along the banks. The woman you noticed earlier is talking with them, still distinct in clothes of black and white. She makes a final statement before turning and shaking her head, leaving the others in a scramble to return to their work.
+
+Tidying the loose and flowing sleeves of her robe, she makes her way slowly towards the pavilion. Still some distance away, she raises her head and sees you. The pause lasts but a heartbeat before she smiles easily and nods in acknowledgment. She waves for you to approach her.
+
+*page_break The Empress of Kiruqtanir
+
+The empress is in her forties, burdened not by the weight of excessive jewelry or layers of extravagant clothing, but by the many seasons of exhaustion behind the brilliance of her relaxed gaze.
+
+As you near her, she beckons for you to walk with her along the waters. When she speaks to you for the first time, the steady cadence of her voice is expected, while her accented words in your native language are a surprise.
+
+"You must think we live such a busy life, my child," she says. Distracted by the bright shimmers of blue-green water under sunlight, her dark brown eyes are kind but disinterested, not looking at you. "I apologize for the long wait."
+
+You turn towards her, thinking fast.
+
+*fake_choice
+    #Respond smoothly and defiantly with confidence.
+        *set composureStat +largeStatChange
+        *set resolveStat +largeStatChange
+        
+        "That is exactly what I think, your majesty. I think on it with relief, because a life of leisure is not what I've come to your empire for," you say with a grace that calms you.
+        
+        *if (showStatChanges)
+            *gosub_scene startup twoStatChangeNotif "Composure" "Resolve"
+    #Deflect cleverly after assessing the situation.
+        *set insightStat +largeStatChange
+        *set deceitStat +largeStatChange
+        
+        "I'm conflicted, your majesty. All busy lives have ambition, but I do not yet know where either of our own lie," you say with a deferential mischief to your voice.
+        
+        *if (showStatChanges)
+            *gosub_scene startup twoStatChangeNotif "Insight" "Deceit"
+
+Distant sounds of hurried conversations and the serene beauty of a desert oasis numb the few seconds of silence that follow. But then the empress laughs lightly, and when you look up this time, she meets your gaze. The casual amusement in her eyes is now replaced with a curious interest, and the world becomes more colorful.
+
+Many, many years later, you will know it was in this moment that you were saved.
+
+*page_break
+
+*set characters_unlocked true
+[b]【 ⊹ ࣪ ˖ CHARACTERS TAB UNLOCKED ࣪ ˖ ⊹ 】[/b]
+
+*gosub_scene startup character_met_routine
+*gosub_scene startup character_unlocked_notif "The Empress of Summoned Harmony | Bayelmirsid"
+
+You walk with the empress along the oasis for some time in easy banter.
+
+You learn that she is thirty-eight years your senior, and has a few children. Other than them, she tells you that her many nieces and nephews live in the palace as well, so you will have many opportunities to make friends. You learn that the people with the white scarves are courtiers, those who work in the imperial court — everyone from prestigious ministers and generals stationed in the capital to the common bureaucrat and patrol living in small villages. The empress works with the highest ranking courtiers on a daily basis to oversee the development of the empire.
+
+She shakes her head at the intricate system of rankings and responsibilities in her court, and assures you that foreign guests of royalty have no need to familiarize themselves with the details.
+
+You have much less to say about your own life. At this young age, your only note of interest is, of course, your very classy title. You are…
+
+*fake_choice
+    #The Crown [b]Prince[/b] of Shasetir
+        *set gender 1
+        *set he "he"
+        *set him "him"
+        *set his "his"
+        *set hiss "his"
+        *set he_is "he's"
+        *set he_has "he's"
+        *set child "boy"
+        *set heir "prince"
+        *set title "lord"
+        *set sibling "brother"
+        *set singular true
+    #The Crown [b]Princess[/b] of Shasetir
+        *set gender 2
+        *set he "she"
+        *set him "her"
+        *set his "her"
+        *set hiss "hers"
+        *set he_is "she's"
+        *set he_has "she's"
+        *set child "girl"
+        *set heir "princess"
+        *set title "lady"
+        *set sibling "sister"
+        *set singular true
+    #The Crown [b]Heir[/b] of Shasetir
+        *set gender 3
+        *set he "they"
+        *set him "them"
+        *set his "their"
+        *set hiss "theirs"
+        *set he_is "they're"
+        *set he_has "they've"
+        *set child "child"
+        *set heir "heir"
+        *set title "liege"
+        *set sibling "sibling"
+        *set singular false
+
+*set basicTraitsCustomized true
+
+"You are already the crown ${heir}?" the empress says with a nod. "I would ask you to remember the trust that your family and your people have placed in you."
+
+You begin to explain that your title is not truly so impressive since you have no siblings to compete with, but pause as her words strike a certain memory.
+
+*page_break The message to the empress
+
+The envelope you have carried across a desert and a month finally closes its journey as you present it to the empress with both hands. "From my parents to you, your majesty."
+
+*if (envelopeOpened)
+    She receives the fine paper encasing. With an amused glance in your direction, she turns the opening downwards and catches the folded message as it slides out the torn edge.
+    
+    "Not a very good messenger," she says.
+    
+    *fake_choice
+        #"Also not a trusted one."
+            *set insightStat +medStatChange
+            
+            You tilt your head in modest nod. "Also not a very trusted one."
+            
+            *if (showStatChanges)
+                *gosub_scene startup oneStatChangeNotif "Insight"
+            
+            The empress laughs easily at your response. "That is true," she smiles. "I suppose the fault is on them for sending a messenger they do not trust."
+            
+            The silver swirls lining the edge of her robes shine as she unfolds the letter.
+        #"I don't try to hide it."
+            *set composureStat +medStatChange
+            
+            You hold back a smile while looking down. "Well, at least I don't try to hide it, your majesty."
+            
+            *if (showStatChanges)
+                *gosub_scene startup oneStatChangeNotif "Composure"
+            
+            The empress nods at your response after a short pause. "I appreciate it."
+            
+            You think there is a faint smile before she looks down to unfold the letter.
+    
+    *page_break
+    *goto readingTheLetter
+*else
+    She receives the fine paper encasing. Kept carefully with you throughout the journey, it remains smooth and sealed at the edge. Turning it over, she casts an amused glance at you.
+    
+    "No curiosity during the travel?" she says.
+    
+    *fake_choice
+        #"No need if I believed that I would be shared the details."
+            *set deceitStat +medStatChange
+            
+            You smile at her and incline your head politely. "There was no need for it, because I believed that your majesty would share with me the details when we meet."
+            
+            *if (showStatChanges)
+                *gosub_scene startup oneStatChangeNotif "Deceit"
+            
+            The empress taps the envelope lightly, and you feel her gaze become more intent and searching.
+            
+            "You should be more careful with assumptions in the future," she says after a long pause, but you relax when she winks at you as she breaks a clean opening and takes out a folded message.
+        #"Anything I would have learned only becomes useful once your majesty also learns of it."
+            *set resolveStat +medStatChange
+            
+            You think quietly for a moment. "Of course there was curiosity. But I have lived in unfamiliar land for the past month, and anything I would have learned only becomes useful once your majesty also learns of it."
+            
+            *if (showStatChanges)
+                *gosub_scene startup oneStatChangeNotif "Resolve"
+            
+            The empress holds your gaze for a moment before looking away at the oasis. Her posture relaxes as she nods gently.
+            
+            She does not say anything as she breaks a clean opening and takes out a folded message. 
+    
+    *page_break
+    *goto readingTheLetter
+
+*label readingTheLetter
+You squint up at the cloudless sky when she reads. The sun casts a heavy brightness on you, and you find it hard to focus.
+
+The diplomats, guards, attendants, scholars, servants, messengers, merchants, and the empress all seem so busy in this settlement on the peripheries of the empire. But you feel very tired. Perhaps the ancient desert is finally taking its toll on you.
+
+You blink back down and see pretty silver patterns flickering against the midnight colored fabrics of the empress' robes as she refolds the letter.
+
+She walks slowly to the edge of the oasis with hands clasped behind her back. What burdens does she carry? You do not know. You join the empress by the shore.
+
+"What do my parents ask?"
+
+And even now, in this current moment, before the end of your story confirms your vow, you already know that you will never forget the sacred gentleness with which the empress speaks her next words.
+
+"They give me a choice."
+
+*page_break
+
+Three months later, the Shasetirian ruling dynasty is dethroned, its king and queen executed on the capital city walls, and it becomes whispered gossip for everyone across the continent.
+
+The imperial court of Kiruqtanir is no exception. As recounted by diplomatic officials from their northern neighbor, a far relative of the previous king, steady with ambition, had amassed great control over the major cities of the state, then surrounded the palace with the support of powerful generals, influential bureaucrats, and wealthy nobility.
+
+"They were very unpopular, the old monarchs, you know. Incompetent," the Shasetirian diplomats had declared nervously when the news first broke. Others at court nodded politely, silently dismissing the words of those trying to keep their jobs under new leadership.
+
+*page_break
+
+When envoys hailing from the newly ascended dynasty arrive at the imperial palaces of Kiruqtanir, they put one knee to the ground for the empress and demand to take the deposed crown ${heir} back to ${his} homeland.
+
+Those accomplished enough to witness this meeting must also be smart enough to understand what goes unsaid.
+
+To the court, this is a great outrage, for the envoy spoke with arrogance and force. The leading foreign official grumbles and puts on a more polite demeanor, but remains steadfast in his request.
+
+The empress does not have the leisure to fuss over the attitude of an insignificant envoy, and agrees to give the ${child} back to the Shasetirians. She cannot waste time on the internal interludes of a trivial neighboring state.
+
+Hers is a busy life.
+
+At noon, a young ${child} of ${eyeColor} eyes and ${hairColor} hair against ${skinColor} skin is sent on a journey across a desert that will end in ${his} death.
+
+*page_break
+
+The only heir to the old Shasetirian dynasty is executed as soon as ${he} returns to the capital city, along with all other immediate family of the king and queen.
+
+Everyone throughout the realm knows that ${he} died with heavy chains around ${his} wrists and knees against a cold floor of stone, listening to the condemnations of a young power and watching the curious faces of citizens who have come to witness the final act.
+
+But only you know that ${he} died under bright sunlight in an endless desert, next to the clean waters of a beautiful oasis, with warm winds gently drying the tears down ${his} face.
+
+*finish

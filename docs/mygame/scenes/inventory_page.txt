@@ -1,0 +1,4 @@
+*label sachetLabel
+[b]【 A small sachet 】[/b]
+Gifted to you on your sixth birthday, you keep this pocket-sized pouch carried with you at all times, fastened on the cloth belt under your outer robes. Meant to be filled with herbs, dried flowers, and other fragrant ingredients, it is empty at the moment.
+*return

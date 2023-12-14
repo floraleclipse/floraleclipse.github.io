@@ -1,86 +1,280 @@
-*comment Copyright 2010 by Dan Fabulich.
-*comment 
-*comment Dan Fabulich licenses this file to you under the
-*comment ChoiceScript License, Version 1.0 (the "License"); you may
-*comment not use this file except in compliance with the License. 
-*comment You may obtain a copy of the License at
-*comment 
-*comment  http://www.choiceofgames.com/LICENSE-1.0.txt
-*comment 
-*comment See the License for the specific language governing
-*comment permissions and limitations under the License.
-*comment 
-*comment Unless required by applicable law or agreed to in writing,
-*comment software distributed under the License is distributed on an
-*comment "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
-*comment either express or implied.
+*title Flowers for an Illustrious Era
+*author dumpling-clouds
+*comment your code goes here
 
-*title My First ChoiceScript Game
-*author Anonymous
 *scene_list
-  startup
-  animal
-  variables
-  gosub
-  ending
-  death
+    startup
+    prologue
+    gold_pearls_and_diamonds
+    characters_page
+    inventory_page
+    locations_page
+    cslib_string
 
-*create leadership 50
-*create strength 50
+*create implicit_control_flow true
+*create cslib_ret 0
 
-Welcome to your very first ChoiceScript game!
+*comment MC personal info and stats
+*create name ""
+*create old_name ""
+*create gender 1
+*create he ""
+*create him ""
+*create his ""
+*create hiss ""
+*create he_is ""
+*create he_has ""
+*create child ""
+*create heir ""
+*create title ""
+*create sibling ""
+*create singular true
+*create age 6
+*comment 1 = black, 2 = bronze, 3 = light brown, 4 = dark beige, 5 = light beige, 6 = pale
+*create skinColorNum 1
+*create skinColor ""
+*comment 1 = black, 2 = brown, 3 = blond, 4 = red
+*create hairColorNum 1
+*create hairColor ""
+*comment 1 = black, 2 = brown, 3 = hazel, 4 = blue, 5 = green, 6 = grey
+*create eyeColorNum 1
+*create eyeColor ""
+*comment 1 = straight, 2 = wavy, 3 = curly, 4 = coiled
+*create hairType 1
+*create hairTypeSet false
+*create birthMonth 1
+*create birthMonthName ""
+*create birthMonthAnimal ""
+*create birthMonthSet false
 
-Copyright 2010 by Dan Fabulich.
+*create personal_info_set_string ""
+*create personal_info_value_string ""
 
-Dan Fabulich licenses this file to you under the
-ChoiceScript License, Version 1.0 (the "License"); you may
-not use this file except in compliance with the License. 
-You may obtain a copy of the License at
+*create food_restrictions_set_string ""
+*create food_restrictions_value_string ""
 
-*link http://www.choiceofgames.com/LICENSE-1.0.txt
+*create clothing_preferences_set_string ""
+*create clothing_preferences_value_string ""
 
-See the License for the specific language governing
-permissions and limitations under the License.
+*comment MC Skills
+*create insightStat 0
+*create deceitStat 0
+*create composureStat 0
+*create resolveStat 0
 
-Unless required by applicable law or agreed to in writing,
-software distributed under the License is distributed on an
-"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
-either express or implied.
+*comment MC Education
+*create scienceStat 0
+*create artStat 0
+*create martialStat 0
 
-*page_break
+*comment MC Disciplines
+*create mathStat 0
+*create medicineStat 0
+*create natureStat 0
+*create visualStat 0
+*create musicalStat 0
+*create literaryStat 0
+*create huntingStat 0
+*create combatStat 0
+*create stealthStat 0
 
-Your majesty, your people are starving in the streets, and threaten revolution.
-Our enemies to the west are weak, but they threaten soon to invade.  What will you do?
+*comment MC Reputation
+*create austerityStat 0
+*create humilityStat 0
+*create audacityStat 0
+*create altruismStat 0
+*create honestyStat 0
 
-*choice
-  #Make pre-emptive war on the western lands.
-    If you can seize their territory, your kingdom will flourish.  But your army's
-    morale is low and the kingdom's armory is empty.  How will you win the war?
-    *choice
-      #Drive the peasants like slaves; if we work hard enough, we'll win.
-        Unfortunately, morale doesn't work like that.  Your army soon turns against you
-        and the kingdom falls to the western barbarians.
-        *finish
-      #Appoint charismatic knights and give them land, peasants, and resources.
-        Your majesty's people are eminently resourceful.  Your knights win the day,
-        but take care: they may soon demand a convention of parliament.
-        *finish
-      #Steal food and weapons from the enemy in the dead of night.
-        A cunning plan.  Soon your army is a match for the westerners; they choose
-        not to invade for now, but how long can your majesty postpone the inevitable?
-        *finish
-  #Beat swords to plowshares and trade food to the westerners for protection.
-    The westerners have you at the point of a sword.  They demand unfair terms
-    from you.
-    *choice
-      #Accept the terms for now.
-        Eventually, the barbarian westerners conquer you anyway, destroying their
-        bread basket, and the entire region starves.
-        *finish
-      #Threaten to salt our fields if they don't offer better terms.
-        They blink.  Your majesty gets a fair price for wheat.
-        *finish
-  #Abdicate the throne. I have clearly mismanaged this kingdom!
-    The kingdom descends into chaos, but you manage to escape with your own hide.
-    Perhaps in time you can return to restore order to this fair land.
-    *finish
+*comment MC Assets
+*create silver 0
+*create copper 0
+
+*create inventory_unlocked false
+*create inventory_owned_string ""
+*create inventory_amount_string ""
+*create flowers_owned_string ""
+
+*comment MC Relationships
+*create yilkarzadStat 0
+*create khavrmetakStat 0
+*create vristismanyaStat 0
+*create aityusenStat 0
+
+*create dahnomStat 0
+*create hadyaStat 0
+
+*create characters_unlocked false
+*create characters_met_string ""
+*create characters_favor_string ""
+*create characters_major_event_string_1 ""
+*create characters_major_event_string_2 ""
+*create characters_major_event_string_3 ""
+*create characters_major_event_string_4 ""
+*create characters_major_event_string_5 ""
+*create characters_major_event_string_6 ""
+*create characters_major_event_string_7 ""
+*create characters_major_event_string_8 ""
+*create characters_major_event_string_9 ""
+*create characters_major_event_string_10 ""
+*create characters_major_event_string_11 ""
+*create characters_major_event_string_12 ""
+*create characters_major_event_string_13 ""
+*create characters_major_event_string_14 ""
+*create characters_major_event_string_15 ""
+*create characters_major_event_string_16 ""
+*create characters_major_event_string_17 ""
+*create characters_major_event_string_18 ""
+*create characters_major_event_string_19 ""
+*create characters_major_event_string_20 ""
+
+*comment MC court status info
+*create isEmployed false
+*create courtierRank 10
+
+*comment Locations
+*create locations_unlocked false
+*create locations_visited_string ""
+
+*comment Yilkarzad info
+*create y_gender 0
+*create y_he ""
+*create y_him ""
+*create y_his ""
+*create y_hiss ""
+*create y_he_is ""
+*create y_he_has ""
+*create y_child ""
+*create y_sibling ""
+*create y_nephew ""
+*create y_heir ""
+
+*comment Aityusen info
+*create a_gender 0
+*create a_he ""
+*create a_him ""
+*create a_his ""
+*create a_hiss ""
+*create a_he_is ""
+*create a_he_has ""
+*create a_child ""
+*create a_sibling ""
+
+*comment personality stats
+*comment agreeable/defensive/"keep the peace" tone
+*create softStat 0
+*comment confrontational/offensive/"point out the problems" tone
+*create sharpStat 0
+*comment polite/pleasant attitude; A averse || V || K likes
+*create warmStat 0
+*comment casual/witty attitude; Y averse || K || V likes
+*create coolStat 0
+*comment focused and driven; K averse || A ||Y likes
+*create brightStat 0
+*comment distant and calm; V averse || Y || A likes
+*create coldStat 0
+
+*comment stat screen controls
+*create basicTraitsCustomized false
+*create showReputation false
+*create showRelationships false
+*create showYirkarzad false
+*create showKhavrmetak false
+*create showVristismanya false
+*create showAityusen false
+*create showDisciplines false
+
+*comment in-game controls
+*create showStatChanges true
+*create showStatModifiers true
+*create showStatChecks true
+*create showStatReqs false
+*create smallStatChange 1
+*create medStatChange 2
+*create largeStatChange 5
+
+*comment Prologue choices
+*create envelopeOpened false
+*create firstImpression ""
+*create firstConversation 1
+*create gainInfo ""
+
+*comment chapter choices
+*create prologueChoices ""
+*create chapter1Choices ""
+*create chapter2Choices ""
+*create chapter3Choices ""
+*create chapter4Choices ""
+*create chapter5Choices ""
+*create chapter6Choices ""
+*create chapter7Choices ""
+*create chapter8Choices ""
+*create chapter9Choices ""
+*create chapter10Choices ""
+*create chapter11Choices ""
+*create chapter12Choices ""
+*create chapter13Choices ""
+*create chapter14Choices ""
+*create chapter15Choices ""
+*create chapter16Choices ""
+*create chapter17Choices ""
+*create chapter18Choices ""
+
+*comment sm_init flowersForAnIllustriousEra | 5
+
+*image images/titleBanner.png
+
+*finish
+
+*comment common functions
+*label oneStatChangeNotif
+*comment // stat param must be capitalized
+*params stat
+[b][ ++ $!{stat} ++ ][/b]
+*return
+
+*label twoStatChangeNotif
+*comment // size and stat params must be capitalized
+*params stat1 stat2
+[b][ ++ $!{stat1}, $!{stat2} ++ ][/b]
+*return
+
+*comment stat gosubs
+*label character_met_routine
+*set characters_met_string &"1"
+*set characters_favor_string &"000|"
+*set characters_major_event_string_1 &"00|"
+*set characters_major_event_string_2 &"00|"
+*set characters_major_event_string_3 &"00|"
+*set characters_major_event_string_4 &"00|"
+*set characters_major_event_string_5 &"00|"
+*set characters_major_event_string_6 &"00|"
+*set characters_major_event_string_7 &"00|"
+*set characters_major_event_string_8 &"00|"
+*set characters_major_event_string_9 &"00|"
+*set characters_major_event_string_10 &"00|"
+*set characters_major_event_string_11 &"00|"
+*set characters_major_event_string_12 &"00|"
+*set characters_major_event_string_13 &"00|"
+*set characters_major_event_string_14 &"00|"
+*set characters_major_event_string_15 &"00|"
+*set characters_major_event_string_16 &"00|"
+*set characters_major_event_string_17 &"00|"
+*set characters_major_event_string_18 &"00|"
+*set characters_major_event_string_19 &"00|"
+*set characters_major_event_string_20 &"00|"
+*return
+
+*label character_unlocked_notif
+*params character_name
+[b][ Character Unlocked ] — [ ${character_name} ][/b]
+*return
+
+*label inventory_unlocked_notif
+*params inventory_name
+[b][ Item Unlocked ] — [ ${inventory_name} ][/b]
+*return
+
+*label location_unlocked_notif
+*params location_name
+[b][ Location Unlocked ] — [ ${location_name} ][/b]
+*return

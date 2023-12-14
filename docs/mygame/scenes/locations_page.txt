@@ -1,0 +1,97 @@
+*label oasisStationLabel
+[b]【 Abandoned Oasis Village 】[/b]
+
+An ancient settlement built around the rare beauty of an oasis in the expansive desert between Kiruqtanir and Shasetir.
+
+[i]Despite the current bustle of activity, the place does not look as if it has been regularly lived in for a very long time. Simple buildings of one or two floors with smooth walls of clay and stone scatter the area, tiles missing from their roofs and their doors left open to reveal empty rooms. The few crannies always hidden from the sun still retain faint shades of painted color.[/i]
+
+[i]You see a blue oasis of clear and shining water, large enough to obscure the faces of those on the opposite side. The vibrant green hues of low shrubs and young trees decorate the shores. Around a dozen wooden tables covered in sheets of yellowed papyrus have been set just above the muddy-red banks, each stationed with people writing intently. It is a radiant pillar of life for the surrounding stone and clay.[/i]
+*return
+
+*label imperialPalacesLabel
+[b]【 The Imperial Palaces 】[/b]
+
+Built on a vast expanse of flat plateau backed by a tall mountain range overlooking the main city area of Tenzadjiln, the thousands of halls, towers, and buildings in the imperial palace complex are organized into nine sectors — eight named after the cardinal directions and one in the center.
+
+As the living spaces of not only the imperial family, but also of capital-stationed courtiers without their own property in the city, students enrolled in the palace academy, as well as servants, attendants, and guards, the beauty and comfort of its architecture and furnishings are unparalleled in the realm. As the daily working center of the imperial court, the efficiency of its layout and infrastructure has been meticulously planned for as well.
+
+[i]Pillared halls encircled by billowing sheets of translucent curtains and tiered towers walled by intricately latticed windows blur together into a rich palette of heavy mahogany, deep jade, shimmering amber, marbled ivory, and inked ebony.[/i]
+
+[i]Your eyes flicker across the tiled roofs, geometric domes, lofty spires, and open terraces of the palace skyline ahead.[/i]
+
+[i]You emerge from the cool shade of canopied corridors into the stifling silence of narrow alleyways, then from the clean fragrance of delicately curated gardens into the efficient structure of expansive courtyards designed with adherence to philosophies you've yet to understand.[/i]
+*return
+
+*label lectureHallsLabel
+[b]【 Lecture Halls 】[/b]
+
+This is where lectures for students enrolled in the imperial academy are held. Located in the western district of the palace complex, these halls of education are organized in an elaborately precise fashion, a reflection of the court culture across the entire palace complex.
+
+[i]Sixty-four open-air halls stand imposingly in a painstakingly planned arrangement of three concentric octagons — four on each edge in the outermost one, three for the middle, and one for the innermost. Flat sandstone roofs lined with carvings of fractal patterns sit three stories high, supported by fluted columns above smooth granite flooring tinted with dignified colors. Pale rose, sapphire blue, midnight sky. The hall that hosts your current class, situated in the inner ring, is cushioned with a particularly soothing shade of light emerald.[/i]
+*return
+
+*label courierStationsLabel
+[b]【 Courier Stations 】[/b]
+
+Over fifty courier stations cover the vast spread of the imperial complex for convenient communication between any two residents. One need only drop a message or package with the desired palace address at the nearest station. They are easily spotted by the tall spires extending from their roofs, pearls of guidance in a labyrinth. Delivery outside the walls, however, must go through the central Courier Arena near the southern gates.
+
+Each station is run by a small unit under the Imperial Courier Program.
+
+[i]The messy room is a bit stuffy but well-lit through large, open windows. Paper of all manners — envelopes, scrolls, loose leafs, books, paintings, calligraphy sheets — are scattered across tables and stools. You nearly knock over a bottle of ink trying to find a seat.[/i]
+*return
+
+*label palaceArmoriesLabel
+[b]【 Palace Armories 】[/b]
+
+There are over a dozen armories spread out across the imperial complex, each hosting a vast array of bladed, ranged, thrown, and polearm weapons, in addition to a wide multitude of shields and armor sets, all neatly organized and stored on polished wooden weapon stands.
+
+Most armories belong to either the Ministry of Defense or the Pioneer Guards, with a few under the Ministry of Industry.
+
+[i]You cross an enclosed courtyard to reach the main building, a tidy room of maps, schedules, and diagrams, but the armory itself is partially underground. As you descend the stairs, the cool temperature is a welcome change from the hot noontime weather outside. The space is dimly lit through narrow windows near the roof, and quiet with only the golden glint of steel blades and iron frames as your companion.[/i]
+*return
+
+*label courtServiceHallsLabel
+[b]【 Court Service Halls 】[/b]
+
+The eastern, southeastern, southern, and western districts of the palace complex are each home to their own expansive sections of pillared halls that serve as the daily working offices of lower and middle-rank courtiers across all ministries of the imperial court.
+
+[i]Outside, the grid of pillared halls interlock with each other to form neat, open courtyards where sunlight rains down on sparkling water fountains and vibrant garden scenery.[/i]
+
+[i]Inside the hall you now stand beneath, latticed screens between the pillars diffuse the natural light into shimmering diamonds across the scattered sheets and bound books covering the rows of long tables. A cozy space, bright and breezy yet privately concealed at the same time.[/i]
+*return
+
+*label imperialGardensLabel
+[b]【 The Imperial Gardens 】[/b]
+
+An extensive section of the southwestern district set aside to cultivate the fresh essence of nature within the imperial palace complex.
+
+[i]Throughout the years, you have never lost appreciation for the sight of both pastel and rich colors coexisting as an elegant palette of floral beauty.[/i]
+
+[i]With neatly tiled pathways to guide you, the sprawling garden is enclosed as a rectangle with a stepped layout. Water, diverted from the large river west of the palace complex, flows along a central line to fill eighteen layers of terraced pools.[/i]
+
+[i]From your vantage point on the third-highest tier of the landscape, you can see the central waterfall flowing all the way down over descending steps of white marble, through layers upon layers of Kiruqtaniran flora sketched on soil and painted by the colors of the seasons. Decorating the garden grounds are a comfortable arrangement of shaded pavilions, roofed walkways, stone fountains, wooden swing-sets, sculptures of mythical beasts, and cultivated sceneries of miniature mountains and valleys.[/i]
+*return
+
+*label trainingGroundsLabel
+[b]【 Training Grounds 】[/b]
+
+Located in the western district. Supplied with a convenient repository of weaponry, armor, and training instrument, the sprawling tract of natural, uneven terrain is host to a constant stream of palace residents looking to improve their martial competence.
+
+Outside the gardens, the training grounds is the only place in the palace complex with vast areas of uncovered natural soil. The necessity of a stronger control over balance and reflexes to maintain one's form on an open, uneven terrain provides tiring but effective sparring sessions for those wishing to improve their martial competence.
+*return
+
+*label academyResearchHallsLabel
+[b]【 Academy Research Halls 】[/b]
+*return
+
+*label towersOfCrossingWindsLabel
+[b]【 Towers of Crossing Winds 】[/b]
+
+There are only four of these lofty palace watchtowers — the Tower of Northern, Eastern, Southern, and Western Winds, each located in the respective cardinal district specified in their names. Each tower is stationed with a rotating schedule of Pioneer Guards that covers all twelve hours of the day.
+
+[i]With eighteen floors, the Towers of Crossing Winds are the tallest buildings in the palace complex. Great columns of marble swirling with inky black and cotton white, carved with reliefs of the patron animals of the twelve months, support each floor above as you climb the spiraling stairway to the top. Holding on to the banisters between the columns, you can see the entirety of the southwest sector of the imperial grounds.[/i]
+*return
+
+*label imperialLibraryLabel
+Located in the quiet northern sector of the palace complex, the imperial library is a building of colorful archways and domed roofs. Stairs lead up to three floors of interior balconies high above the low tables of sandalwood spread across the vast central area on the main floor. Students and courtiers alike sit or kneel on woven rugs either in work or study.
+*return

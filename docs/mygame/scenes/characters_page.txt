@@ -1,0 +1,12 @@
+*label empressLabel
+[b]【 The Empress of Summoned Harmony | Bayelmirsid 】[/b]
+
+[i]The empress stands under the heat of the sun, burdened not by the weight of excessive jewelry or layers of extravagant clothing, but by the many seasons of exhaustion behind the brilliance of her relaxed gaze.[/i]
+
+[i]Distant sounds of hurried conversations and the serene beauty of a desert oasis numb the few seconds of silence that follow the first words you speak to her. But then the empress laughs lightly, and when you look up this time, she meets your gaze. The casual amusement in her eyes is now replaced with a curious interest, and the world becomes more colorful.[/i]
+
+*if (age <= 6)
+    She will remember you.
+*else
+    You have not met with Empress Bayelmirsid in six years.
+*return
