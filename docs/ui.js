@@ -165,6 +165,7 @@ function showMenu() {
     setButtonTitles();
     var button = document.getElementById("menuButton");
     button.innerHTML = "Return to the Game";
+    var oldZoom = getZoomFactor();
     options = [{name:"Return to the game.", group:"choice", resume:true}];
     if (window.isSteamworks) {
       options.push(
@@ -175,19 +176,38 @@ function showMenu() {
       { name: "View achievements.", group: "choice", achievements: true }
     );
     options.push(
-      {name:"Restart the game.", group:"choice", restart:true},
-      {name:"Change settings.", group:"choice", settings:true},
-      {name:"Play more games like this.", group:"choice", moreGames:true}
+      {name:"Restart the game.", group:"choice", restart:true}
     );
-    if (isWebSavePossible() && !window.isSteamApp) {
-      options.push(
-        { name: "Email us at " + getSupportEmail() + ".", group: "choice", contactUs: true },
-        { name: "Report a bug.", group: "choice", reportBug: true }
-      )
+    options.push(
+      {name:"Make the text bigger.", group:"choice", bigger:true},
+      {name:"Make the text smaller.", group:"choice", smaller:true}
+    );
+    if (oldZoom <= 0.5) {
+      options[options.length-1].unselectable = true;
+    }
+    if (oldZoom !== 1) {
+      options.push({name:"Reset the text to its original size.", group:"choice", reset:true});
     }
     options.push(
-      {name:"Share this game with friends.", group:"choice", share:true},
-      {name:"Email me when new games are available.", group:"choice", subscribe:true},
+      {name:"Use a black background.", group:"choice", color:"black"},
+      {name:"Use a sepia background.", group:"choice", color:"sepia"},
+      {name:"Use a white background.", group:"choice", color:"white"}
+    );
+    if (window.animationProperty) {
+      if (window.animateEnabled) {
+        options.push({ name: "Don't animate between pages.", group: "choice", animation: 2 });
+      } else {
+        options.push({ name: "Animate between pages.", group: "choice", animation: 1 });
+      }
+    }
+    if (window.isMobile) {
+      if (window.slidingEnabled !== false) {
+        options.push({ name: "Disable touch slide controls.", group: "choice", sliding: 1 });
+      } else {
+        options.push({ name: "Enable touch slide controls.", group: "choice", sliding: 2 });
+      }
+    }
+    options.push(
       {name:"Show keyboard shortcuts.", group:"choice", shortcuts:true}
     );
     if (document.getElementById("aboutLink")) {
@@ -234,22 +254,21 @@ function showMenu() {
           })
           curl();
         });
-      } else if (option.settings) {
-        textOptionsMenu({ size: 1, color: 1, animation: window.animationProperty, sliding: window.isMobile });
+      } else if (option.color) {
+        changeBackgroundColor(option.color);
+      } else if (option.reset) {
+        setZoomFactor(1);
+      } else if (option.animation) {
+        window.animateEnabled = option.animation !== 2;
+        if (initStore()) store.set("preferredAnimation", parseFloat(option.animation));
+      } else if (option.sliding) {
+        window.slidingEnabled = option.sliding == 2;
+        if (initStore()) store.set("preferredSliding", window.slidingEnabled);
+      } else if (option.bigger || option.smaller) {
+        changeFontSize(option.bigger);
       } else if (option.credits) {
         absolutizeAboutLink();
         aboutClick();
-      } else if (option.moreGames) {
-        moreGames();
-        curl();
-      } else if (option.share) {
-        clearScreen(function() {
-          printShareLinks(document.getElementById("text"), "now");
-          menu();
-        });
-      } else if (option.subscribe) {
-        setButtonTitles();
-        subscribeLink();
       } else if (option.contactUs) {
         window.location.href="mailto:"+getSupportEmail();
       } else if (option.reportBug) {
@@ -268,6 +287,12 @@ function showMenu() {
           menu();
         })
       }
+      // if changed settings, load menu again
+      if (option.color || option.reset || option.animation || option.sliding || option.bigger || option.smaller) {
+        clearScreen(function() {
+          menu();
+        });
+      }
     });
     // show title and author on menu screen
     // this will be hidden on desktop web, but visible elsewhere
@@ -285,11 +310,11 @@ function setButtonTitles() {
   var button;
   button = document.getElementById("menuButton");
   if (button) {
-    button.innerHTML = "Menu";
+    button.innerHTML = "Settings";
   }
   button = document.getElementById("statsButton");
   if (button) {
-    button.innerHTML = "Show Stats";
+    button.innerHTML = "Stats";
   }
   button = document.getElementById("achievementsButton");
   if (button) {
@@ -1186,7 +1211,7 @@ function printYoutubeFrame(slug) {
   document.getElementById("text").appendChild(wrapper);
 }
 
-function moreGames() {
+/* function moreGames() {
     if (window.isIosApp) {
       window.location.href = "https://choiceofgames.app.link/jBm199qZXL/";
     } else if (window.isAndroidApp) {
@@ -1214,9 +1239,9 @@ function moreGames() {
         // in xulrunner, this will be blocked, but it will trigger opening the external browser
       }
     }
-}
+} */
 
-function printShareLinks(target, now) {
+/* function printShareLinks(target, now) {
   if (!target) target = document.getElementById('text');
   var msgDiv = document.createElement("div");
   if (window.isIosApp) {
@@ -1308,9 +1333,9 @@ function printShareLinks(target, now) {
     shareLinkText+
     "</ul>\n";
   target.appendChild(msgDiv);
-}
+} */
 
-function isShareConfigured() {
+/* function isShareConfigured() {
   return !!document.getElementById("share");
 }
 
@@ -1323,7 +1348,7 @@ function shareAction(e) {
     });
     curl();
   });
-}
+} */
 
 function isReviewSupported() {
   return !!(window.isIosApp || window.isAndroidApp);
