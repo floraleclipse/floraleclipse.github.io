@@ -9,6 +9,7 @@
 
 *temp questionTwinsNum 0
 *temp disciplineIntuitionChoice 1
+*temp interventionReaction 1
 
 [b]Chapter 1: Gold, Pearls, and Diamonds[/b]
 
@@ -240,7 +241,7 @@ Indeed, it had not been too surprising to learn of {placeholder} and {placeholde
 
 Soon, the hollow dissonance of clashing wooden weaponry again fills the hall.
 
-But as you get in position across a classmate to spar, blunt staff in your hands, you are still able to hear {placeholder_instructor} drop a remark as she drifts past her cousin. "Even if ${he} skips [i]half[/i] of ${his} lectures, ${he} would still sit higher than you in the monthly rankings."
+But as you get in position to spar with a blunt staff in your hands, you are still able to hear {placeholder_instructor} drop a remark as she drifts past her cousin. "Even if ${he} skips [i]half[/i] of ${his} lectures, ${he} would still sit higher than you in the monthly rankings."
 
 *set scienceStat +10
 *set artStat +10
@@ -251,7 +252,7 @@ But as you get in position across a classmate to spar, blunt staff in your hands
 *fake_choice
     #You do not hide the slight quirk of your mouth.
         *set coolStat +smallStatChange
-    #An imperceptible raise of the chin and a firm gaze are your only response.
+    #You carry on with an imperceptible raise of the chin and a firm gaze.
         *set brightStat +smallStatChange
 
 As a child of Kiruqtaniran nobility, you have been studying at the imperial palaces since the age of nine.
@@ -310,31 +311,103 @@ Although the benefits are clear to you, preparing ahead for your lessons is a ha
 
 No relatives in the capital means no obligations or invitations to any recreational events hosted in the city.
 
-You are not that upset by this, you tell yourself.
+You reel in the force of your strike as your weapon lightly taps your current training partner on the arm. She is one of the classmates you are more familiar with — {placeholder_girl}, a girl with warm brown skin, a head of thick, wavy black hair, and sleeves permanently rolled-up above her elbows. She tells you this is the only comfortable way.
 
-You reel in the force of your strike as your weapon lightly taps your current training partner on the arm. She is one of the more familiar classmates to you — {placeholder_girl}, a girl with warm brown skin, a head of thick, wavy black hair, and sleeves permanently rolled-up above her elbows. She tells you this is the only comfortable way.
+"Yeah, obviously you win again," she says with a slight grumble, bending down to catch her breath. "Though I'd much rather train with you every lecture here than having to deal with {placeholder} one more time."
 
-"Yeah, obviously you win again," she says with a slight grumble. "Though I'd much rather train with you every lecture here than having to deal with {placeholder} one more time."
-
-{placeholder_girl} nods towards the center of the hall, where {placeholder} and another boy are sparring.
+{placeholder_girl} nods towards the center of the hall, where {placeholder} and @{gender another boy | a girl | another student} are sparring.
 
 *page_break
 
-You glance briefly in their direction before agreeing with a shrug. "Yeah, he's not my favorite person either."
+You glance briefly in their direction before agreeing with a shrug. "He's not my favorite person either."
 
-"But he's being more irritating than usual today," {placeholder_girl} says, pausing to catch a few breaths. "I was sparring with him a few rotations before, and I get the feeling he's not using the maneuvers we're supposed to practice today."
+"But he's more irritating than usual today," {placeholder_girl} says, shuffling a bit closer. "I was sparring with him a few rotations before, and I get the feeling he's not using the maneuvers we're supposed to use today."
 
-As you take a longer look, you begin to realize what she means. {placeholder}'s moves are quick, precise, but most of all, urgent. There is a heated intensity to his actions that does not belong to a simple practice session.
+As you take a longer look, you begin to realize what she means. {placeholder}'s moves are quick, precise, but most of all, urgent. There is a heated intensity to his actions that does not belong in a simple practice session.
 
+Dodging another sweeping strike from the other @{gender boy| girl| student}, he spins his staff, combined with a feinting maneuver, in a motion that you immediately recognize —
 
+"He's going to hurt his partner," you say. {placeholder_girl} stays silent but you know she can see it too.
 
+{placeholder} hits his opponent's staff with a force that knocks it out of ${his} hands, ${his} expression wincing from unexpected pain.
 
+But the momentum of the maneuver has not stopped.
 
+The staff spins once more in the air and crashes down, about to strike the defenseless student's neck —
 
+A modest clash of polished oakwood staffs capped with cloths of linen follows instead, so insignificant that it would have blended perfectly into the surrounding chaos of similar sounds if not for the…
 
+*fake_choice
+    #...cold severity in my voice. "I know you understand the rules of sparring, so this is just pure hostility."
+        *set coldStat +smallStatChange
+        *set interventionReaction 1
+    #...deliberate cordiality in my voice. "I believe it counts as a win when our partner drops their weapon."
+        *set warmStat +smallStatChange
+        *set interventionReaction 2
 
+{placeholder} stares in shock at the staff that had blocked his own, then raises his eyes to meet yours with burning ire.
 
-*page_break A voice from the opposite end of the hall
+"@{interventionreaction [i]Hostility?[/i] And who are you to make judgment? | Spare me the pretense of courtesy. Who are you to lecture your classmates?} Who are you to step in as a self-appointed protector of your equals?"
+
+"You are not the only one who has studied the material covered next month in our syllabus," you speak without reservation now, not missing the increasing silence around you as more students notice the angry exchange. "Tactics we have yet to learn as a class are disallowed in sparring sessions, precisely to prevent what was going to happen just now —"
+
+"What? [i]What[/i] was going to happen?"
+
+"That maneuver could have caused real injury to someone who was already weaponless."
+
+"I can [i]control[/i] the force of my attacks, how low do you consider me that you think I would intentionally hurt a classmate?" {placeholder} hisses.
+
+You are about to retort when a dangerously calm voice that evokes an image of the coldest hailstorm suppressing the lethal flames of a wildfire appears next to you.
+
+"Explain the circumstances that led the two of you to this conversation."
+
+*fake_choice
+    #let placeholder speak first -- so that i have an advantage in refuting his lies
+        *set deceitStat +smallStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Deceit"
+    #let placeholder speak first -- i'm not afraid to give him the first line when i know i'm in the right
+        *set composureStat +smallStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Composure"
+    #i think fast and speak before placeholder can react -- instructor is angry and you take this into account
+        *set insightStat +smallStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Insight"
+    #i respond immediately -- the truth speaks for itself
+        *set resolveStat +smallStatChange
+        *if (showStatChanges)
+            *gosub_scene startup oneStatChangeNotif "Resolve"
+
+"I've heard enough," {placeholder_instructor} says, and you catch a warning glare she sends to {placeholder}, who glares back but takes a deep breath and stops talking.
+
+Your teacher nods at you. "You are correct that we do not use maneuvers from future lessons in sparring sessions to give all students a level field of competition. Now, {placeholder_npc} does not mind your intervention, but you can see how your actions might not be appreciated by everyone, yes?"
+
+*fake_choice
+    #I am glad that {placeholder_instructor} stepped in to bring an end to the dispute with fair judgment for everyone.
+        *set softStat +smallStatChange
+    #I have more to say, but I know that {placeholder_instructor} will be fair in her judgment.
+        *set sharpStat +smallStatChange
+
+You defer to {placeholder_instructor}, respecting her judgment. "Yes, instructor. Even well-intentioned actions do not necessarily guarantee the best outcome for everyone. I will remember."
+
+With that, {placeholder_instructor} turns to her younger cousin with a much colder expression. "I don't believe you've apologized."
+
+{placeholder} glowers a bit but turns to his training partner. "I'm… sorry for disregarding your safety. I was too focused on myself."
+
+He does sound genuine, even to you, and {placeholder_npc} hastily motions ${his} acceptance.
+
+"Using material I have yet to teach to show off in class is a fault that you [i]will[/i] be punished for on the next occurrence. Do you understand?"
+
+"…Yes."
+
+"Get back to practice. Everyone else as well."
+
+You're still processing the rapid exchange when the fire-heated tension in the hall is quietly washed away by the pleasant cadence of a light voice.
+
+"Well… let's not resume just yet. I think there's something to be discussed here."
+
+*page_break The man at the front of the hall
 
 You had almost forgotten about him.
 
@@ -345,6 +418,8 @@ Only now do you notice the silver pendant he wears over the standard white scarf
 Your mind blanks for the span of a breath before you remember what this detail implies just as {placeholder_teacher} replies with a stiff bow to mask the confusion coloring her countenance.
 
 "I — Of course, Secretary {placeholder}."
+
+There is but a moment of stillness before the entire class
 
 *page_break The Imperial Secretary of Kopirtanri
 
