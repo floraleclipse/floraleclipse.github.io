@@ -223,7 +223,7 @@
 
 *image images/titleBanner.png
 
-*finish
+*finish Begin
 
 *comment common functions
 *label oneStatChangeNotif
