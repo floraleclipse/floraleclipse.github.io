@@ -176,9 +176,6 @@ function showMenu() {
       { name: "View achievements.", group: "choice", achievements: true }
     );
     options.push(
-      {name:"Restart the game.", group:"choice", restart:true}
-    );
-    options.push(
       {name:"Make the text bigger.", group:"choice", bigger:true},
       {name:"Make the text smaller.", group:"choice", smaller:true}
     );
@@ -227,33 +224,6 @@ function showMenu() {
         require('electron').ipcRenderer.invoke('quit');
       } else if (option.achievements) {
         return showAchievements();
-      } else if (option.restart) {
-        if (_global.blockRestart) {
-          asyncAlert("Please wait until the timer has run out.");
-          return;
-        }
-        return clearScreen(function() {
-          var text = document.getElementById('text');
-          text.innerHTML = "Start over from the beginning?";
-          var options = [
-            {name: "Restart the game.", group:"choice", restart: true},
-            {name: "Cancel.", group: "choice", restart: false },
-          ]
-          printOptions([""], options, function(option) {
-            if (option.restart) {
-              clearScreen(function() {
-                setButtonTitles();
-                restartGame();
-              })
-            } else {
-              clearScreen(function() {
-                setButtonTitles();
-                loadAndRestoreGame();
-              })
-            }
-          })
-          curl();
-        });
       } else if (option.color) {
         changeBackgroundColor(option.color);
       } else if (option.reset) {
