@@ -5,15 +5,18 @@ html {
 
 body {
   position: relative;
-  max-width: 80ch;
+  max-width: 700px;
   min-height: 100vh;
   /* keep iOS address bar from popping in and out */
+  /*_width:expression(this.scrollWidth > 680 ? "680px" : "auto");*/
   font-size: 100%;
   /* reset for CWS */
-  font-family: Palatino, Georgia, "Times New Roman", serif;
+  font: -apple-system-body;
+  /* we'll override the font, but keep the size from iOS dynamic text sizing */
+  font-family: Georgia, "Times New Roman", serif;
   background-color: #F7F4F1;
   color: rgba(0, 0, 0, 0.85);
-  margin: 1ch auto;
+  margin: 8px auto;
   padding: 0;
   -webkit-user-select: text;
   /* selectable text for Chrome app support */
@@ -140,29 +143,23 @@ table {
 }
 
 .choice {
-  margin: 1rem 0;
-}
-
-.choice>div {
-  position: relative;
-  /* so the .shuttle can be positioned absolutely within it */
-  min-height: 1.25cm;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-color: #a9acaf;
-  border-style: solid;
-  border-width: 1px 1px 0px 1px;
+  margin: 1.2rem 0 1rem 0;
 }
 
 .choice label {
+  position: relative;
+  /* so the .shuttle can be positioned absolutely within it */
   transition-property: background-color, color;
   transition-duration: 0.1s;
   -webkit-transition-property: background-color, color;
   -webkit-transition-duration: 0.1s;
   -webkit-tap-highlight-color: transparent;
-  padding: 0.5em 1ch;
+  padding: 11px 8px 12px;
   display: block;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px 0px 0px 0px;
+  cursor: pointer;
 }
 
 .shuttle {
@@ -265,6 +262,26 @@ table {
   background-color: #007AFF;
 }
 
+.choice .firstChild {
+  border-top-width: 5px;
+}
+
+/* IE doesn't support label:last-child */
+.choice .lastChild {
+  border-bottom-width: 5px;
+}
+
+.choice .onlyChild {
+  border-width: 1px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.choice .noBorder {
+  border-width: 0;
+}
+
 .selectedKeyboard,
 .choice>div.selectedKeyboard:hover,
 .next.selectedKeyboard {
@@ -278,30 +295,17 @@ table {
   -webkit-transition-timing-function: linear;
 }
 
-.choice>div:first-child {
-  border-top-width: 1px;
-  -webkit-border-top-right-radius: 1ch;
-  -webkit-border-top-left-radius: 1ch;
-  border-top-right-radius: 1ch;
-  border-top-left-radius: 1ch;
-}
-
-/* IE doesn't support label:last-child */
-.choice>div:last-child {
-  border-bottom-width: 1px;
-  -webkit-border-bottom-right-radius: 1ch;
-  -webkit-border-bottom-left-radius: 1ch;
-  border-bottom-right-radius: 1ch;
-  border-bottom-left-radius: 1ch;
-}
-
-.choice .noBorder {
-  border-width: 0;
-}
-
 input[type="radio"],
 input[type="checkbox"] {
-  margin-right: 1ch;
+  margin-right: 8px;
+  cursor: pointer;
+  height: 14px;
+  width: 14px;
+}
+
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+  accent-color: black
 }
 
 .saveGame>label {
@@ -341,12 +345,15 @@ button {
   /* Safari, don't override my CSS styles */
   color: #f7f4f1;
   /* Match background color */
-  background-color: #626160;
-  border: none;
+  background-color: #222222;
+  border-color: black;
+  border-width: 4px;
+  border-style: double;
   -webkit-border-radius: 0.5em;
   -moz-border-radius: 0.5em;
   border-radius: 0.5em;
-  padding: 6px;
+  padding: 4px 4px 0px 4px;
+  cursor: pointer;
 }
 
 .linkButton {
@@ -363,9 +370,36 @@ h1 {
   font-weight: normal;
 }
 
+h1.gameTitle {
+  margin-top: 0.2em;
+  margin-bottom: 0.4em;
+  font-family: 'Papyrus', fantasy;
+}
+
 h2 {
   font-size: 1.125em;
   font-weight: normal;
+}
+
+h2#author {
+  margin-bottom: 0em;
+  font-size: 0.8em;
+  float: right;
+  margin-top: -2.4em;
+  font-family: 'Papyrus', fantasy;
+}
+
+p {
+  margin-block-start: 0.9em;
+  margin-block-end: 0.9em;
+}
+
+p#headerLinks {
+  display: none;
+}
+
+p#buttons {
+  margin-top: 0.5em;
 }
 
 #identity {
@@ -391,10 +425,30 @@ h2 {
 
 .spacedLink {
   margin-right: 0.5em;
+  background-color: #222222;
+  color: floralwhite;
+  border-color: floralwhite;
+  border-style: double;
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 4px 8px;
+  cursor: pointer;
 }
 
 .spacedLink:last-child {
   margin-right: 0;
+}
+
+#quickSaveMenu {
+  margin-right: 0.7em;
+  margin-left: 0.2em;
+  width: 150px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 4px 0px 4px 2px;
+  cursor: pointer;
 }
 
 #sharelist {
