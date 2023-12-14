@@ -21,9 +21,9 @@ body {
   -webkit-user-select: text;
   /* selectable text for Chrome app support */
   transition-property: background-color, color;
-  transition-duration: 2s;
+  /*transition-duration: 2s;*/
   -webkit-transition-property: background-color, color;
-  -webkit-transition-duration: 2s;
+  /*-webkit-transition-duration: 2s;*/
 }
 
 a {
@@ -285,7 +285,7 @@ table {
 .selectedKeyboard,
 .choice>div.selectedKeyboard:hover,
 .next.selectedKeyboard {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgb(255, 255, 255);
   background-color: #a03c3c;
   transition-property: background-color, color;
   transition-duration: 0.5s;
