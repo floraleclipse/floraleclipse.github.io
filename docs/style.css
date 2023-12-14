@@ -559,7 +559,7 @@ body.nightmode .choice label {
 body.nightmode .next {
   color: #242424;
   /* Match background color */
-  background-color: #FFFFFF;
+  background-color: #D9D9D9;
 }
 
 body.nightmode .shuttle {
